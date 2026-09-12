@@ -1,0 +1,2398 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>মিলন মেলা | স্বাধীন বাংলা প্রেসক্লাব</title>
+
+  <meta
+    name="description"
+    content="স্বাধীন বাংলা প্রেসক্লাবের গণমাধ্যম কর্মীদের নিয়ে আয়োজিত মিলন মেলা ও সদস্য নিবন্ধন।"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --primary: #063b2c;
+      --primary-dark: #03271e;
+      --secondary: #0c7558;
+      --gold: #d7a928;
+      --gold-light: #f7df91;
+      --cream: #fffaf0;
+      --white: #ffffff;
+      --text: #1c2b25;
+      --muted: #68766f;
+      --border: #e4e9e6;
+      --success: #12804e;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .10);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Hind Siliguri", sans-serif;
+      color: var(--text);
+      background: #f7f9f8;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1140px, 92%);
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(3, 39, 30, .96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #fff0a9);
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: 0 6px 20px rgba(215,169,40,.3);
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, var(--gold), #f0c957);
+      color: #162319;
+      padding: 10px 19px;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(215,169,40,.25);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(215,169,40,.20), transparent 30%),
+        radial-gradient(circle at 10% 80%, rgba(12,117,88,.35), transparent 35%),
+        linear-gradient(135deg, #03271e, #07513d);
+      color: white;
+      padding: 95px 0 105px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 50%;
+      right: -150px;
+      top: -150px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 17px;
+      border: 1px solid rgba(247,223,145,.35);
+      background: rgba(255,255,255,.06);
+      border-radius: 50px;
+      color: var(--gold-light);
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: "Noto Serif Bengali", serif;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.2;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: rgba(255,255,255,.83);
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .hero-buttons {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      padding: 14px 25px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #f2ce61);
+      color: #17261d;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(255,255,255,.07);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ================= TRUST ================= */
+
+    .trust-strip {
+      margin-top: -38px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .trust-box {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .trust-item {
+      text-align: center;
+      padding: 8px 15px;
+      border-right: 1px solid var(--border);
+    }
+
+    .trust-item:last-child {
+      border-right: none;
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ================= SECTION ================= */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 45px;
+    }
+
+    .section-head small {
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .section-head h2 {
+      font-family: "Noto Serif Bengali", serif;
+      color: var(--primary);
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.3;
+      margin: 8px 0 13px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    /* ================= BENEFITS ================= */
+
+    .benefits {
+      background: var(--cream);
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .benefit-card {
+      background: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      border: 1px solid #eee7d7;
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-card::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(215,169,40,.08);
+      right: -35px;
+      top: -35px;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: #eef7f3;
+      color: var(--secondary);
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .benefit-card h3 {
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .benefit-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* ================= EVENT ================= */
+
+    .event-layout {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .event-main {
+      background:
+        linear-gradient(135deg, rgba(3,39,30,.97), rgba(8,91,67,.95));
+      color: white;
+      border-radius: 28px;
+      padding: 45px;
+      box-shadow: var(--shadow);
+    }
+
+    .event-main h3 {
+      font-family: "Noto Serif Bengali", serif;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .event-main p {
+      color: rgba(255,255,255,.78);
+    }
+
+    .event-list {
+      margin-top: 25px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .event-list div {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .check {
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background: rgba(215,169,40,.18);
+      color: var(--gold-light);
+      display: grid;
+      place-items: center;
+      flex: 0 0 27px;
+    }
+
+    .event-side {
+      display: grid;
+      gap: 20px;
+    }
+
+    .mini-card {
+      background: white;
+      padding: 28px;
+      border-radius: 23px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 30px rgba(0,0,0,.05);
+    }
+
+    .mini-card h4 {
+      color: var(--primary);
+      margin-bottom: 7px;
+      font-size: 20px;
+    }
+
+    .mini-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* ================= REGISTRATION ================= */
+
+    .registration {
+      background:
+        linear-gradient(180deg, #f7f9f8 0%, #eef5f1 100%);
+    }
+
+    .form-wrap {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: clamp(25px, 5vw, 48px);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .form-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-title h3 {
+      font-family: "Noto Serif Bengali", serif;
+      color: var(--primary);
+      font-size: 30px;
+    }
+
+    .form-title p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 19px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 600;
+      color: #24342d;
+      font-size: 15px;
+    }
+
+    .required {
+      color: #c62828;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #dce4df;
+      border-radius: 12px;
+      padding: 13px 14px;
+      font-family: inherit;
+      font-size: 15px;
+      outline: none;
+      background: #fbfcfb;
+      transition: .2s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 4px rgba(12,117,88,.08);
+      background: white;
+    }
+
+    .help {
+      color: #78847e;
+      font-size: 12px;
+    }
+
+    .notice {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: #fff9e9;
+      border: 1px solid #f1dfaa;
+      color: #685620;
+      font-size: 14px;
+    }
+
+    .consent {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      color: #53615a;
+    }
+
+    .consent input {
+      width: auto;
+      margin-top: 5px;
+    }
+
+    .submit-wrap {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .submit-btn {
+      min-width: 240px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 12px 25px rgba(6,59,44,.2);
+    }
+
+    /* ================= SUCCESS ================= */
+
+    .success {
+      display: none;
+      text-align: center;
+      padding: 35px 15px 10px;
+    }
+
+    .success.show {
+      display: block;
+    }
+
+    .success-icon {
+      width: 76px;
+      height: 76px;
+      margin: auto auto 18px;
+      border-radius: 50%;
+      background: #e7f7ed;
+      color: var(--success);
+      display: grid;
+      place-items: center;
+      font-size: 40px;
+      font-weight: 700;
+    }
+
+    .success h3 {
+      font-family: "Noto Serif Bengali", serif;
+      color: var(--primary);
+      font-size: 29px;
+      margin-bottom: 8px;
+    }
+
+    .success p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .reference {
+      margin: 20px auto;
+      max-width: 380px;
+      padding: 13px;
+      background: #f4f8f5;
+      border-radius: 12px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* ================= FAQ ================= */
+
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      margin-bottom: 12px;
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    details p {
+      color: var(--muted);
+      margin-top: 12px;
+      font-size: 15px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #031f18;
+      color: rgba(255,255,255,.72);
+      padding: 45px 0 25px;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      color: white;
+      font-size: 23px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .footer-main p {
+      font-size: 14px;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .copyright {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 850px) {
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .event-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-box {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 16px;
+      }
+
+      .trust-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav {
+        min-height: 65px;
+      }
+
+      .brand {
+        font-size: 15px;
+      }
+
+      .brand-logo {
+        width: 39px;
+        height: 39px;
+      }
+
+      .nav-btn {
+        padding: 8px 13px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 65px 0 80px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .event-main {
+        padding: 30px 23px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-right {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="#" class="brand">
+        <div class="brand-logo">স</div>
+        <span>স্বাধীন বাংলা প্রেসক্লাব</span>
+      </a>
+
+      <a href="#registration" class="nav-btn">
+        নিবন্ধন করুন
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          ✦ বিশেষ আয়োজন
+        </div>
+
+        <h1>
+          স্বাধীন বাংলা প্রেসক্লাবের
+          <span>মিলন মেলা</span>
+        </h1>
+
+        <p>
+          দেশের বিভিন্ন প্রান্তে কর্মরত গণমাধ্যমকর্মী ও সম্মানিত সদস্যদের
+          নিয়ে আয়োজিত হতে চলেছে একটি বিশেষ মিলন মেলা।
+          পারস্পরিক যোগাযোগ, সম্মাননা ও সৌহার্দ্যপূর্ণ মিলনের এই আয়োজনে
+          আপনিও অংশ নিন।
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#registration" class="btn btn-primary">
+            রেজিস্ট্রেশন করুন
+          </a>
+
+          <a href="#benefits" class="btn btn-outline">
+            সুযোগ-সুবিধা দেখুন
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= TRUST STRIP ================= -->
+
+  <div class="container trust-strip">
+
+    <div class="trust-box">
+
+      <div class="trust-item">
+        <strong>সম্মানিত সদস্যদের জন্য</strong>
+        <span>বিশেষ আয়োজন ও সুবিধা</span>
+      </div>
+
+      <div class="trust-item">
+        <strong>আনুষ্ঠানিক সম্মাননা</strong>
+        <span>সদস্যদের জন্য সম্মাননা কার্যক্রম</span>
+      </div>
+
+      <div class="trust-item">
+        <strong>সুশৃঙ্খল নিবন্ধন</strong>
+        <span>তথ্য যাচাই ও নিশ্চিতকরণ প্রক্রিয়া</span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= BENEFITS ================= -->
+
+  <section class="benefits" id="benefits">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <small>সদস্যদের জন্য বিশেষ সুবিধা</small>
+
+        <h2>
+          মিলন মেলায় থাকছে নানা আয়োজন
+        </h2>
+
+        <p>
+          প্রতিষ্ঠানের সিদ্ধান্ত অনুযায়ী অনুষ্ঠানে অংশগ্রহণকারী
+          যোগ্য সদস্যদের জন্য বিভিন্ন সম্মাননা ও সুবিধার ব্যবস্থা থাকবে।
+        </p>
+
+      </div>
+
+
+      <div class="benefit-grid">
+
+        <div class="benefit-card">
+          <div class="icon">🏆</div>
+          <h3>সাংবাদিক সম্মাননা ক্রেস্ট</h3>
+          <p>
+            যোগ্য সদস্যদের জন্য সাংবাদিকতা ও গণমাধ্যমকর্মী হিসেবে
+            বিশেষ সম্মাননার ব্যবস্থা থাকবে।
+          </p>
+        </div>
+
+
+        <div class="benefit-card">
+          <div class="icon">📜</div>
+          <h3>সম্মাননা সার্টিফিকেট</h3>
+          <p>
+            নির্ধারিত প্রক্রিয়া অনুযায়ী সদস্যদের জন্য
+            সম্মাননা সার্টিফিকেট প্রদানের ব্যবস্থা থাকবে।
+          </p>
+        </div>
+
+
+        <div class="benefit-card">
+          <div class="icon">👕</div>
+          <h3>বিশেষ টি-শার্ট</h3>
+          <p>
+            মিলন মেলা ও সদস্যদের জন্য নির্ধারিত বিশেষ
+            টি-শার্ট প্রদানের ব্যবস্থা থাকবে।
+          </p>
+        </div>
+
+
+        <div class="benefit-card">
+          <div class="icon">🤝</div>
+          <h3>মিলন ও যোগাযোগ</h3>
+          <p>
+            বিভিন্ন অঞ্চলের গণমাধ্যমকর্মীদের মধ্যে যোগাযোগ ও
+            পারস্পরিক সম্পর্ক গড়ে তোলার সুযোগ।
+          </p>
+        </div>
+
+
+        <div class="benefit-card">
+          <div class="icon">🍽️</div>
+          <h3>খাওয়া-দাওয়ার আয়োজন</h3>
+          <p>
+            অনুষ্ঠানে অংশগ্রহণকারী সদস্যদের জন্য
+            আয়োজকদের পক্ষ থেকে খাবারের ব্যবস্থা থাকবে।
+          </p>
+        </div>
+
+
+        <div class="benefit-card">
+          <div class="icon">📦</div>
+          <h3>অনুপস্থিত সদস্যদের জন্য</h3>
+          <p>
+            যারা অনুষ্ঠানে অংশগ্রহণ করতে পারবেন না, তাদের জন্য
+            প্রযোজ্য সম্মাননা সামগ্রী কুরিয়ারের মাধ্যমে পাঠানোর
+            ব্যবস্থা থাকতে পারে।
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= EVENT DETAILS ================= -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <small>বিশেষ ঘোষণা</small>
+
+        <h2>
+          সদস্যরা কীভাবে সুবিধা পাবেন?
+        </h2>
+
+      </div>
+
+
+      <div class="event-layout">
+
+        <div class="event-main">
+
+          <h3>
+            মিলন মেলায় অংশগ্রহণ করুন
+          </h3>
+
+          <p>
+            নির্ধারিত প্রক্রিয়ায় নিবন্ধন সম্পন্ন করার পর আপনার
+            তথ্য যাচাই করা হবে। পরবর্তী নির্দেশনা ও অনুষ্ঠানসংক্রান্ত
+            গুরুত্বপূর্ণ তথ্য প্রযোজ্য ক্ষেত্রে SMS-এর মাধ্যমে জানানো হবে।
+          </p>
+
+          <div class="event-list">
+
+            <div>
+              <span class="check">✓</span>
+              <span>নিবন্ধন তথ্য জমা</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>সদস্য তথ্য যাচাই</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>নিশ্চিতকরণ SMS</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>পরবর্তী নির্দেশনা প্রদান</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="event-side">
+
+          <div class="mini-card">
+
+            <h4>যারা অংশগ্রহণ করতে পারবেন</h4>
+
+            <p>
+              নির্ধারিত যোগ্যতা ও সদস্যপদ অনুযায়ী যেসব সদস্য
+              মিলন মেলায় অংশগ্রহণের সুযোগ পাবেন, তাদের জন্য
+              অনুষ্ঠানে নির্ধারিত সুবিধাগুলো থাকবে।
+            </p>
+
+          </div>
+
+
+          <div class="mini-card">
+
+            <h4>যারা অংশগ্রহণ করতে পারবেন না</h4>
+
+            <p>
+              অনুষ্ঠানে উপস্থিত হতে না পারা যোগ্য সদস্যদের জন্য
+              প্রযোজ্য সম্মাননা সামগ্রী কুরিয়ারের মাধ্যমে পাঠানোর
+              ব্যবস্থা থাকলে তা নিবন্ধিত তথ্য অনুযায়ী সম্পন্ন করা হবে।
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= REGISTRATION ================= -->
+
+  <section class="registration" id="registration">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <small>Member Registration</small>
+
+        <h2>
+          মিলন মেলা নিবন্ধন ফর্ম
+        </h2>
+
+        <p>
+          নিচের তথ্যগুলো সঠিকভাবে পূরণ করুন। তথ্য যাচাইয়ের পর
+          পরবর্তী নির্দেশনা আপনাকে জানানো হবে।
+        </p>
+
+      </div>
+
+
+      <div class="form-wrap">
+
+        <!-- FORM -->
+
+        <form id="registrationForm">
+
+          <div class="form-title">
+
+            <h3>
+              সদস্য তথ্য জমা দিন
+            </h3>
+
+            <p>
+              অনুগ্রহ করে সঠিক ও প্রয়োজনীয় তথ্য প্রদান করুন।
+            </p>
+
+          </div>
+
+
+          <div class="form-grid">
+
+            <!-- NAME -->
+
+            <div class="field full">
+
+              <label>
+                আপনার পূর্ণ নাম <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="আপনার পূর্ণ নাম লিখুন"
+                required
+              />
+
+            </div>
+
+
+            <!-- MOBILE -->
+
+            <div class="field">
+
+              <label>
+                মোবাইল নম্বর <span class="required">*</span>
+              </label>
+
+              <input
+                type="tel"
+                id="mobile"
+                name="mobile"
+                placeholder="01XXXXXXXXX"
+                pattern="01[0-9]{9}"
+                required
+              />
+
+            </div>
+
+
+            <!-- DISTRICT -->
+
+            <div class="field">
+
+              <label>
+                জেলা <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="district"
+                name="district"
+                placeholder="আপনার জেলা"
+                required
+              />
+
+            </div>
+
+
+            <!-- UPAZILA -->
+
+            <div class="field">
+
+              <label>
+                উপজেলা <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="upazila"
+                name="upazila"
+                placeholder="আপনার উপজেলা"
+                required
+              />
+
+            </div>
+
+
+            <!-- ID CARD -->
+
+            <div class="field">
+
+              <label>
+                সদস্য/আইডি কার্ড নম্বর
+                <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="cardNumber"
+                name="cardNumber"
+                placeholder="আপনার আইডি কার্ড নম্বর"
+                required
+              />
+
+              <span class="help">
+                আপনার আইডি কার্ডে থাকা নম্বরটি লিখুন।
+              </span>
+
+            </div>
+
+
+            <!-- ADDRESS -->
+
+            <div class="field full">
+
+              <label>
+                কুরিয়ার গ্রহণের ঠিকানা
+                <span class="required">*</span>
+              </label>
+
+              <textarea
+                id="address"
+                name="address"
+                rows="3"
+                placeholder="বাড়ি/গ্রাম, ইউনিয়ন/ওয়ার্ড, উপজেলা, জেলা লিখুন"
+                required
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <!-- NOTICE -->
+
+          <div class="notice">
+
+            <strong>বিশেষ দ্রষ্টব্য:</strong>
+
+            আপনার আইডি কার্ড এখনো গ্রহণ না করে থাকলে,
+            অনুগ্রহ করে সংশ্লিষ্ট সাপোর্ট টিমের সঙ্গে যোগাযোগ করে
+            বিষয়টি নিশ্চিত করুন। শুধুমাত্র প্রয়োজনীয় ও যাচাইযোগ্য
+            তথ্য প্রদান করুন।
+
+          </div>
+
+
+          <!-- CONSENT -->
+
+          <label class="consent">
+
+            <input
+              type="checkbox"
+              id="consent"
+              required
+            />
+
+            <span>
+              আমি নিশ্চিত করছি যে উপরের তথ্যগুলো আমার জ্ঞাতসারে
+              প্রদান করছি এবং নিবন্ধন ও যোগাযোগের প্রয়োজনে
+              প্রতিষ্ঠান এগুলো ব্যবহার করতে পারবে।
+            </span>
+
+          </label>
+
+
+          <!-- SUBMIT -->
+
+          <div class="submit-wrap">
+
+            <button
+              type="submit"
+              class="btn submit-btn"
+            >
+              তথ্য জমা দিন
+            </button>
+
+          </div>
+
+        </form>
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <div class="success" id="successMessage">
+
+          <div class="success-icon">
+            ✓
+          </div>
+
+          <h3>
+            অভিনন্দন!
+          </h3>
+
+          <p>
+            আপনার নিবন্ধন তথ্য সফলভাবে জমা হয়েছে।
+            তথ্যগুলো যাচাই করার পর পরবর্তী নির্দেশনা ও
+            কনফার্মেশন SMS আপনার মোবাইল নম্বরে পাঠানো হবে।
+          </p>
+
+          <div class="reference">
+            নিবন্ধন রেফারেন্স:
+            <span id="referenceNumber"></span>
+          </div>
+
+          <button
+            class="btn btn-primary"
+            onclick="location.reload()"
+          >
+            নতুন করে নিবন্ধন
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FAQ ================= -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <small>সাধারণ প্রশ্ন</small>
+
+        <h2>
+          আপনার জানা প্রয়োজন
+        </h2>
+
+      </div>
+
+
+      <div class="faq">
+
+        <details>
+
+          <summary>
+            নিবন্ধনের পর কী হবে?
+          </summary>
+
+          <p>
+            আপনার দেওয়া তথ্য যাচাই করা হবে। যাচাই সম্পন্ন হলে
+            প্রযোজ্য ক্ষেত্রে পরবর্তী নির্দেশনা SMS-এর মাধ্যমে
+            জানানো হবে।
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            অনুষ্ঠানে উপস্থিত হতে না পারলে কী হবে?
+          </summary>
+
+          <p>
+            যোগ্য সদস্য অনুষ্ঠানে উপস্থিত হতে না পারলে,
+            প্রযোজ্য সম্মাননা সামগ্রী কুরিয়ারের মাধ্যমে
+            পাঠানোর ব্যবস্থা থাকলে তা নিবন্ধিত তথ্য অনুযায়ী
+            সম্পন্ন করা হবে।
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            নিবন্ধনের সময় কোন তথ্য দিতে হবে?
+          </summary>
+
+          <p>
+            পূর্ণ নাম, মোবাইল নম্বর, জেলা, উপজেলা, সদস্য/আইডি
+            কার্ড নম্বর এবং কুরিয়ার গ্রহণের ঠিকানা দিতে হবে।
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            ভুল তথ্য দিলে কী হবে?
+          </summary>
+
+          <p>
+            তথ্য জমা দেওয়ার আগে সব তথ্য ভালোভাবে যাচাই করুন।
+            ভুল তথ্যের কারণে পরবর্তী যোগাযোগ বা ডেলিভারিতে
+            সমস্যা হতে পারে।
+          </p>
+
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div>
+
+          <div class="footer-brand">
+            স্বাধীন বাংলা প্রেসক্লাব
+          </div>
+
+          <p>
+            গণমাধ্যমকর্মী ও সদস্যদের পারস্পরিক যোগাযোগ,
+            সম্মাননা ও সহযোগিতার লক্ষ্যে আয়োজিত বিশেষ উদ্যোগ।
+          </p>
+
+        </div>
+
+
+        <div class="footer-right">
+
+          <p>
+            সদস্যদের তথ্যের গোপনীয়তা ও নিরাপত্তাকে
+            সর্বোচ্চ গুরুত্ব দেওয়া উচিত।
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+
+        © <span id="year"></span>
+        স্বাধীন বাংলা প্রেসক্লাব — সর্বস্বত্ব সংরক্ষিত।
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    const form =
+      document.getElementById("registrationForm");
+
+    const successMessage =
+      document.getElementById("successMessage");
+
+    const referenceNumber =
+      document.getElementById("referenceNumber");
+
+
+    form.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+
+      /*
+        DEMO STORAGE
+
+        এখানে শুধু ব্রাউজারে ডেমো হিসেবে তথ্য রাখা হচ্ছে।
+        Production website-এ অবশ্যই নিরাপদ backend/database ব্যবহার করুন।
+      */
+
+      const data = {
+
+        name:
+          document.getElementById("name").value.trim(),
+
+        mobile:
+          document.getElementById("mobile").value.trim(),
+
+        district:
+          document.getElementById("district").value.trim(),
+
+        upazila:
+          document.getElementById("upazila").value.trim(),
+
+        cardNumber:
+          document.getElementById("cardNumber").value.trim(),
+
+        address:
+          document.getElementById("address").value.trim(),
+
+        submittedAt:
+          new Date().toISOString()
+
+      };
+
+
+      const registrationList =
+        JSON.parse(
+          localStorage.getItem("pressClubRegistrations") || "[]"
+        );
+
+
+      registrationList.push(data);
+
+
+      localStorage.setItem(
+        "pressClubRegistrations",
+        JSON.stringify(registrationList)
+      );
+
+
+      /*
+        রেজিস্ট্রেশন নম্বর
+      */
+
+      const ref =
+        "SBPC-" +
+        Date.now().toString().slice(-8);
+
+
+      referenceNumber.textContent = ref;
+
+
+      /*
+        FORM HIDE
+      */
+
+      form.style.display = "none";
+
+
+      /*
+        SUCCESS SHOW
+      */
+
+      successMessage.classList.add("show");
+
+
+      /*
+        SUCCESS SECTION-এ স্ক্রল
+      */
+
+      successMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    });
+
+  </script>
+
+</body>
+  </html>
+  <!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>স্বাধীন বাংলা প্রেসক্লাব — প্রিমিয়াম ডকুমেন্ট রিসিভ ও সদস্য তথ্য যাচাই</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sbRed: '#EF4444',
+                        sbDarkRed: '#DC2626',
+                        sbDarkGreen: '#064E3B',
+                        sbGreen: '#059669',
+                        sbLightBg: '#F8FAFC',
+                        sbAccentGold: '#F59E0B'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Tiro Bangla"', 'serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px rgba(239, 68, 68, 0.4), 0 0 20px rgba(5, 150, 105, 0.2)' },
+                            '100%': { boxShadow: '0 0 25px rgba(239, 68, 68, 0.8), 0 0 40px rgba(5, 150, 105, 0.4)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-6px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        .gradient-border {
+            position: relative;
+            border-radius: 1.5rem;
+            background: linear-gradient(60deg, #EF4444, #059669, #F59E0B, #064E3B);
+            background-size: 300% 300%;
+            animation: gradientBorder 6s ease infinite;
+            padding: 3px;
+        }
+        @keyframes gradientBorder {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .inner-content {
+            background: #ffffff;
+            border-radius: calc(1.5rem - 3px);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #059669;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-emerald-50/30 to-red-50/20 text-gray-800 font-sans antialiased selection:bg-sbRed selection:text-white">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-card border-b border-gray-200/80 shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-gradient-to-tr from-sbDarkGreen via-sbGreen to-sbAccentGold rounded-2xl flex items-center justify-center text-white shadow-lg shadow-emerald-900/30 animate-pulse-slow">
+                    <i class="fa-solid fa-newspaper text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-serif font-bold text-xl sm:text-2xl text-sbDarkGreen tracking-wide">স্বাধীন বাংলা প্রেসক্লাব</h1>
+                    <p class="text-xs text-sbRed font-extrabold tracking-widest uppercase">Official Member & Representative Portal</p>
+                </div>
+            </div>
+
+            <nav class="hidden lg:flex items-center space-x-8 font-semibold text-gray-700">
+                <a href="#home" class="hover:text-sbRed transition-colors">হোম</a>
+                <a href="#verify" class="hover:text-sbRed transition-colors">তথ্য যাচাই</a>
+                <a href="#notice" class="hover:text-sbRed transition-colors">নোটিশ</a>
+                <a href="#video-section" class="hover:text-sbRed transition-colors">অফিসিয়াল ভিডিও</a>
+                <a href="#features" class="hover:text-sbRed transition-colors">সুযোগ-সুবিধা</a>
+                <a href="#support" class="hover:text-sbRed transition-colors">সহায়তা</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="#verify" class="bg-gradient-to-r from-sbRed to-rose-600 hover:from-rose-600 hover:to-red-700 text-white px-6 py-3 rounded-2xl font-bold shadow-lg shadow-sbRed/40 transition-all transform hover:-translate-y-0.5 flex items-center space-x-2">
+                    <i class="fa-solid fa-magnifying-glass animate-bounce"></i>
+                    <span>তথ্য যাচাই করুন</span>
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-700 hover:text-sbRed focus:outline-none p-2 bg-gray-100 rounded-xl">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-200 px-4 pt-3 pb-6 space-y-3 shadow-2xl">
+            <a href="#home" class="block py-2 text-gray-800 hover:text-sbRed font-bold border-b border-gray-100">হোম</a>
+            <a href="#verify" class="block py-2 text-gray-800 hover:text-sbRed font-bold border-b border-gray-100">তথ্য যাচাই</a>
+            <a href="#notice" class="block py-2 text-gray-800 hover:text-sbRed font-bold border-b border-gray-100">নোটিশ</a>
+            <a href="#video-section" class="block py-2 text-gray-800 hover:text-sbRed font-bold border-b border-gray-100">অফিসিয়াল ভিডিও</a>
+            <a href="#features" class="block py-2 text-gray-800 hover:text-sbRed font-bold border-b border-gray-100">সুযোগ-সুবিধা</a>
+            <a href="#support" class="block py-2 text-gray-800 hover:text-sbRed font-bold">সহায়তা</a>
+        </div>
+    </header>
+
+    <main id="home">
+
+        <!-- Notice Section -->
+        <section id="notice" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+            <div class="gradient-border shadow-2xl">
+                <div class="inner-content p-6 sm:p-10 bg-gradient-to-r from-red-50/80 via-white to-emerald-50/80 relative overflow-hidden">
+                    <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-sbRed/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                        <div class="flex items-start space-x-5">
+                            <div class="w-14 h-14 bg-gradient-to-br from-sbRed to-rose-700 rounded-2xl flex-shrink-0 flex items-center justify-center text-white shadow-lg shadow-sbRed/40 animate-bounce">
+                                <i class="fa-solid fa-bullhorn text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="inline-block bg-gradient-to-r from-sbRed to-rose-600 text-white text-xs px-3 py-1 rounded-full font-bold mb-3 uppercase tracking-wider shadow-md">
+                                    <i class="fa-solid fa-triangle-exclamation mr-1"></i> জরুরি ঘোষণা
+                                </span>
+                                <h2 class="text-xl sm:text-2xl font-serif font-bold text-gray-900 leading-relaxed">
+                                    অনুগ্রহ করে ডেলিভারি ম্যানের কাছ থেকে আপনার মূল্যবান ডকুমেন্ট/পার্সেলটি গ্রহণ করুন। হাতে পাওয়ার পর পরবর্তী ধাপে আপনার জন্য প্রয়োজনীয় সকল বিষয় বুঝিয়ে দেওয়া হবে।
+                                </h2>
+                                <p class="text-sm sm:text-base text-sbDarkGreen font-bold mt-3 flex items-center space-x-2 bg-emerald-100/70 px-4 py-2 rounded-xl inline-flex">
+                                    <i class="fa-solid fa-hand-point-down text-sbGreen"></i>
+                                    <span>ডকুমেন্ট গ্রহণ করার পর নিচের অপশন থেকে আপনার তথ্য যাচাই করুন।</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 self-center md:self-auto w-full md:w-auto text-center">
+                            <a href="#verify" class="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-sbDarkGreen to-sbGreen hover:from-emerald-800 hover:to-emerald-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-sbGreen/30 transition-all transform hover:scale-105">
+                                <span>তথ্য যাচাই করুন</span>
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Video Section (With Sound Control Button) -->
+        <section id="video-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-white bg-gradient-to-r from-sbRed to-rose-600 px-4 py-1.5 rounded-full shadow-md">
+                    <i class="fa-solid fa-video mr-1"></i> OFFICIAL VIDEO STREAM
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-sbDarkGreen mt-3">স্বাধীন বাংলা প্রেসক্লাব সম্প্রচার স্ক্রিন</h2>
+                <p class="text-gray-600 mt-2 text-base">সংবাদ ও প্রতিনিধি কার্যক্রম সংক্রান্ত অফিসিয়াল নির্দেশিকা ও ভিডিওটি সরাসরি নিচে উপভোগ করুন।</p>
+                
+                <!-- Quick Sound Enable Button -->
+                <div class="mt-4">
+                    <button onclick="enableSound()" id="sound-btn" class="bg-amber-500 hover:bg-amber-600 text-gray-950 font-extrabold px-6 py-2.5 rounded-xl shadow-lg transition-all transform hover:scale-105 inline-flex items-center space-x-2 text-sm">
+                        <i class="fa-solid fa-volume-high text-lg animate-pulse"></i>
+                        <span>সাউন্ড অন করতে এখানে ক্লিক করুন</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- TV Channel Style Player Container -->
+            <div class="bg-gray-950 rounded-3xl p-4 sm:p-6 shadow-2xl border-4 border-sbDarkGreen relative overflow-hidden ring-4 ring-emerald-500/20">
+                <div class="flex items-center justify-between pb-4 px-2 text-white border-b border-gray-800 mb-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-3.5 h-3.5 bg-red-500 rounded-full animate-ping"></span>
+                        <span class="font-bold text-xs sm:text-sm tracking-wider uppercase bg-red-600 px-3 py-1 rounded-lg text-white flex items-center space-x-1.5 shadow-md">
+                            <i class="fa-solid fa-broadcast-tower"></i> <span>LIVE BROADCAST</span>
+                        </span>
+                    </div>
+                    <div class="text-xs sm:text-sm font-bold tracking-wider text-amber-400">
+                        ✨ স্বাধীন বাংলা প্রেসক্লাব — Official Media Channel
+                    </div>
+                    <div class="hidden sm:flex items-center space-x-2 text-emerald-400 text-xs font-semibold">
+                        <i class="fa-solid fa-shield-halved"></i> <span>Auto Play Active</span>
+                    </div>
+                </div>
+
+                <!-- Responsive 16:9 Embedded Video Frame -->
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-gray-800">
+                    <iframe 
+                        id="official-video-frame"
+                        class="w-full h-full border-0" 
+                        src="https://www.youtube.com/embed/MeE2kJDSlXU?autoplay=1&mute=0&enablejsapi=1&controls=1" 
+                        title="স্বাধীন বাংলা প্রেসক্লাব অফিসিয়াল ভিডিও" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="pt-4 px-2 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-2">
+                    <div class="flex items-center space-x-2 text-emerald-300 font-medium">
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                        <span>ভিডিওটি স্বয়ংক্রিয়ভাবে চালু করা হয়েছে। সাউন্ড না শুনলে উপরের বাটনটিতে ক্লিক করুন।</span>
+                    </div>
+                    <div class="text-amber-400 font-bold uppercase tracking-wider">
+                        HD Quality Verified
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search & Verification Section -->
+        <section id="verify" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="gradient-border shadow-2xl">
+                <div class="inner-content p-6 sm:p-12 bg-gradient-to-br from-white via-emerald-50/40 to-amber-50/30 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-sbGreen/10 to-sbAccentGold/10 rounded-bl-full pointer-events-none blur-xl"></div>
+                    
+                    <div class="text-center max-w-xl mx-auto mb-10">
+                        <div class="w-16 h-16 bg-gradient-to-tr from-sbDarkGreen via-sbGreen to-sbAccentGold text-white rounded-3xl mx-auto flex items-center justify-center text-3xl shadow-xl shadow-emerald-900/30 mb-4 animate-float">
+                            <i class="fa-solid fa-id-card-clip"></i>
+                        </div>
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-sbRed bg-red-100 px-4 py-1.5 rounded-full shadow-sm">
+                            <i class="fa-solid fa-shield-check mr-1"></i> সদস্য যাচাইকরণ পোর্টাল
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-sbDarkGreen mt-3">তথ্য যাচাই করুন</h2>
+                        <p class="text-gray-600 mt-2 text-base font-medium">আপনার মোবাইল নম্বর দিয়ে তাৎক্ষণিকভাবে সদস্য/প্রতিনিধির তথ্য যাচাই করুন।</p>
+                    </div>
+
+                    <div class="max-w-xl mx-auto">
+                        <form id="search-form" onsubmit="handleSearch(event)" class="space-y-5">
+                            <div class="relative group">
+                                <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none text-sbGreen group-focus-within:text-sbRed transition-colors">
+                                    <i class="fa-solid fa-phone-volume text-xl"></i>
+                                </div>
+                                <input 
+                                    type="tel" 
+                                    id="phone-input" 
+                                    placeholder="আপনার মোবাইল নম্বর লিখুন (যেমন: 01XXXXXXXXX)" 
+                                    maxlength="11"
+                                    class="w-full pl-14 pr-4 py-5 bg-white border-3 border-emerald-500/40 rounded-2xl focus:outline-none focus:border-sbRed focus:ring-4 focus:ring-sbRed/20 text-gray-900 font-bold text-lg transition-all shadow-lg placeholder:font-normal placeholder:text-gray-400"
+                                    required
+                                >
+                            </div>
+                            <button 
+                                type="submit" 
+                                class="w-full bg-gradient-to-r from-sbDarkGreen via-sbGreen to-emerald-600 hover:from-emerald-900 hover:to-emerald-700 text-white font-bold py-5 rounded-2xl shadow-xl shadow-sbGreen/40 transition-all transform hover:-translate-y-1 flex items-center justify-center space-x-3 text-xl tracking-wide group">
+                                <i class="fa-solid fa-magnifying-glass group-hover:scale-125 transition-transform"></i>
+                                <span>তথ্য যাচাই করুন</span>
+                            </button>
+                        </form>
+                        <div id="search-error" class="hidden mt-4 text-center text-red-700 font-bold text-sm bg-red-100 py-3 rounded-2xl border-2 border-red-300 shadow-sm animate-pulse"></div>
+                    </div>
+
+                    <!-- Result Card Container -->
+                    <div id="result-container" class="hidden mt-12 transition-all duration-500 transform">
+                        <div class="bg-gradient-to-br from-emerald-50 via-white to-amber-50/50 border-3 border-sbGreen/50 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 bg-sbGreen text-white text-xs font-extrabold px-4 py-1.5 rounded-bl-2xl shadow-md uppercase tracking-wider">
+                                Verified Data Record
+                            </div>
+
+                            <div class="bg-gradient-to-r from-amber-500 to-amber-600 text-white p-5 rounded-2xl mb-8 shadow-xl">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-white text-xl flex-shrink-0">
+                                        <i class="fa-solid fa-triangle-exclamation"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-extrabold text-white text-base sm:text-lg">জরুরি বার্তা ও নির্দেশিকা:</h4>
+                                        <p class="text-amber-100 text-sm sm:text-base mt-1.5 leading-relaxed font-medium">
+                                            প্রিয় প্রতিনিধি, আপনার পার্সেলটি এখনও গ্রহণ করা হয়নি। আপনার তথ্য আমাদের ওয়েবসাইটের ডাটাবেজ সার্ভারে রয়েছে। উক্ত ব্যক্তি স্বাধীন বাংলা প্রেসক্লাবের একজন সদস্য। আপনি পার্সেল গ্রহণ করার সাথে সাথে আপনার ওয়েবসাইটের অ্যাকাউন্ট চালু হবে এবং আমাদের প্রতিনিধি আপনাকে সবকিছু ফোন দিয়ে বুঝিয়ে দিবে। সব বিষয়, দয়া করে দ্রুত ডেলিভারি ম্যানের সাথে যোগাযোগ করুন এবং পার্সেলটি গ্রহণ করুন।
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b-2 border-emerald-100 mb-8 gap-4">
+                                <div>
+                                    <span class="text-xs font-extrabold uppercase tracking-wider text-white bg-sbGreen px-4 py-1.5 rounded-full shadow-md">
+                                        <i class="fa-solid fa-circle-check mr-1"></i> সদস্য তথ্য যাচাই সফল
+                                    </span>
+                                    <h3 id="res-name" class="text-2xl sm:text-3xl font-serif font-bold text-sbDarkGreen mt-3">--</h3>
+                                </div>
+                                <div class="text-right">
+                                    <span id="res-status-badge" class="px-4 py-2 rounded-2xl text-xs font-extrabold uppercase tracking-wide bg-amber-100 text-amber-800 shadow-sm border border-amber-300">Pending</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 text-sm">
+                                <div class="bg-white p-5 rounded-2xl border-2 border-gray-100 shadow-md">
+                                    <span class="text-gray-500 block text-xs font-bold mb-1 uppercase tracking-wider">প্রাপকের নাম (Recipient Name)</span>
+                                    <span id="res-recipient-name" class="font-extrabold text-gray-900 text-lg">--</span>
+                                </div>
+                                <div class="bg-white p-5 rounded-2xl border-2 border-gray-100 shadow-md">
+                                    <span class="text-gray-500 block text-xs font-bold mb-1 uppercase tracking-wider">মোবাইল নম্বর (Recipient Phone)</span>
+                                    <span id="res-phone" class="font-extrabold text-gray-900 text-lg">--</span>
+                                </div>
+                                <div class="bg-white p-5 rounded-2xl border-2 border-gray-100 shadow-md sm:col-span-2">
+                                    <span class="text-gray-500 block text-xs font-bold mb-1 uppercase tracking-wider">ঠিকানা (Recipient Address)</span>
+                                    <span id="res-address" class="font-extrabold text-gray-900 text-base">--</span>
+                                </div>
+                                <div class="bg-white p-5 rounded-2xl border-2 border-gray-100 shadow-md">
+                                    <span class="text-gray-500 block text-xs font-bold mb-1 uppercase tracking-wider">ডেলিভারি স্ট্যাটাস (Delivery Status)</span>
+                                    <span id="res-delivery-status" class="font-extrabold text-sbRed text-base">--</span>
+                                </div>
+                                <div class="bg-white p-5 rounded-2xl border-2 border-gray-100 shadow-md">
+                                    <span class="text-gray-500 block text-xs font-bold mb-1 uppercase tracking-wider">অনুমোদন স্ট্যাটাস (Approval Status)</span>
+                                    <span id="res-approval-status" class="font-extrabold text-sbRed text-base">--</span>
+                                </div>
+                                <div class="bg-white p-5 rounded-2xl border-2 border-gray-100 shadow-md">
+                                    <span class="text-gray-500 block text-xs font-bold mb-1 uppercase tracking-wider">ডেলিভারি সময় (Delivery Time)</span>
+                                    <span id="res-delivery-time" class="font-bold text-gray-700 text-base">প্রযোজ্য নয় / অপেক্ষমাণ</span>
+                                </div>
+                                <div class="bg-white p-5 rounded-2xl border-2 border-gray-100 shadow-md">
+                                    <span class="text-gray-500 block text-xs font-bold mb-1 uppercase tracking-wider">সিওডি পরিমাণ (COD Amount)</span>
+                                    <span id="res-cod" class="font-extrabold text-emerald-700 text-xl">-- TK</span>
+                                </div>
+                                <div class="bg-white p-5 rounded-2xl border-2 border-gray-100 shadow-md">
+                                    <span class="text-gray-500 block text-xs font-bold mb-1 uppercase tracking-wider">রাইডার (Rider)</span>
+                                    <span id="res-rider" class="font-extrabold text-gray-900 text-base">--</span>
+                                </div>
+                                <div class="bg-white p-5 rounded-2xl border-2 border-gray-100 shadow-md">
+                                    <span class="text-gray-500 block text-xs font-bold mb-1 uppercase tracking-wider">রাইডারের ফোন (Riders Phone)</span>
+                                    <span id="res-rider-phone" class="font-extrabold text-sbDarkGreen text-lg">--</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 pt-6 border-t-2 border-emerald-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <p class="text-xs sm:text-sm text-gray-600 font-bold">
+                                    <i class="fa-solid fa-circle-check text-sbGreen mr-1.5 text-base"></i> স্বাধীন বাংলা প্রেসক্লাবের অফিশিয়াল ডাটাবেজ অনুযায়ী তথ্য নিশ্চিত করা হয়েছে।
+                                </p>
+                                <button onclick="document.getElementById('confirmation-section').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-auto bg-gradient-to-r from-sbRed to-rose-600 hover:from-rose-600 hover:to-red-700 text-white font-extrabold px-8 py-4 rounded-2xl shadow-xl shadow-sbRed/30 transition-all transform hover:scale-105">
+                                    পার্সেল গ্রহণ নিশ্চিত করুন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Document Received Confirmation Section -->
+        <section id="confirmation-section" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="bg-gradient-to-r from-sbDarkGreen via-emerald-800 to-sbGreen rounded-3xl p-8 sm:p-14 text-white shadow-2xl relative overflow-hidden ring-4 ring-white/10">
+                <div class="absolute -right-16 -top-16 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="max-w-2xl mx-auto text-center space-y-5">
+                    <div class="w-20 h-20 bg-white/10 backdrop-blur-xl rounded-3xl mx-auto flex items-center justify-center text-amber-300 text-4xl shadow-inner mb-6 border border-white/20 animate-float">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold">আপনার মূল্যবান ডকুমেন্ট গ্রহণ করুন</h2>
+                    <p class="text-emerald-100 text-base sm:text-lg leading-relaxed font-medium">
+                        স্বাধীন বাংলা প্রেসক্লাবের পক্ষ থেকে আপনার গুরুত্বপূর্ণ ডকুমেন্ট/প্রয়োজনীয় সামগ্রী পাঠানো হয়েছে। অনুগ্রহ করে ডেলিভারি ম্যানের কাছ থেকে আপনার পার্সেলটি ব্যক্তিগতভাবে গ্রহণ করুন।
+                    </p>
+                    <p class="text-sm sm:text-base text-amber-300 font-extrabold bg-white/10 py-3 px-6 rounded-2xl inline-block backdrop-blur-md border border-white/20 shadow-md">
+                        ✨ পার্সেল হাতে পাওয়ার পর প্রয়োজনীয় সকল বিষয় আপনাকে বুঝিয়ে দেওয়া হবে।
+                    </p>
+                    <div class="pt-4">
+                        <button onclick="confirmDocumentReceived()" id="confirm-btn" class="bg-gradient-to-r from-sbRed to-rose-600 hover:from-rose-600 hover:to-red-700 text-white font-bold text-lg sm:text-xl px-10 py-5 rounded-2xl shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center space-x-3 mx-auto">
+                            <i class="fa-solid fa-circle-check text-2xl"></i>
+                            <span>ডকুমেন্ট গ্রহণ করেছি</span>
+                        </button>
+                        <div id="success-message" class="hidden mt-6 bg-emerald-500/30 border-2 border-emerald-400 text-white font-extrabold px-8 py-4 rounded-2xl backdrop-blur-md shadow-2xl">
+                            ✓ ধন্যবাদ! আপনার ডকুমেন্ট গ্রহণের বিষয়টি নিশ্চিত হয়েছে। শীঘ্রই আপনার অ্যাকাউন্ট সম্পূর্ণ অ্যাক্টিভ করা হবে।
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-sbRed bg-red-100 px-4 py-1.5 rounded-full shadow-sm">
+                    <i class="fa-solid fa-star mr-1"></i> EXCLUSIVE BENEFITS
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-sbDarkGreen mt-3">আমাদের নতুন যে সুযোগ-সুবিধাগুলো আপনি পাচ্ছেন</h2>
+                <p class="text-gray-600 mt-2 text-base font-medium">স্বাধীন বাংলা প্রেসক্লাবের সদস্যদের জন্য আধুনিক প্রযুক্তিসম্পন্ন ডিজিটাল ফিচারসমূহ।</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-gray-100 group">
+                    <div class="w-16 h-16 bg-red-50 text-sbRed rounded-2xl flex items-center justify-center text-3xl mb-5 group-hover:bg-sbRed group-hover:text-white transition-all shadow-md">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-sbDarkGreen mb-2">বাংলা ও ইংরেজি সংবাদ স্বয়ংক্রিয় সংগ্রহ ব্যবস্থা</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed font-medium">বাংলা ও ইংরেজি সংবাদ সংগ্রহের জন্য আধুনিক স্বয়ংক্রিয় ব্যবস্থা।</p>
+                </div>
+
+                <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-gray-100 group">
+                    <div class="w-16 h-16 bg-emerald-50 text-sbGreen rounded-2xl flex items-center justify-center text-3xl mb-5 group-hover:bg-sbGreen group-hover:text-white transition-all shadow-md">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-sbDarkGreen mb-2">AI-চালিত স্বয়ংক্রিয় ভয়েস ওভার</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed font-medium">সংবাদকে AI প্রযুক্তির মাধ্যমে ভয়েস ওভারে রূপান্তরের সুবিধা।</p>
+                </div>
+
+                <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-gray-100 group">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-5 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-md">
+                        <i class="fa-solid fa-photo-film"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-sbDarkGreen mb-2">এক ক্লিকে ফটোকার্ড তৈরি ও স্বয়ংক্রিয় Facebook প্রকাশ</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed font-medium">সহজেই সংবাদ থেকে আকর্ষণীয় ফটোকার্ড তৈরি এবং Facebook-এ প্রকাশের সুবিধা।</p>
+                </div>
+
+                <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-gray-100 group">
+                    <div class="w-16 h-16 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-3xl mb-5 group-hover:bg-amber-600 group-hover:text-white transition-all shadow-md">
+                        <i class="fa-solid fa-tv"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-sbDarkGreen mb-2">লাইভ টিভি, IPTV ও লাইভ ভিডিও স্ট্রিমিং</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed font-medium">লাইভ সম্প্রচার, IPTV এবং লাইভ ভিডিও স্ট্রিমিংয়ের আধুনিক সুবিধা।</p>
+                </div>
+
+                <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-gray-100 group">
+                    <div class="w-16 h-16 bg-red-50 text-sbRed rounded-2xl flex items-center justify-center text-3xl mb-5 group-hover:bg-sbRed group-hover:text-white transition-all shadow-md">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-sbDarkGreen mb-2">ব্রেকিং নিউজ ও লাইভ ইভেন্ট কভারেজ</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed font-medium">জরুরি সংবাদ ও গুরুত্বপূর্ণ ইভেন্ট দ্রুত প্রকাশ ও কভারেজের সুবিধা।</p>
+                </div>
+
+                <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-gray-100 group">
+                    <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center text-3xl mb-5 group-hover:bg-purple-600 group-hover:text-white transition-all shadow-md">
+                        <i class="fa-solid fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-sbDarkGreen mb-2">সম্পূর্ণ কাস্টমাইজযোগ্য Premium Design</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed font-medium">১০+ Header এবং ৬+ Footer সহ সম্পূর্ণ কাস্টমাইজযোগ্য ডিজাইন ব্যবস্থা।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Support Section -->
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="bg-white border-3 border-emerald-500/30 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="text-center max-w-2xl mx-auto space-y-6">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-sbGreen bg-emerald-100 px-4 py-1.5 rounded-full shadow-sm">
+                        <i class="fa-solid scale-125 fa-shield-halved mr-1"></i> OFFICIAL SUPPORT
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-sbDarkGreen">অফিসিয়াল আইনি ও প্রশাসনিক সহযোগিতা</h2>
+                    <p class="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
+                        সাংবাদিকতা শুধু একটি পেশা নয়; এটি সত্য প্রকাশ, মানুষের কথা তুলে ধরা এবং সমাজের প্রতি একটি গুরুত্বপূর্ণ দায়িত্ব।
+                    </p>
+                    <div class="bg-emerald-50 border-l-6 border-sbGreen p-5 rounded-2xl text-left text-sm sm:text-base text-sbDarkGreen font-bold shadow-md">
+                        <i class="fa-solid fa-circle-info mr-2 text-sbGreen text-lg"></i>
+                        প্রয়োজন অনুযায়ী অফিসিয়ালভাবে আইনি ও প্রশাসনিক সহযোগিতার ক্ষেত্রে সমন্বয় ও দিকনির্দেশনা প্রদানের ব্যবস্থা থাকবে।
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <section class="bg-gradient-to-br from-sbDarkGreen via-emerald-900 to-teal-950 text-white py-16 my-12 relative overflow-hidden shadow-2xl">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-amber-300 bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-md shadow-md">
+                    <i class="fa-solid fa-award mr-1"></i> CORE VALUES
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold mt-4">স্বচ্ছতা • সততা • দায়িত্বশীলতা</h2>
+                <p class="text-emerald-100 mt-2 max-w-xl mx-auto text-base font-medium">চলুন, আমরা সবাই মিলে গড়ে তুলি একটি স্বচ্ছ, আধুনিক ও দায়িত্বশীল সংবাদমাধ্যম।</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
+                    <div class="bg-white/10 backdrop-blur-xl p-8 rounded-3xl border-2 border-white/20 shadow-xl">
+                        <div class="w-14 h-14 bg-amber-400 text-sbDarkGreen rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5 font-bold shadow-lg">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">স্বচ্ছতা</h3>
+                        <p class="text-sm text-emerald-100 mt-3 font-medium">সকল কার্যক্রমে শতভাগ স্বচ্ছতা ও জবাবদিহিতা নিশ্চিত করা হয়।</p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-xl p-8 rounded-3xl border-2 border-white/20 shadow-xl">
+                        <div class="w-14 h-14 bg-amber-400 text-sbDarkGreen rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5 font-bold shadow-lg">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">সততা</h3>
+                        <p class="text-sm text-emerald-100 mt-3 font-medium">সাংবাদিকতার মূলনীতি ও সততা রক্ষায় আমরা সর্বদা প্রতিশ্রুতিবদ্ধ।</p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-xl p-8 rounded-3xl border-2 border-white/20 shadow-xl">
+                        <div class="w-14 h-14 bg-amber-400 text-sbDarkGreen rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5 font-bold shadow-lg">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">দায়িত্বশীলতা</h3>
+                        <p class="text-sm text-emerald-100 mt-3 font-medium">সমাজের প্রতি দায়িত্ববোধ থেকে বস্তুনিষ্ঠ সংবাদ প্রকাশ ও প্রচার।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="bg-gradient-to-r from-red-600 via-rose-600 to-red-800 rounded-3xl p-8 sm:p-14 text-white text-center shadow-2xl relative overflow-hidden">
+                <h2 class="text-2xl sm:text-4xl font-serif font-bold">আপনার ডকুমেন্ট গ্রহণ সম্পন্ন হয়েছে?</h2>
+                <p class="text-red-100 text-base sm:text-lg mt-3 max-w-2xl mx-auto leading-relaxed font-medium">
+                    দয়া করে যত দ্রুত সম্ভব ডেলিভারি ম্যানের কাছ থেকে আপনার মূল্যবান ডকুমেন্ট/পার্সেলটি ব্যক্তিগতভাবে গ্রহণ করুন। হাতে পাওয়ার পর প্রয়োজনীয় সকল বিষয় আপনাকে বুঝিয়ে দেওয়া হবে।
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-5">
+                    <a href="#verify" class="w-full sm:w-auto bg-white hover:bg-gray-100 text-sbRed font-extrabold px-9 py-4 rounded-2xl shadow-xl transition-all transform hover:scale-105 text-lg">
+                        তথ্য যাচাই করুন
+                    </a>
+                    <a href="#verify" class="w-full sm:w-auto bg-sbDarkGreen hover:bg-emerald-900 text-white font-extrabold px-9 py-4 rounded-2xl shadow-xl transition-all transform hover:scale-105 border-2 border-emerald-400 text-lg">
+                        সদস্য তথ্য অনুসন্ধান করুন
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-300 pt-16 pb-10 border-t-2 border-gray-800 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-sbRed rounded-xl flex items-center justify-center text-white shadow-lg">
+                            <i class="fa-solid fa-newspaper text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white">স্বাধীন বাংলা প্রেসক্লাব</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 max-w-md leading-relaxed font-medium">
+                        স্বাধীন বাংলা প্রেসক্লাব পেশাদার গণমাধ্যমকর্মী ও সাংবাদিকদের অধিকার রক্ষা, তথ্য যাচাই এবং আধুনিক ডিজিটাল প্ল্যাটফর্ম প্রদানে সর্বদা সচেষ্ট।
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">দ্রুত লিংক</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="#home" class="hover:text-sbRed transition-colors">হোম</a></li>
+                        <li><a href="#verify" class="hover:text-sbRed transition-colors">তথ্য যাচাই</a></li>
+                        <li><a href="#features" class="hover:text-sbRed transition-colors">সুযোগ-সুবিধা</a></li>
+                        <li><a href="#video-section" class="hover:text-sbRed transition-colors">প্রতিনিধি ভিডিও</a></li>
+                        <li><a href="#support" class="hover:text-sbRed transition-colors">সহায়তা</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">সহায়তা ও যোগাযোগ</h4>
+                    <ul class="space-y-3 text-sm text-gray-400 font-medium">
+                        <li><i class="fa-solid fa-phone mr-2 text-sbRed"></i> 24/7 Support Hotline</li>
+                        <li><i class="fa-solid fa-envelope mr-2 text-sbGreen"></i> support@shadhinbanglapressclub.com</li>
+                        <li><i class="fa-solid fa-location-dot mr-2 text-amber-500"></i> ঢাকা, বাংলাদেশ</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4 font-semibold">
+                <p>© 2026 স্বাধীন বাংলা প্রেসক্লাব — সর্বস্বত্ব সংরক্ষিত।</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-gray-300 transition-colors">গোপনীয়তা নীতি</a>
+                    <a href="#" class="hover:text-gray-300 transition-colors">শর্তাবলী</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript & Database Handler -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Function to enable sound via iframe URL update or postMessage
+        function enableSound() {
+            const iframe = document.getElementById('official-video-frame');
+            // Reload iframe with mute=0 to allow sound
+            iframe.src = "https://www.youtube.com/embed/MeE2kJDSlXU?autoplay=1&mute=0&enablejsapi=1&controls=1";
+            
+            const btn = document.getElementById('sound-btn');
+            btn.innerHTML = '<i class="fa-solid fa-check text-lg"></i> <span>সাউন্ড চালু করা হয়েছে!</span>';
+            btn.classList.remove('bg-amber-500', 'hover:bg-amber-600');
+            btn.classList.add('bg-emerald-600', 'text-white');
+        }
+
+        const memberDatabase = [
+            { name: "SAHADAT HOSSAIN", phone: "01403160356", address: "ফরিদগঞ্জ পৌরসভা", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md. Saheb Ali", riderPhone: "01923047873", cod: "570" },
+            { name: "MD SHAKIL AHMAD", phone: "01750365546", address: "Miyapur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md.Masum ali", riderPhone: "01718521039", cod: "570" },
+            { name: "মোঃ জাকিরুল ইসলাম", phone: "01781710667", address: "Kaunia Railgate, Kaunia, Rangpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md. Abdul Kader", riderPhone: "01301185760", cod: "570" },
+            { name: "মোঃমিঠুন", phone: "01751015386", address: "Savar, Dhaka", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "ইন্দ্রজিৎ সূত্রধর", phone: "01912603566", address: "Shimul Market, Nikli, Kishoreganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD. NAZIB HASAN SHAKIB", riderPhone: "01755425691", cod: "570" },
+            { name: "RIZVI ALAMIN", phone: "01751405555", address: "Bhurungamari, Kurigram", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Uttarm Kumar", riderPhone: "01751279376", cod: "570" },
+            { name: "JILHOZ KHAN", phone: "01935263167", address: "Sadar kushtia police camp Kushtia", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "MD SAMSUDDIN", phone: "01611891568", address: "Lalmohan, Bhola", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Arif Hosen 2", riderPhone: "01605250925", cod: "570" },
+            { name: "কাজী আনোয়ার হোসেন", phone: "01681503174", address: "88/6 Monipuri Para, Tejgaon, Dhaka", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Habibur rahman-4 2nd shift (tejgaon)", riderPhone: "01345163209", cod: "570" },
+            { name: "মোঃ নাসিম মাহমুদ", phone: "01521750133", address: "বাদামতুলি,কোতোয়ালি,ঢাকা", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "মোঃ এলাহী আহমেদ ফারহান", phone: "01797431931", address: "Palbari Mor, Jhenaidah Chatrabas, Jashore Sadar, Gopalganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Mahamudur Rahman", riderPhone: "01516522577", cod: "570" },
+            { name: "ISMAIL HOSSEN", phone: "01795098431", address: "Modhpur, Tangail", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Morsalinur Ashad", riderPhone: "01759579019", cod: "570" },
+            { name: "মশি উদ দৌলা রুবেল", phone: "01814948062", address: "Chhagalnaiya, Feni", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Nur Mohammad", riderPhone: "01627480503", cod: "570" },
+            { name: "মোহাম্মদ হাবিবুর রহমান", phone: "01632109588", address: "চট্টগ্রাম চট্টগ্রাম মহানগর ৭নং ওয়ার্ড হামজারবাগ, সিটি কর্পোরেশন, হামজারবাগ, মাজারগলি, পাঁচলাইশ, চট্টগ্রাম", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Mohammad Asad (panchlaish)", riderPhone: "01621617786", cod: "570" },
+            { name: "PABITRA DEB NATH", phone: "01712063747", address: "Madhabpur, Habiganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Likhon Chandra Roy", riderPhone: "01736599936", cod: "570" },
+            { name: "মোঃ জাকির হোসেন (মনু)", phone: "01712364264", address: "Poranpur Haji Bari, Mohammadpur, Ward-07, Chatkhil, Noakhali", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md.Abdur Nur Saimun", riderPhone: "01885094693", cod: "570" },
+            { name: "মোঃ এমাদ মিয়া, MD AMAD MIA", phone: "01967236091", address: "Sundar Bon Courier Service, Belabo, Narsingdi", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Saeed Hassan", riderPhone: "01314435211", cod: "570" },
+            { name: "মোঃ রাশেদুল ইসলাম ওয়াজেদৌলা", phone: "01615185247", address: "Malondir Par, Pakerhat, Khansama, Dinajpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Prosanjit Chandra Roy", riderPhone: "01317121291", cod: "570" },
+            { name: "মোঃ আলমগীর হোসেন", phone: "01826356292", address: "Longdu, Rangamati", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 01:59:12 pm", rider: "MD. OMOR FARUK RUBEL", riderPhone: "01850868639", cod: "570" },
+            { name: "আবু সালেহ মো. হামিদুল্লাহ", phone: "01724537735", address: "Sundarban Courier Service, Kotiadi Bus Stand", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Monir Hossain", riderPhone: "01855429392", cod: "570" },
+            { name: "মোঃ রেজাউল হক", phone: "01705881871", address: "Sukandighi Gopal Roy Kakina, Kaliganj, Lalmonirhat", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Milon Mahamud", riderPhone: "01879453736", cod: "570" },
+            { name: "MD ARMAN HOSSAIN", phone: "01758552045", address: "Dhaka Epz Sundarban, Saver, Dhaka", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Mainul Houqe ( Baipail )", riderPhone: "01788846792", cod: "570" },
+            { name: "মিলন আহমেদ", phone: "01754329832", address: "বগুড়া মালতি নগর মাটির মসজিদ সামনে", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Ebadot Hossain", riderPhone: "01980602702", cod: "570" },
+            { name: "মোঃ সুমন ইসলাম", phone: "01796731384", address: "Thakurgaon Sadar, Thakurgaon", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 11:32:19 am", rider: "Md Murad Islam", riderPhone: "01717319833", cod: "570" },
+            { name: "BAPPI HOWLADER", phone: "01714951149", address: "Muladi, Barishal", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "আশিকুজ্জামান আশিক", phone: "01629083475", address: "Valuka, Court Bhaban, Valuka, Mymensingh", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 08:45:29 pm", rider: "Sabbir Bhaluka", riderPhone: "01630778887", cod: "570" },
+            { name: "এস এম রাসেল ইসলাম", phone: "01580633565", address: "Gaibandha Sadar, Gaibandha", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MO. MAMUN MIA", riderPhone: "01341809795", cod: "570" },
+            { name: "আবু আলম", phone: "01303322206", address: "Pani Unnayan Board, Sadar, Shariatpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Shamim Sheikh", riderPhone: "01731338937", cod: "570" },
+            { name: "জাহারুল ইসলাম (জীবন)", phone: "01718325958", address: "Amjhupi Bazar, Meherpur Sadar, Meherpur", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 12:41:50 pm", rider: "Imran Meherpur", riderPhone: "01867188521", cod: "570" },
+            { name: "SHAMIM AHMED", phone: "01711450412", address: "Sandikona, Kendua, Netrokona", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md. Ashraful Islam", riderPhone: "01981249307", cod: "570" },
+            { name: "IMRAN HAWLADER", phone: "01318693902", address: "Galachipa, Patukhali", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Feruj", riderPhone: "01849209011", cod: "570" },
+            { name: "MD ROBIN ALI", phone: "01887770191", address: "Jamalpur, Jamalpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Shadin", riderPhone: "01988322215", cod: "570" },
+            { name: "H", phone: "01521730580", address: "MEDICAL COLLEGE ROAD, SAHEB BARI, KUCHAITOLI", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Rayhan", riderPhone: "01328461742", cod: "570" },
+            { name: "মোঃ আজমির হাসান", phone: "01764966163", address: "Anwara, Malghar Bazar, Chattogram", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Mohammad Abdullah", riderPhone: "01881273459", cod: "570" },
+            { name: "MD SORFUDDIN SARDER", phone: "01610441011", address: "Paikgacha, Khulna", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Tausi Hosen", riderPhone: "01955454051", cod: "570" },
+            { name: "MD.SAJIB GAZI", phone: "01787241834", address: "Mirpur-10, Bakergonj, Barishal", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "মোঃ ছানোয়ার হোসেন", phone: "01310410640", address: "Bhuapur, Tangail", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Mehedi Hasan", riderPhone: "01317879732", cod: "570" },
+            { name: "REDWAN HRIDU", phone: "01705531886", address: "Mirpur 11, Mirpur, Dhaka", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "জামাল উদ্দিন", phone: "01835413786", address: "Hazirhat, Komolnagar, Lakshmipur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Redowan", riderPhone: "01894328611", cod: "570" },
+            { name: "ইসরাফিল বেপারী", phone: "01325242963", address: "Shariatpur Sadar, Shariatpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Aminul Islam", riderPhone: "01889938853", cod: "570" },
+            { name: "ARAFAT HOSSAIN", phone: "01743327407", address: "Jurgaw Bazar Street Fast, Kalkini, Madaripur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD Rakib Hossain", riderPhone: "01826165451", cod: "570" },
+            { name: "ESHAK DEWUN", phone: "01711775440", address: "Narsingdi Sadar, Madhabdi Paurashava", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Manju Ali", riderPhone: "01575586058", cod: "570" },
+            { name: "SAHADAT HUSAIN", phone: "01774142016", address: "Azimgonj, Borolekha, Moulvibazar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "মুহাম্মাদ শাহরিয়ার তাজ", phone: "01987207620", address: "Daulatpur, Khulna", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "HASIBUL ISLAM METUL", riderPhone: "01903040010", cod: "570" },
+            { name: "SAIFUR RAHMAN AKAND NISHAD", phone: "01611046058", address: "Monohordi, Narsingdi", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Rahmat Ullah", riderPhone: "01754972577", cod: "570" },
+            { name: "MD ASADULLAH", phone: "01787073162", address: "Taltoli, Barishal Sadar, Barishal", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Izazul Haque", riderPhone: "01751891016", cod: "570" },
+            { name: "মোনাব্বের হোসাইন সুমন", phone: "01678054936", address: "Belghar Arong Bazar, Hajiganj, Chandpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Tareq Majumder", riderPhone: "01683006582", cod: "570" },
+            { name: "মো আকাশ খন্দকার", phone: "01732373370", address: "Kushtia Sadar, Kushtia", deliveryStatus: "Partially Delivered", approvalStatus: "Partially Delivered", deliveryTime: "2026-09-08 08:15:09 pm", rider: "Md Abul Bashar", riderPhone: "01785615597", cod: "150" },
+            { name: "MD SAIDUR RAHMAN", phone: "01864717607", address: "Mohalchhari, Khagrachhari", deliveryStatus: "Cancelled", approvalStatus: "Cancelled", deliveryTime: "2026-09-08 10:55:22 am", rider: "SUJIT CHAKMA", riderPhone: "01603109425", cod: "570" },
+            { name: "MD MOYNUL HASAN SADIK", phone: "01771502637", address: "Mohammad Ali Hospital R Samne Sherpur Road, Bogura", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "SK MUSTAKIM ISLAM", phone: "01617628862", address: "Nebakhali, Jagannathpur, Satkhira Sadar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Al Mamun", riderPhone: "01331602305", cod: "570" },
+            { name: "MD SHAPRAN MIA", phone: "01745448243", address: "Hossinpur Sundorban Kuriyar, Pakundia", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Mohammed Saddam Hussain", riderPhone: "01610408044", cod: "570" },
+            { name: "মোঃ জুয়েল ইসলাম", phone: "01739160146", address: "Taraganj, Rangpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Mobaid Hossain", riderPhone: "01755241393", cod: "570" },
+            { name: "এস এম মাহবুবুল ইসলাম লিটন", phone: "01728678129", address: "Kathalbaria, Puthia, Rajshahi", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Salauddin Ridoy", riderPhone: "01894598533", cod: "570" },
+            { name: "মোহাম্মদ ফখরুল ইসলাম সরকার", phone: "01975960519", address: "Hamla Bari, Debidwar, Cumilla", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Nayem Islam 2", riderPhone: "01705991734", cod: "570" },
+            { name: "মোঃ আশিক রহমান", phone: "01614176397", address: "Shah Alam Chairmaner Rasta, Begumganj, Noakhali", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Arafat Hossain", riderPhone: "01612972146", cod: "570" },
+            { name: "সাব্বির হোসেন", phone: "01745054092", address: "Uttara 18, Niamatpur, Nawgan", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Raihan Ali", riderPhone: "01908607802", cod: "570" },
+            { name: "মোঃ রাকিব হোসেন", phone: "01770548771", address: "Galachipa, Patuakhali", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Sujon Chandra Bhadra", riderPhone: "01319577919", cod: "570" },
+            { name: "সাগর আহামেদ জজ", phone: "01711041335", address: "Purbdhala, Netrokona", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Rafiqul Islam", riderPhone: "01736880204", cod: "570" },
+            { name: "মোঃ হুমায়ূন আহমেদ", phone: "01721005505", address: "Adamdighi Gorgram Road, Bogura", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Obaidullah Hasan", riderPhone: "01784928559", cod: "570" },
+            { name: "MD WASIM UDDIN", phone: "01822338256", address: "Sundarban Courier Mirsarai, Chattogram", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 05:17:12 pm", rider: "Minhajul Alam", riderPhone: "01616241596", cod: "570" },
+            { name: "মোঃ মহিব্বুল্লাহ", phone: "01611220552", address: "Dhaka Uddan, Mohammadpur, Dhaka", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Rumiz", riderPhone: "01797957723", cod: "570" },
+            { name: "MOHAMMAD NURE ALAM", phone: "01720482671", address: "Mawna, Sreepur, Gazipur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Omor Faruk", riderPhone: "01881406547", cod: "570" },
+            { name: "RUBEL SHEIKH", phone: "01781935112", address: "Sundarbon, Narail Sadar, Narail", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Habib Narail", riderPhone: "01615688024", cod: "570" },
+            { name: "AKTARUJJAMAN", phone: "01609610549", address: "Jaldhaka, Nilphamari", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Selim Mia", riderPhone: "01738587022", cod: "570" },
+            { name: "রাকিবুর রহমান", phone: "01970811011", address: "Sharsha, Jessore Sadar, Jessore", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Aktaruzzaman", riderPhone: "01914164434", cod: "570" },
+            { name: "ইয়ামিন", phone: "01303822105", address: "Hatibandha, Lalmonirhat", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD Abdul Kuddus", riderPhone: "01738291557", cod: "570" },
+            { name: "এস এম নাইম হাসান টিটো", phone: "01944410501", address: "Kundoshi, Lohagora, Narail", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 12:08:00 pm", rider: "Alomgir Ali", riderPhone: "01937266393", cod: "570" },
+            { name: "আতিকুল ইসলাম", phone: "01745258182", address: "Mobile Point, College Road, Subidkhali", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Sajol Islam", riderPhone: "01404556689", cod: "570" },
+            { name: "MOHAMMED SARWAR AZAM", phone: "01973488362", address: "তাজমহল ফ্যাশন হাউস, চকবাজার-চট্টগ্রাম", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 03:34:09 pm", rider: "Tufazzl Hossain", riderPhone: "01822914143", cod: "570" },
+            { name: "MD. SHAHADATH HOSSAIN", phone: "01911892722", address: "আরাফাত আবাসিক সোনাডাঙ্গা", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Arko Mondal", riderPhone: "01941917123", cod: "570" },
+            { name: "MD RAKIB HOSSIN", phone: "01798551052", address: "Dashmina Sadar, Potuakhali", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 07:02:08 pm", rider: "MD Elias Hosain", riderPhone: "01795122232", cod: "570" },
+            { name: "MD. DILWAR HUSSAIN", phone: "01722634295", address: "Badaghat Bazar, Tahirpur, Sunamganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Foysal", riderPhone: "01745311996", cod: "570" },
+            { name: "এস,এম আমিনুল ইসলাম", phone: "01751551992", address: "Alampur Chourasta, Kazipur, Sirajganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD. JALAL SHEIKH", riderPhone: "01314403826", cod: "570" },
+            { name: "মোঃ আনিছুল ইসলাম", phone: "01302138760", address: "S A Courier Service Mission Mor, Lalmonirhat", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Abu Taleb", riderPhone: "01953016461", cod: "570" },
+            { name: "জিয়াউল হক জিয়া", phone: "01818921445", address: "করিম সিকদার পাড়া,ভারুয়াখালী", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "মোঃ আলহাজ্ব আলী", phone: "01558927110", address: "Santhia, Pabna", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD. SUVON HOSSAIN SUVO", riderPhone: "01569196632", cod: "570" },
+            { name: "আসলাম সরদার", phone: "01323430830", address: "Bhandaria, Pirojpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Najmul Hasan", riderPhone: "01400103409", cod: "570" },
+            { name: "HASAN HOWLADER", phone: "01789853986", address: "Hajigonj, Chadpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Rasel Gazi", riderPhone: "01677012424", cod: "570" },
+            { name: "মো:রাব্বীল ঢালী", phone: "01868242947", address: "Dinajpur Sadar, Dinajpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Akash Islam", riderPhone: "01787396135", cod: "570" },
+            { name: "মো:মামুন মিয়া", phone: "01749188927", address: "Dhaka Ashulia", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Shibbir Ahmmed", riderPhone: "01315667936", cod: "570" },
+            { name: "জাহেদুল ইসলাম আল রাইয়ান", phone: "01871194102", address: "Ramu, Coxbazar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Tahsin Israt", riderPhone: "01690054062", cod: "570" },
+            { name: "সাইফুল ইসলাম শিপু", phone: "01823256289", address: "Ramgarh, Khagrachari", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "SRI ACHIM TRIPURA", riderPhone: "01575719856", cod: "570" },
+            { name: "মোঃ আজগর আলী", phone: "01713730041", address: "State Fast Haripur, Haripur, Thakurgaon", deliveryStatus: "Partially Delivered", approvalStatus: "Partially Delivered", deliveryTime: "2026-09-07 07:04:10 pm", rider: "MD.Labib Hasan", riderPhone: "01734669254", cod: "50" },
+            { name: "আমিরুল ইসলাম", phone: "01987941950", address: "Dolma, Fulbaria, Mymensingh", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD Golam Kibria", riderPhone: "01619741846", cod: "570" },
+            { name: "MD ENAMUL HOQUE", phone: "01716754555", address: "Aziz Babon, Kandipara, Brahmanbaria", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Araafat Hossain Rider KC", riderPhone: "01822777519", cod: "570" },
+            { name: "মোঃ মিজানুর রহমান", phone: "01713974673", address: "Aditmari, Lalmonirhat", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Shihab Hasan", riderPhone: "01609621465", cod: "570" },
+            { name: "MD AL HASAN", phone: "01309460485", address: "Sadar, Joypurhat", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Abu Hasan", riderPhone: "01600275455", cod: "570" },
+            { name: "সেলিম চৌধুরী", phone: "01318072367", address: "Sundarbon, Rangpur Sadar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md. Rabiul Islam", riderPhone: "01750984491", cod: "570" },
+            { name: "শহিদুল ইসলাম বাবলু", phone: "01620857326", address: "Sundar Bon Courier Service Hajir Hat, Laxmipur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Redowan", riderPhone: "01894328611", cod: "570" },
+            { name: "মোহাম্মদ সেলিম", phone: "01818125445", address: "Sundarban, Eidgaon, Coxbazar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "SAHIDUL ISLAM", riderPhone: "01867101491", cod: "570" },
+            { name: "মোঃ গাজীউর রহমান গাজী", phone: "01715653231", address: "Raniganj, Ghoraghat, Dinajpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Ripon Babu", riderPhone: "01302513869", cod: "570" },
+            { name: "মুহাম্মদ রাওফুল বরাত বাঁধন ঢালী", phone: "01996135909", address: "Mison Mor, Lalmonirhat Sadar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Abu Taleb", riderPhone: "01953016461", cod: "570" },
+            { name: "মো:রুবেল মিয়া", phone: "01719815177", address: "Mirzapur, Tangail", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD Rakib Hossien", riderPhone: "01620060758", cod: "570" },
+            { name: "SYED SOHEL", phone: "01812129814", address: "Dasar, Madaripur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Saiful Madaripur", riderPhone: "01761161740", cod: "570" },
+            { name: "MD MIJANUR RAHMAN SABUJ", phone: "01330771076", address: "Najirpur Upazila Mor, Pirojpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Sajib Sharif", riderPhone: "01963711409", cod: "570" },
+            { name: "K.M. SHAUN", phone: "01712153140", address: "Hatikumrul, Sirajganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "MD IMRAN HOSSEN", phone: "01719883224", address: "Taltali, Barguna", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Ibrahim", riderPhone: "01732345414", cod: "570" },
+            { name: "KAMRUL HASSAN", phone: "01791621442", address: "Muladi, Barishal", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md.Seyum", riderPhone: "01314894151", cod: "570" },
+            { name: "মো রিয়াদ হোসেন", phone: "01944563787", address: "Munshiganj Sadar, Munshiganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Arafat mia", riderPhone: "01620031278", cod: "570" },
+            { name: "সোহেল রানা", phone: "01927199109", address: "Jhenaigati, Sherpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Kamruzzaman", riderPhone: "01925496393", cod: "570" },
+            { name: "SHAKIL", phone: "01717807237", address: "Mirzapur, Tangail", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Fozle Rabby", riderPhone: "01322702168", cod: "570" },
+            { name: "MD.AKIB ALI", phone: "01646133913", address: "LOkkhipur Roziopara", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "মোঃ রফিকুল ইসলাম রফিক", phone: "01909255341", address: "Olipur theka nibe Kurigram", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Riyad Mia", riderPhone: "01302402176", cod: "570" },
+            { name: "IMRAN HOSSAIN", phone: "01867359259", address: "Borogram Kamrangirchar, Mehendiganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "মোঃ জাহিদুল মিয়া", phone: "01797811383", address: "Mathbaria, Pirojpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Sowrav Kumar Halder", riderPhone: "01926363585", cod: "570" },
+            { name: "SYED RUHUL AMIN", phone: "01312602666", address: "Shihipasha, Agoiljhara, Barishal", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Joy Mondal", riderPhone: "01864089119", cod: "570" },
+            { name: "LAHAUDDIN HASAN MUNSHI", phone: "01771065453", address: "Kalkini, Madaripur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Hasanul Haq", riderPhone: "01999891949", cod: "570" },
+            { name: "মো: আসাদুজ্জামান খান", phone: "01857554993", address: "Meherpur Sadar, Meherpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD Shamim Ali", riderPhone: "01778815913", cod: "570" },
+            { name: "ASIF SHEIKH", phone: "01785012396", address: "Kalkini haspatal gat, Kalkini", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Mehedi Islam", riderPhone: "01763749666", cod: "570" },
+            { name: "মোঃ সাইমুন মিয়া", phone: "01609320308", address: "Jamal Khan, Chattogram", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 06:53:54 pm", rider: "Mohammad shakil", riderPhone: "01631757778", cod: "570" },
+            { name: "বাদশা আলমগীর", phone: "01737035188", address: "Lahini Bottola, Kushtia Sadar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Riad Ahmed", riderPhone: "01792479696", cod: "570" },
+            { name: "মোঃ আবু কাহার হৃদয়", phone: "01758628453", address: "Doyar Bazar, Sunamganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD Khalid Hasan", riderPhone: "01817516405", cod: "570" },
+            { name: "MD TAMJID RIAL", phone: "01738094313", address: "Karotoa Belkuchi, Sirajganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "মো:তৌফিকুর রহমান শিশির", phone: "01757956312", address: "নওগাঁ সদর নওগাঁ", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md.Anowar Hossan", riderPhone: "01843965828", cod: "570" },
+            { name: "মোঃ ইফতেখার মামুন", phone: "01912886002", address: "Sundarban Courier Nandail, Mymensingh", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Taizul Islam (Rayhan)", riderPhone: "01319314958", cod: "570" },
+            { name: "মোঃ আরিফ হোসেন", phone: "01776768615", address: "Ranirnagar Sundarban Kuria, Nawgan", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Mithun Mondal", riderPhone: "01706346413", cod: "570" },
+            { name: "তাওহীদ আহমেদ", phone: "01703764612", address: "Shripur Uttar, Tahirpur, Sunamganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Al-Mohan", riderPhone: "01737123233", cod: "570" },
+            { name: "MD.SHAHINUR RAHMAN", phone: "01720142557", address: "Sundarban Currier Basundia Branch, Jessore", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "SHOUROV KUMAR DAS", riderPhone: "01705564505", cod: "570" },
+            { name: "শ্রী অনিক চন্দ্র বনিক", phone: "01752469072", address: "Dokkhin Chandla Bazar, Brahmanpara", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 03:04:21 pm", rider: "Md: Mamun", riderPhone: "01735614387", cod: "570" },
+            { name: "SHAHRIAR MORSHED KHAN", phone: "01818284369", address: "Motihar, Rajshahi", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md. Rubel Hossain", riderPhone: "01712019016", cod: "570" },
+            { name: "JALASH PAHAN", phone: "01774535896", address: "Sundarban Courier Porsha, Noagaon", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Monowarul Islam", riderPhone: "01340234611", cod: "570" },
+            { name: "মোঃ আজগর আলী চৌধুরী", phone: "01713730041", address: "State Fast Courier Haripur, Thakurgaon", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD.Labib Hasan", riderPhone: "01734669254", cod: "570" },
+            { name: "মোঃ জামিরুল ইসলাম", phone: "01995013667", address: "Uchai, Panchbibi, Joypurhat", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md: Muktar Hossen", riderPhone: "01401468975", cod: "570" },
+            { name: "ABDULLAH AL MAHMUD FAHIM", phone: "01984525362", address: "Sundarban Courier Service, Noakhali Sadar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Juwel", riderPhone: "01873762548", cod: "570" },
+            { name: "MD. SELIM", phone: "01716659368", address: "Nesaria Madrasah, Pahartoli, Chittagong", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "নাজমুল আহসান", phone: "01719990419", address: "Kashimpur Metro Thana, Gazipur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Ramjan Ali 2", riderPhone: "01741964604", cod: "570" },
+            { name: "ANONDO", phone: "01782042364", address: "Jaldhaka, Nilphamari", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Moudud Ahamed", riderPhone: "01723777334", cod: "570" },
+            { name: "RIYAD", phone: "01952746000", address: "Tempu stand, Kawkhali, Pirojpur", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-09 09:04:57 am", rider: "Aminul Haque Bablu", riderPhone: "01724996805", cod: "570" },
+            { name: "SHAHIDULLAH MONSUR", phone: "01850021771", address: "Jahangirnagar University, Savar, Dhaka", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Shahporan Islam", riderPhone: "01406850660", cod: "570" },
+            { name: "মোঃতানজিল", phone: "01581269204", address: "Bhola Sadar, Bhola", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Roni", riderPhone: "01316183808", cod: "570" },
+            { name: "আরিয়ান অন্তর", phone: "01333603275", address: "Konabari Degree College Gate, Gazipur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Al mamun 2", riderPhone: "01723733221", cod: "570" },
+            { name: "মোঃ ইমরান হোসাইন", phone: "01323421385", address: "Nazirpur Union, Baufal, Patuakhali", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md:Aminul Islam Pial", riderPhone: "01313733679", cod: "570" },
+            { name: "মোঃ সাদেকুল ইসলাম", phone: "01751467754", address: "Ruhiya, Thakurgaon", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD.Samim Fardus", riderPhone: "01737534859", cod: "570" },
+            { name: "SHAHADUT HOSSAIN SAGOR", phone: "01846204799", address: "Palashbari, Gaibandha", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Yeaqub Ali", riderPhone: "01738220996", cod: "570" },
+            { name: "AZIR UDDIN", phone: "01862939082", address: "Vadam, Tongi, Gazipur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Sahed Kabir", riderPhone: "01844815760", cod: "570" },
+            { name: "MD. FUYAD HASAN RAHI", phone: "01756852939", address: "Sundarganj, Gaibandha", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 03:00:55 pm", rider: "Md. Menhazul Islam", riderPhone: "01740209088", cod: "570" },
+            { name: "মোহাম্মদ হাফিজুর রহমান", phone: "01930181916", address: "Rayenda Bazar, Sharankhola, Bagerhat", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Emon", riderPhone: "01738286210", cod: "570" },
+            { name: "মোঃ আব্দুল খালেক", phone: "01552855946", address: "খাগড়াছড়ি সদর, খাগড়াছড়ি", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Bijoy Barua (Shuvo)", riderPhone: "01860258855", cod: "570" },
+            { name: "ফকির মোঃ হাসান", phone: "01613274702", address: "Gobindaganj, Chatak, Sunamganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "শাকিল আহমেদ", phone: "01616911729", address: "Nimaikashari, Siddhirganj, Narayanganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Shahin Alam", riderPhone: "01404722805", cod: "570" },
+            { name: "মোঃ জুয়েল রানা", phone: "01627069981", address: "Hajiganj, Chandpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Kawsar Alam", riderPhone: "01604281999", cod: "570" },
+            { name: "তোফায়েল আহমেদ সজিব", phone: "01777391548", address: "Wireless Gate, Mohanganj, Netrakona", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Jamal Mia", riderPhone: "01624673285", cod: "570" },
+            { name: "HABIBUR RAHMAN", phone: "01601785240", address: "Narayanhat Bazar, Fatikchhari, Chattogram", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 01:15:25 pm", rider: "Mithu Chandra Ray", riderPhone: "01735756401", cod: "570" },
+            { name: "FOYSAL AHMMED SOUROV", phone: "01887926346", address: "Kalai Sadar, Joypurhat", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Abu Sayed", riderPhone: "01798871231", cod: "570" },
+            { name: "মো রেজওয়ান হোসেন", phone: "01965826378", address: "Monirampur Bazar, Monirampur, Jashore", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Sakib Hosen", riderPhone: "01954350598", cod: "570" },
+            { name: "মোঃ রফিকুল ইসলাম", phone: "01774701885", address: "Muladi Courier Office, Muladi, Barishal", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD Nahid", riderPhone: "01748791280", cod: "570" },
+            { name: "IMRAN ANSARI", phone: "01760424686", address: "Hospital Road, Patarhat, Mehendiganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Asibul Islam Asib", riderPhone: "01316344663", cod: "570" },
+            { name: "MD KHALID BIN SHOWKOT", phone: "01997371728", address: "Kushtia East Mazampur, Kushtia Sadar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Motiur Rahman", riderPhone: "01604654254", cod: "570" },
+            { name: "হ্লাছোহ্রী মারমা", phone: "01845240247", address: "Rowangchhari, Bandarban", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Sundar Kumar Tanchangya", riderPhone: "01648180438", cod: "570" },
+            { name: "মোঃ মেহেদী হাসান", phone: "01786065457", address: "Chhoto Nilganj, Amtali, Barguna", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 11:49:20 am", rider: "Md. NAZRUL", riderPhone: "01734786073", cod: "570" },
+            { name: "MAHMUDUL HASAN", phone: "01862228282", address: "Sundarban Courier Service, Hemayetpur, Savar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Ismail Mia", riderPhone: "01928094232", cod: "570" },
+            { name: "ইয়াছির আরাফাত", phone: "01766746405", address: "Rajapur, Jhalokathi", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Tarequl Islam", riderPhone: "01605858740", cod: "570" },
+            { name: "মো:মোস্তাইন বিল্লাহ", phone: "01704311314", address: "Sundarban Courier, Banglabazar, Puran Dhaka", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Udoy chondro dash", riderPhone: "01826142304", cod: "570" },
+            { name: "শওকত জামান ভূইয়া", phone: "01712304461", address: "Pongkarhati, Nandail, Mymensingh", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Mostakim", riderPhone: "01997315180", cod: "570" },
+            { name: "মোঃ আবুল কাশেম", phone: "01875409668", address: "Sylhet, biyanibazar, supatola", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "MD ARIFUZZAMAN NAYAN", phone: "01875586846", address: "Steadfast Courier, Brahmanpara, Cumilla", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Sahin Alom", riderPhone: "01614061822", cod: "570" },
+            { name: "MD. KAMRUZZAMAN KHAN", phone: "01352506364", address: "Zianagar, Pirojpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Hasibur Rahman", riderPhone: "01767684997", cod: "570" },
+            { name: "এনামুল হক", phone: "01811169210", address: "Charbata Khaser Hat, Subarnachar, Noakhali", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "ASHIS SAHA", riderPhone: "01871734356", cod: "570" },
+            { name: "MD.ABDUL MOTIN", phone: "01710365925", address: "Lalbag Mor, Rangpur Sadar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Moniruzzaman", riderPhone: "01305162513", cod: "570" },
+            { name: "MD NAZMUL ISLAM", phone: "01619699183", address: "Gopalpur, Nabinagar, Brahmanbaria", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Shain mia", riderPhone: "01948585398", cod: "570" },
+            { name: "MOHAMMAD SAZZAD KIBRIA. PAPPU", phone: "01712836587", address: "Domar, Nilphamari", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 01:24:09 pm", rider: "Md.Abul Kalam Azad", riderPhone: "01822791042", cod: "570" },
+            { name: "হাসান আহমেদ", phone: "01720568077", address: "3R media, Shahrasti, Chandpur", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 06:25:26 pm", rider: "Nayem Hossain", riderPhone: "01619025558", cod: "570" },
+            { name: "মোঃ জাবেদ আলী", phone: "01580393201", address: "Sadar, Bagerhat", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Mehedi Hasan Akash", riderPhone: "01642381188", cod: "570" },
+            { name: "মো: আব্দুর রাজ্জাক", phone: "01920109070", address: "কাওয়ালিপারা", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md.Gulam Rabbi", riderPhone: "01821030921", cod: "570" },
+            { name: "MD. HAMIDUR RAHMAN", phone: "01791422929", address: "Ullapara, Sirajgonj", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 03:03:05 pm", rider: "Shamim Reza", riderPhone: "01311185923", cod: "570" },
+            { name: "MOHAMMAD IBRAHIM", phone: "01881558701", address: "Kartikpur barrah", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Sohel Khan", riderPhone: "01770077033", cod: "570" },
+            { name: "মো. পলাশ খান", phone: "01953335001", address: "Shantinagar Residential Area, Shariatpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Rifat", riderPhone: "01783701187", cod: "570" },
+            { name: "মোঃসাইদুল ইসলাম তানবীর", phone: "01715875313", address: "Patarhat Bazar, Mehendiganj, Barishal", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Parvez Hosen", riderPhone: "01773280119", cod: "570" },
+            { name: "MD.ARIFUL ISLAM", phone: "01315186552", address: "BKSPI, Zirani, Ashulia, Savar", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 04:23:17 pm", rider: "Golam Kibria", riderPhone: "01722423042", cod: "570" },
+            { name: "অপু সরদার", phone: "01768386970", address: "Kalkini, Madaripur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Hasanul Haq", riderPhone: "01999891949", cod: "570" },
+            { name: "MD. SAJJAD ALAM", phone: "01575774092", address: "Januki Singh Road, Kaunia, Barishal", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "zobayer", riderPhone: "01601917596", cod: "570" },
+            { name: "মোঃ রেজাউল করিম", phone: "01717187971", address: "Ganiganj Bazar, Shantiganj, Sunamganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Sajal Paul", riderPhone: "01846456744", cod: "570" },
+            { name: "MD. SAIFULLAH SARKAR", phone: "01768814017", address: "Baraipara, Nilphamari Sadar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Rakibul Islam", riderPhone: "01738503739", cod: "570" },
+            { name: "MD. AL AMIN", phone: "01747416864", address: "Nageswari, Kurigram", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Rafsun Ahmed Ridoy", riderPhone: "01799033683", cod: "570" },
+            { name: "AZAHAR UDDIN", phone: "01612679401", address: "Bhurghata, Kalkini, Madaripur", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 07:44:07 pm", rider: "Md. Mahamud", riderPhone: "01754491663", cod: "570" },
+            { name: "MD AKHLASH UDDIN", phone: "01767007393", address: "Godagari, Rajshahi", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md.Abdullah", riderPhone: "01322379529", cod: "570" },
+            { name: "MAMUN CHOUDHURY", phone: "01711005288", address: "Lalkuthi Bazar, Mirpur-1, Dhaka", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 06:57:34 pm", rider: "Sakibul", riderPhone: "01799212339", cod: "570" },
+            { name: "MD. NAZMUL HASAN NAYEM", phone: "01759333810", address: "Banani Koler Pukurpar, Patuakhali", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "2026-09-09 10:06:19 am", rider: "Abdur Rob", riderPhone: "01715910784", cod: "570" },
+            { name: "MD.MAHABUBUL HASAN", phone: "01728133655", address: "Sandarban, Barura, Cumilla", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Liton mia", riderPhone: "01862269905", cod: "570" },
+            { name: "মোহাম্মদ খায়রুল ইসলাম ফকির", phone: "01763516148", address: "Sundarban Courier Khormopotti, Hosenpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Manjurul Islam", riderPhone: "01345915750", cod: "570" },
+            { name: "JANNATUL BAKI ONTAR BHUIYAN", phone: "01734201738", address: "Basila, Mohammadpur, Dhaka", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 01:35:12 pm", rider: "Forid mia", riderPhone: "01710246963", cod: "570" },
+            { name: "সৈয়দ মোঃ মাসুম হোসাইন", phone: "01715281935", address: "Sundar Bon Courier Service, Tangail Sadar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Joynal Abedin", riderPhone: "01316325199", cod: "570" },
+            { name: "MD HASIBUZZAMAN TIPU", phone: "01969737395", address: "Kanchan Rupganj, Narayanganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Asadul Habib Rupganj", riderPhone: "01987763094", cod: "570" },
+            { name: "আব্দুল কাইয়ূম শরীফ", phone: "01717753471", address: "Muksudpur, Gopalganj", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD.Hachibul Sheik", riderPhone: "01751153030", cod: "570" },
+            { name: "রাকিব শিকদার", phone: "01779989826", address: "Jogania, Kalia, Narail", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Nayon Das", riderPhone: "01854255028", cod: "570" },
+            { name: "MD ANISUR RAHMAN", phone: "01321183221", address: "Khansama, Dinajpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Rakib", riderPhone: "01967561665", cod: "570" },
+            { name: "MD MASUDUL HAQ", phone: "01726728717", address: "Joydebpur, Gazipur Sodor", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Rokib Babu", riderPhone: "01723766302", cod: "570" },
+            { name: "SUMON CHAKROBATTY", phone: "01720360245", address: "Patkelghata, Tala, Satkhira", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "MD. ABDUL GOFUR", riderPhone: "01915783009", cod: "570" },
+            { name: "মোঃ ইব্রাহিম মিয়া", phone: "01723554088", address: "Lalmonirhat Sadar, Lalmonirhat", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Abu Taleb", riderPhone: "01953016461", cod: "570" },
+            { name: "MD AZIZUR RAHMAN", phone: "01734837613", address: "Gondogram Bonani, Bogura", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Nahid", riderPhone: "01313252063", cod: "570" },
+            { name: "MD ASHRAFUL ISLAM", phone: "01974128736", address: "Bagharchar, Dewanganj, Jamalpur", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Motalab Hossin", riderPhone: "01933987195", cod: "570" },
+            { name: "জাহারুল ইসলাম জীবন", phone: "01718325958", address: "Amjhupi Bazar, Meherpur Sadar", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 04:41:24 pm", rider: "Imran Meherpur", riderPhone: "01867188521", cod: "570" },
+            { name: "MD MAHADI HASAN", phone: "01714474553", address: "Madhabdi, Narsingdi Sadar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Sabbir Rohman", riderPhone: "01312500404", cod: "570" },
+            { name: "MD RUBEL ISLAM", phone: "01304555964", address: "Kulaghat, Lalmonirhat Sadar", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Sohel Rana", riderPhone: "01617377312", cod: "570" },
+            { name: "MD KHALEKUL ISLAM", phone: "01798051506", address: "Kissregonj stert first, Nilphamari", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Unassigned", riderPhone: "0", cod: "570" },
+            { name: "ARIF AHAMAD", phone: "01609756513", address: "Haluaghat, Mymensingh", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Abdur Rahman", riderPhone: "01936350045", cod: "570" },
+            { name: "MD. ASHIKUR RAHMAN", phone: "01600303946", address: "Mokamtala, Shibganj, Bogura", deliveryStatus: "Delivered", approvalStatus: "Delivered", deliveryTime: "2026-09-08 06:30:10 pm", rider: "Md Sultan Ahomed Shiab", riderPhone: "01710542366", cod: "570" },
+            { name: "MD HAFIZUL ISLAM", phone: "01779700453", address: "Gournadi, Barishal", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Md Arman Mia", riderPhone: "01880490417", cod: "570" },
+            { name: "SHIMU", phone: "01341297121", address: "New polton Lane Azimpur, Dhaka", deliveryStatus: "Pending", approvalStatus: "Pending", deliveryTime: "-", rider: "Hossain Sikder", riderPhone: "01938567714", cod: "300" }
+        ];
+
+        function handleSearch(event) {
+            event.preventDefault();
+            const phoneInput = document.getElementById('phone-input').value.trim();
+            const errorDiv = document.getElementById('search-error');
+            const resultContainer = document.getElementById('result-container');
+
+            errorDiv.classList.add('hidden');
+            resultContainer.classList.add('hidden');
+
+            const phoneRegex = /^01[3-9]\d{8}$/;
+            if (!phoneRegex.test(phoneInput)) {
+                errorDiv.textContent = "দয়া করে সঠিক ১১ ডিজিটের বাংলাদেশি মোবাইল নম্বর দিন (যেমন: 01XXXXXXXXX)";
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+
+            const foundMember = memberDatabase.find(m => m.phone === phoneInput);
+
+            if (foundMember) {
+                document.getElementById('res-name').textContent = foundMember.name;
+                document.getElementById('res-recipient-name').textContent = foundMember.name;
+                document.getElementById('res-phone').textContent = foundMember.phone;
+                document.getElementById('res-address').textContent = foundMember.address;
+                
+                const deliveryStatusEl = document.getElementById('res-delivery-status');
+                deliveryStatusEl.textContent = foundMember.deliveryStatus;
+                deliveryStatusEl.className = foundMember.deliveryStatus === 'Delivered' ? 'font-extrabold text-sbGreen text-base' : 'font-extrabold text-sbRed text-base';
+
+                const approvalStatusEl = document.getElementById('res-approval-status');
+                approvalStatusEl.textContent = foundMember.approvalStatus;
+                approvalStatusEl.className = foundMember.approvalStatus === 'Delivered' ? 'font-extrabold text-sbGreen text-base' : 'font-extrabold text-sbRed text-base';
+
+                document.getElementById('res-delivery-time').textContent = foundMember.deliveryTime;
+                document.getElementById('res-cod').textContent = foundMember.cod + " TK";
+                document.getElementById('res-rider').textContent = foundMember.rider;
+                document.getElementById('res-rider-phone').textContent = foundMember.riderPhone;
+
+                const statusBadge = document.getElementById('res-status-badge');
+                statusBadge.textContent = foundMember.deliveryStatus;
+                statusBadge.className = foundMember.deliveryStatus === 'Delivered' 
+                    ? 'px-4 py-2 rounded-2xl text-xs font-extrabold uppercase tracking-wide bg-emerald-100 text-emerald-800 shadow-sm border border-emerald-300'
+                    : 'px-4 py-2 rounded-2xl text-xs font-extrabold uppercase tracking-wide bg-amber-100 text-amber-800 shadow-sm border border-amber-300';
+
+                resultContainer.classList.remove('hidden');
+                
+                const videoSection = document.getElementById('video-section');
+                videoSection.scrollIntoView({ behavior: 'smooth' });
+
+                setTimeout(() => {
+                    resultContainer.scrollIntoView({ behavior: 'smooth' });
+                }, 1200);
+
+            } else {
+                document.getElementById('res-name').textContent = "সম্মানিত প্রতিনিধি";
+                document.getElementById('res-recipient-name').textContent = "নিবন্ধিত প্রতিনিধি";
+                document.getElementById('res-phone').textContent = phoneInput;
+                document.getElementById('res-address').textContent = "স্বাধীন বাংলা প্রেসক্লাব নিবন্ধিত এলাকা";
+                document.getElementById('res-delivery-status').textContent = "Pending";
+                document.getElementById('res-approval-status').textContent = "Pending";
+                document.getElementById('res-delivery-time').textContent = "অপেক্ষমাণ";
+                document.getElementById('res-cod').textContent = "570 TK";
+                document.getElementById('res-rider').textContent = "Assigned Rider";
+                document.getElementById('res-rider-phone').textContent = "01XXXXXXXXX";
+
+                const statusBadge = document.getElementById('res-status-badge');
+                statusBadge.textContent = "Pending";
+                statusBadge.className = 'px-4 py-2 rounded-2xl text-xs font-extrabold uppercase tracking-wide bg-amber-100 text-amber-800 shadow-sm border border-amber-300';
+
+                resultContainer.classList.remove('hidden');
+                
+                const videoSection = document.getElementById('video-section');
+                videoSection.scrollIntoView({ behavior: 'smooth' });
+
+                setTimeout(() => {
+                    resultContainer.scrollIntoView({ behavior: 'smooth' });
+                }, 1200);
+            }
+        }
+
+        function confirmDocumentReceived() {
+            const btn = document.getElementById('confirm-btn');
+            const msg = document.getElementById('success-message');
+            
+            btn.disabled = true;
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+            btn.innerHTML = '<i class="fa-solid fa-check-double text-2xl"></i> <span>গ্রহণ নিশ্চিত হয়েছে</span>';
+            msg.classList.remove('hidden');
+        }
+    </script>
+</body>
+  </html>
