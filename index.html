@@ -23,21 +23,15 @@ content="স্বাধীন বাংলা প্রেসক্লাবে
 :root{
   --green:#075b45;
   --green-dark:#033d30;
-  --green-light:#0c8062;
-
+  --green-light:#0b8062;
   --gold:#c99a35;
   --gold-light:#f5dda0;
-
   --cream:#fffaf0;
-  --white:#ffffff;
-
+  --white:#fff;
   --text:#18231f;
   --muted:#66736e;
-
   --border:rgba(201,154,53,.25);
-
-  --shadow:
-    0 20px 60px rgba(0,0,0,.09);
+  --shadow:0 20px 60px rgba(0,0,0,.09);
 }
 
 
@@ -57,25 +51,12 @@ html{
 
 body{
   font-family:'Hind Siliguri',sans-serif;
-
   color:var(--text);
 
   background:
-    radial-gradient(
-      circle at 10% 0%,
-      rgba(201,154,53,.12),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 90% 20%,
-      rgba(7,91,69,.08),
-      transparent 30%
-    ),
-    linear-gradient(
-      180deg,
-      #f8faf8,
-      #fffdf8
-    );
+    radial-gradient(circle at 10% 0%,rgba(201,154,53,.12),transparent 28%),
+    radial-gradient(circle at 90% 20%,rgba(7,91,69,.08),transparent 30%),
+    linear-gradient(180deg,#f8faf8,#fffdf8);
 
   overflow-x:hidden;
 }
@@ -85,10 +66,6 @@ a{
   color:inherit;
 }
 
-button{
-  font-family:inherit;
-}
-
 .container{
   width:min(1140px,92%);
   margin:auto;
@@ -96,7 +73,7 @@ button{
 
 
 /* =========================================================
-   TOP NOTICE
+   TOP BAR
 ========================================================= */
 
 .topbar{
@@ -108,16 +85,172 @@ button{
       #033d30
     );
 
-  color:white;
-
+  color:#fff;
   text-align:center;
 
   padding:9px 15px;
 
   font-size:14px;
-  font-weight:500;
+  font-weight:600;
+}
 
-  letter-spacing:.2px;
+
+/* =========================================================
+   DEADLINE TIMER
+========================================================= */
+
+.deadline-bar{
+  position:relative;
+  z-index:9998;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4b241d,
+      #7b3024,
+      #552019
+    );
+
+  color:#fff;
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.13);
+
+  overflow:hidden;
+}
+
+.deadline-bar::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.07),
+      transparent
+    );
+
+  transform:translateX(-100%);
+
+  animation:deadlineShine 4s infinite;
+}
+
+.deadline-inner{
+  width:min(1050px,92%);
+  min-height:86px;
+
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:20px;
+
+  position:relative;
+  z-index:2;
+}
+
+.deadline-icon{
+  width:50px;
+  height:50px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.10);
+
+  border:
+    1px solid rgba(255,255,255,.18);
+
+  font-size:25px;
+
+  animation:
+    timerPulse 1.5s ease-in-out infinite;
+}
+
+.deadline-text{
+  text-align:center;
+}
+
+.deadline-title{
+  font-size:14px;
+  color:#ffe9e4;
+  margin-bottom:5px;
+}
+
+.deadline-clock{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:5px;
+
+  font-size:27px;
+  font-weight:800;
+
+  letter-spacing:2px;
+}
+
+.deadline-clock span{
+  min-width:43px;
+
+  padding:6px 5px;
+
+  border-radius:8px;
+
+  background:rgba(0,0,0,.20);
+
+  border:
+    1px solid rgba(255,255,255,.12);
+}
+
+.deadline-clock b{
+  animation:colonBlink 1s infinite;
+}
+
+.deadline-warning{
+  padding:9px 17px;
+
+  border-radius:30px;
+
+  background:
+    rgba(255,255,255,.09);
+
+  border:
+    1px solid rgba(255,255,255,.17);
+
+  font-size:13px;
+  font-weight:700;
+
+  animation:
+    warningFloat 2s ease-in-out infinite;
+}
+
+@keyframes deadlineShine{
+  0%{transform:translateX(-100%)}
+  45%,100%{transform:translateX(100%)}
+}
+
+@keyframes timerPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.08)}
+}
+
+@keyframes colonBlink{
+  0%,100%{opacity:1}
+  50%{opacity:.35}
+}
+
+@keyframes warningFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-3px)}
 }
 
 
@@ -128,10 +261,10 @@ button{
 header{
   position:sticky;
   top:0;
-  z-index:9999;
+  z-index:9997;
 
   background:
-    rgba(255,255,255,.90);
+    rgba(255,255,255,.92);
 
   backdrop-filter:blur(18px);
 
@@ -186,11 +319,9 @@ header{
   font-family:'Noto Serif Bengali',serif;
 
   font-size:19px;
-
   line-height:1.15;
 
   color:var(--green-dark);
-
   font-weight:700;
 }
 
@@ -200,7 +331,6 @@ header{
   margin-top:3px;
 
   color:var(--muted);
-
   font-size:11px;
 }
 
@@ -253,7 +383,6 @@ header{
   content:"";
 
   position:absolute;
-
   top:0;
   left:-120%;
 
@@ -287,8 +416,7 @@ header{
   box-shadow:
     0 0 0 0 rgba(245,221,160,.7);
 
-  animation:
-    pulse 1.8s infinite;
+  animation:pulse 1.8s infinite;
 }
 
 .apply-nav:hover{
@@ -301,46 +429,25 @@ header{
 }
 
 @keyframes floatingButton{
-
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-7px);
-  }
-
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
 }
 
 @keyframes shine{
-
-  0%{
-    left:-120%;
-  }
-
-  45%,100%{
-    left:140%;
-  }
-
+  0%{left:-120%}
+  45%,100%{left:140%}
 }
 
 @keyframes pulse{
-
   0%{
-    box-shadow:
-      0 0 0 0 rgba(245,221,160,.65);
+    box-shadow:0 0 0 0 rgba(245,221,160,.65)
   }
-
   70%{
-    box-shadow:
-      0 0 0 8px rgba(245,221,160,0);
+    box-shadow:0 0 0 8px rgba(245,221,160,0)
   }
-
   100%{
-    box-shadow:
-      0 0 0 0 rgba(245,221,160,0);
+    box-shadow:0 0 0 0 rgba(245,221,160,0)
   }
-
 }
 
 
@@ -351,9 +458,7 @@ header{
 .hero{
   position:relative;
 
-  padding:
-    75px 0
-    55px;
+  padding:75px 0 55px;
 
   text-align:center;
 
@@ -407,9 +512,10 @@ header{
 
   border-radius:50px;
 
-  background:white;
+  background:#fff;
 
-  border:1px solid var(--border);
+  border:
+    1px solid var(--border);
 
   color:var(--green);
 
@@ -418,8 +524,7 @@ header{
   box-shadow:
     0 8px 30px rgba(0,0,0,.06);
 
-  animation:
-    fadeDown .8s ease both;
+  animation:fadeDown .8s ease both;
 }
 
 .hero h1{
@@ -428,30 +533,21 @@ header{
 
   max-width:950px;
 
-  margin:
-    20px auto
-    14px;
+  margin:20px auto 14px;
 
   font-family:'Noto Serif Bengali',serif;
 
-  font-size:
-    clamp(
-      34px,
-      6vw,
-      60px
-    );
+  font-size:clamp(34px,6vw,60px);
 
   line-height:1.18;
 
   color:var(--green-dark);
 
-  animation:
-    fadeUp .8s .1s ease both;
+  animation:fadeUp .8s .1s ease both;
 }
 
 .hero h1 span{
   display:block;
-
   color:var(--gold);
 }
 
@@ -469,8 +565,7 @@ header{
 
   line-height:1.9;
 
-  animation:
-    fadeUp .8s .2s ease both;
+  animation:fadeUp .8s .2s ease both;
 }
 
 
@@ -479,9 +574,7 @@ header{
 ========================================================= */
 
 .video-section{
-  padding:
-    10px 0
-    65px;
+  padding:10px 0 65px;
 }
 
 .video-card{
@@ -491,7 +584,7 @@ header{
 
   padding:10px;
 
-  background:white;
+  background:#fff;
 
   border-radius:28px;
 
@@ -501,8 +594,7 @@ header{
   box-shadow:
     0 25px 70px rgba(0,0,0,.11);
 
-  animation:
-    scaleIn .8s ease both;
+  animation:scaleIn .8s ease both;
 }
 
 .video-wrapper{
@@ -531,9 +623,7 @@ header{
 .video-caption{
   text-align:center;
 
-  padding:
-    15px 10px
-    5px;
+  padding:15px 10px 5px;
 
   font-weight:700;
 
@@ -556,7 +646,7 @@ header{
 
 
 /* =========================================================
-   SECTION
+   SECTIONS
 ========================================================= */
 
 .section{
@@ -565,7 +655,6 @@ header{
 
 .section-header{
   text-align:center;
-
   margin-bottom:45px;
 }
 
@@ -596,12 +685,7 @@ header{
 
   font-family:'Noto Serif Bengali',serif;
 
-  font-size:
-    clamp(
-      28px,
-      4vw,
-      43px
-    );
+  font-size:clamp(28px,4vw,43px);
 
   color:var(--green-dark);
 }
@@ -638,8 +722,7 @@ header{
   border:
     1px solid var(--border);
 
-  box-shadow:
-    var(--shadow);
+  box-shadow:var(--shadow);
 
   overflow:hidden;
 }
@@ -674,7 +757,6 @@ header{
 
 .highlight{
   color:var(--green);
-
   font-weight:700;
 }
 
@@ -757,9 +839,7 @@ header{
   width:68px;
   height:68px;
 
-  margin:
-    0 auto
-    17px;
+  margin:0 auto 17px;
 
   display:grid;
   place-items:center;
@@ -778,8 +858,7 @@ header{
 
   font-size:31px;
 
-  transition:
-    transform .35s ease;
+  transition:transform .35s ease;
 }
 
 .benefit:hover .benefit-icon{
@@ -810,7 +889,7 @@ header{
 
 
 /* =========================================================
-   LIFETIME CARD
+   LIFETIME
 ========================================================= */
 
 .lifetime{
@@ -853,7 +932,7 @@ header{
 
   font-size:210px;
 
-  color:white;
+  color:#fff;
 
   opacity:.055;
 
@@ -868,8 +947,7 @@ header{
 
   font-family:'Noto Serif Bengali',serif;
 
-  font-size:
-    clamp(24px,4vw,34px);
+  font-size:clamp(24px,4vw,34px);
 
   margin-bottom:12px;
 }
@@ -908,7 +986,7 @@ header{
 
   border-radius:25px;
 
-  background:white;
+  background:#fff;
 
   border:
     1px solid rgba(0,0,0,.06);
@@ -953,7 +1031,7 @@ header{
 
 
 /* =========================================================
-   APPLICATION SECTION
+   APPLICATION
 ========================================================= */
 
 .application{
@@ -981,7 +1059,7 @@ header{
 
   border-radius:32px;
 
-  background:white;
+  background:#fff;
 
   border:
     1px solid var(--border);
@@ -1016,8 +1094,7 @@ header{
 
   color:var(--green-dark);
 
-  font-size:
-    clamp(27px,4vw,38px);
+  font-size:clamp(27px,4vw,38px);
 
   margin-bottom:10px;
 }
@@ -1027,9 +1104,7 @@ header{
 
   max-width:700px;
 
-  margin:
-    0 auto
-    23px;
+  margin:0 auto 23px;
 
   color:var(--muted);
 
@@ -1038,7 +1113,7 @@ header{
 
 
 /* =========================================================
-   MAIN CTA
+   MAIN BUTTON
 ========================================================= */
 
 .main-button{
@@ -1057,7 +1132,7 @@ header{
 
   border-radius:50px;
 
-  color:white;
+  color:#fff;
 
   background:
     linear-gradient(
@@ -1116,46 +1191,30 @@ header{
 }
 
 @keyframes mainFloat{
-
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-5px);
-  }
-
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-5px)}
 }
 
 @keyframes mainShine{
-
-  0%{
-    left:-120%;
-  }
-
-  45%,100%{
-    left:140%;
-  }
-
+  0%{left:-120%}
+  45%,100%{left:140%}
 }
 
 
 /* =========================================================
-   COUNTDOWN
+   70 SECOND REDIRECT
 ========================================================= */
 
 .redirect-box{
   position:relative;
 
-  margin:
-    25px auto
-    0;
+  margin:25px auto 0;
 
-  max-width:550px;
+  max-width:570px;
 
-  padding:15px;
+  padding:16px;
 
-  border-radius:16px;
+  border-radius:17px;
 
   background:#f6f8f6;
 
@@ -1169,11 +1228,11 @@ header{
   line-height:1.7;
 }
 
-.countdown{
+.redirect-count{
   display:inline-flex;
 
-  min-width:38px;
-  height:38px;
+  min-width:40px;
+  height:40px;
 
   margin:0 4px;
 
@@ -1184,11 +1243,131 @@ header{
 
   background:var(--green);
 
-  color:white;
+  color:#fff;
 
   font-weight:700;
 
   font-size:16px;
+}
+
+
+/* =========================================================
+   FLOATING NOTIFICATION
+========================================================= */
+
+.live-notification{
+
+  position:fixed;
+
+  left:20px;
+  bottom:22px;
+
+  z-index:99999;
+
+  width:min(360px,calc(100% - 40px));
+
+  padding:15px 17px;
+
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:12px;
+
+  border-radius:18px;
+
+  background:
+    rgba(255,255,255,.96);
+
+  backdrop-filter:blur(15px);
+
+  border:
+    1px solid rgba(7,91,69,.14);
+
+  box-shadow:
+    0 18px 50px rgba(0,0,0,.15);
+
+  opacity:0;
+
+  transform:
+    translateY(30px)
+    scale(.95);
+
+  pointer-events:none;
+
+  transition:
+    opacity .45s ease,
+    transform .45s ease;
+}
+
+.live-notification.show{
+
+  opacity:1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.live-dot{
+
+  width:10px;
+  height:10px;
+
+  flex-shrink:0;
+
+  margin-top:6px;
+
+  border-radius:50%;
+
+  background:#0b8062;
+
+  box-shadow:
+    0 0 0 0 rgba(11,128,98,.45);
+
+  animation:
+    livePulse 1.5s infinite;
+}
+
+.live-notification strong{
+
+  display:block;
+
+  color:#064936;
+
+  font-size:15px;
+
+  margin-bottom:2px;
+}
+
+.live-notification p{
+
+  margin:0;
+
+  color:#68736f;
+
+  font-size:13px;
+
+  line-height:1.5;
+}
+
+@keyframes livePulse{
+
+  0%{
+    box-shadow:
+      0 0 0 0 rgba(11,128,98,.45);
+  }
+
+  70%{
+    box-shadow:
+      0 0 0 8px rgba(11,128,98,0);
+  }
+
+  100%{
+    box-shadow:
+      0 0 0 0 rgba(11,128,98,0);
+  }
+
 }
 
 
@@ -1198,7 +1377,6 @@ header{
 
 .rules{
   max-width:850px;
-
   margin:auto;
 }
 
@@ -1213,7 +1391,7 @@ header{
 
   margin-bottom:12px;
 
-  background:white;
+  background:#fff;
 
   border:
     1px solid rgba(0,0,0,.06);
@@ -1227,8 +1405,7 @@ header{
 }
 
 .rule:hover{
-  transform:
-    translateX(5px);
+  transform:translateX(5px);
 
   box-shadow:
     0 12px 30px rgba(0,0,0,.07);
@@ -1252,7 +1429,7 @@ header{
       var(--green-light)
     );
 
-  color:white;
+  color:#fff;
 
   font-weight:700;
 }
@@ -1267,7 +1444,7 @@ header{
 
 
 /* =========================================================
-   FINAL CTA
+   FINAL
 ========================================================= */
 
 .final-section{
@@ -1281,8 +1458,7 @@ header{
 
   color:var(--green-dark);
 
-  font-size:
-    clamp(27px,4vw,40px);
+  font-size:clamp(27px,4vw,40px);
 
   margin-bottom:10px;
 }
@@ -1290,9 +1466,7 @@ header{
 .final-section p{
   max-width:700px;
 
-  margin:
-    0 auto
-    25px;
+  margin:0 auto 25px;
 
   color:var(--muted);
 
@@ -1305,8 +1479,7 @@ header{
 ========================================================= */
 
 footer{
-  padding:
-    40px 15px;
+  padding:40px 15px;
 
   text-align:center;
 
@@ -1321,7 +1494,7 @@ footer{
 }
 
 footer h3{
-  color:white;
+  color:#fff;
 
   font-family:'Noto Serif Bengali',serif;
 
@@ -1340,14 +1513,13 @@ footer p{
 
 
 /* =========================================================
-   SCROLL REVEAL
+   REVEAL
 ========================================================= */
 
 .reveal{
   opacity:0;
 
-  transform:
-    translateY(35px);
+  transform:translateY(35px);
 
   transition:
     opacity .8s ease,
@@ -1356,18 +1528,15 @@ footer p{
 
 .reveal.show{
   opacity:1;
-
-  transform:
-    translateY(0);
+  transform:translateY(0);
 }
 
 
 /* =========================================================
-   BASIC ANIMATIONS
+   ANIMATIONS
 ========================================================= */
 
 @keyframes fadeUp{
-
   from{
     opacity:0;
     transform:translateY(25px);
@@ -1377,11 +1546,9 @@ footer p{
     opacity:1;
     transform:translateY(0);
   }
-
 }
 
 @keyframes fadeDown{
-
   from{
     opacity:0;
     transform:translateY(-15px);
@@ -1391,11 +1558,9 @@ footer p{
     opacity:1;
     transform:translateY(0);
   }
-
 }
 
 @keyframes scaleIn{
-
   from{
     opacity:0;
     transform:scale(.96);
@@ -1405,7 +1570,6 @@ footer p{
     opacity:1;
     transform:scale(1);
   }
-
 }
 
 
@@ -1416,8 +1580,7 @@ footer p{
 @media(max-width:900px){
 
   .benefits{
-    grid-template-columns:
-      repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
   }
 
   .trust-grid{
@@ -1430,6 +1593,34 @@ footer p{
 
   .topbar{
     font-size:12px;
+  }
+
+  .deadline-inner{
+    min-height:74px;
+    gap:9px;
+  }
+
+  .deadline-icon{
+    width:38px;
+    height:38px;
+    font-size:18px;
+  }
+
+  .deadline-title{
+    font-size:11px;
+  }
+
+  .deadline-clock{
+    font-size:21px;
+  }
+
+  .deadline-clock span{
+    min-width:34px;
+    padding:5px 3px;
+  }
+
+  .deadline-warning{
+    display:none;
   }
 
   .nav{
@@ -1447,20 +1638,16 @@ footer p{
   .logo{
     width:41px;
     height:41px;
-
     font-size:20px;
   }
 
   .apply-nav{
     padding:9px 14px;
-
     font-size:12px;
   }
 
   .hero{
-    padding:
-      50px 0
-      40px;
+    padding:50px 0 40px;
   }
 
   .hero-description{
@@ -1481,9 +1668,7 @@ footer p{
   }
 
   .benefits{
-    grid-template-columns:
-      repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:10px;
   }
 
@@ -1494,7 +1679,6 @@ footer p{
   .benefit-icon{
     width:57px;
     height:57px;
-
     font-size:26px;
   }
 
@@ -1540,6 +1724,12 @@ footer p{
     font-size:14px;
   }
 
+  .live-notification{
+    left:12px;
+    bottom:12px;
+    width:calc(100% - 24px);
+  }
+
 }
 
 </style>
@@ -1550,12 +1740,52 @@ footer p{
 
 
 <!-- ======================================================
-     TOP BAR
+     TOP
 ======================================================= -->
 
 <div class="topbar">
   স্বাধীন বাংলা প্রেসক্লাব • সম্মাননা কার্যক্রম ২০২৬
 </div>
+
+
+<!-- ======================================================
+     DEADLINE TIMER
+======================================================= -->
+
+<div class="deadline-bar">
+
+  <div class="deadline-inner">
+
+    <div class="deadline-icon">
+      ⏳
+    </div>
+
+    <div class="deadline-text">
+
+      <div class="deadline-title">
+        আবেদনের সময় শেষ হতে বাকি
+      </div>
+
+      <div class="deadline-clock">
+
+        <span id="hours">01</span>
+        <b>:</b>
+        <span id="minutes">00</span>
+        <b>:</b>
+        <span id="seconds">00</span>
+
+      </div>
+
+    </div>
+
+    <div class="deadline-warning">
+      দ্রুত আবেদন জমা দিন
+    </div>
+
+  </div>
+
+</div>
+
 
 
 <!-- ======================================================
@@ -1923,7 +2153,6 @@ footer p{
     </div>
 
 
-
     <div class="lifetime reveal">
 
       <h3>
@@ -2057,17 +2286,20 @@ footer p{
 
       <div class="redirect-box">
 
-        এই পেজটি স্বয়ংক্রিয়ভাবে আবেদন ফর্মে নিয়ে যাবে।
+        আবেদন ফর্মে যাওয়ার জন্য আর মাত্র
+
+        <span
+          id="redirectCount"
+          class="redirect-count">
+          70
+        </span>
+
+        সেকেন্ড।
 
         <br>
 
-        <span
-          id="countdown"
-          class="countdown">
-          50
-        </span>
-
-        সেকেন্ড পর Google Form খুলবে।
+        সময় শেষ হলে Google Form
+        স্বয়ংক্রিয়ভাবে খোলা হবে।
 
       </div>
 
@@ -2114,7 +2346,7 @@ footer p{
         </div>
 
         <p>
-          নিচের অথবা উপরের
+          উপরের অথবা নিচের
           <b>“Google Form পূরণ করুন”</b>
           বাটনে ক্লিক করুন।
         </p>
@@ -2200,10 +2432,8 @@ footer p{
     </h2>
 
     <p>
-
       দীর্ঘদিনের সম্পৃক্ততার এই বিশেষ স্বীকৃতির
       অংশ হতে সঠিক তথ্য দিয়ে আবেদন ফর্ম জমা দিন।
-
     </p>
 
 
@@ -2220,6 +2450,32 @@ footer p{
   </div>
 
 </section>
+
+
+
+<!-- ======================================================
+     FLOATING NOTIFICATION
+======================================================= -->
+
+<div
+  id="liveNotification"
+  class="live-notification">
+
+  <div class="live-dot"></div>
+
+  <div>
+
+    <strong id="notificationTitle">
+      জরুরি বিজ্ঞপ্তি
+    </strong>
+
+    <p id="notificationText">
+      আবেদন জমা দেওয়ার সময় শেষ হতে চলেছে।
+    </p>
+
+  </div>
+
+</div>
 
 
 
@@ -2242,56 +2498,289 @@ footer p{
 
 
 
-<!-- ======================================================
-     JAVASCRIPT
-======================================================= -->
-
 <script>
 
-/* ==========================================
-   GOOGLE FORM URL
-========================================== */
+/* =========================================================
+   GOOGLE FORM
+========================================================= */
 
 const FORM_URL =
 "https://forms.gle/AtKofKqsZ5q6WsTD8";
 
 
-/* ==========================================
-   50 SECOND AUTO REDIRECT
-========================================== */
+/* =========================================================
+   ONE HOUR DEADLINE
+========================================================= */
 
-let seconds = 50;
-
-const countdown =
-document.getElementById("countdown");
+const DEADLINE_KEY =
+"shadin_bangla_2026_deadline";
 
 
-const timer =
+/*
+   প্রথমবার ওয়েবসাইট খোলার সময়
+   ১ ঘণ্টার deadline তৈরি হবে।
+
+   Refresh করলে আবার ১ ঘণ্টা হবে না।
+*/
+
+let deadline =
+localStorage.getItem(DEADLINE_KEY);
+
+
+if(!deadline){
+
+  deadline =
+    Date.now() +
+    (60 * 60 * 1000);
+
+  localStorage.setItem(
+    DEADLINE_KEY,
+    deadline
+  );
+
+}
+
+
+deadline =
+Number(deadline);
+
+
+/* =========================================================
+   DEADLINE COUNTDOWN
+========================================================= */
+
+function updateDeadline(){
+
+  const now =
+    Date.now();
+
+  let remaining =
+    deadline - now;
+
+
+  if(remaining <= 0){
+
+    remaining = 0;
+
+  }
+
+
+  const totalSeconds =
+    Math.floor(
+      remaining / 1000
+    );
+
+
+  const hours =
+    Math.floor(
+      totalSeconds / 3600
+    );
+
+
+  const minutes =
+    Math.floor(
+      (totalSeconds % 3600) / 60
+    );
+
+
+  const seconds =
+    totalSeconds % 60;
+
+
+  document.getElementById("hours")
+    .textContent =
+    String(hours).padStart(2,"0");
+
+
+  document.getElementById("minutes")
+    .textContent =
+    String(minutes).padStart(2,"0");
+
+
+  document.getElementById("seconds")
+    .textContent =
+    String(seconds).padStart(2,"0");
+
+
+  if(totalSeconds <= 600){
+
+    document.querySelector(
+      ".deadline-bar"
+    ).style.background =
+      "linear-gradient(135deg,#671c1c,#a52d25,#671c1c)";
+
+  }
+
+}
+
+
+updateDeadline();
+
+setInterval(
+  updateDeadline,
+  1000
+);
+
+
+/* =========================================================
+   70 SECOND AUTO REDIRECT
+========================================================= */
+
+let redirectSeconds = 70;
+
+const redirectDisplay =
+document.getElementById(
+  "redirectCount"
+);
+
+
+const redirectTimer =
 setInterval(function(){
 
-  seconds--;
+  redirectSeconds--;
 
-  countdown.textContent =
-  seconds;
+  if(redirectSeconds < 0){
+    redirectSeconds = 0;
+  }
 
-  if(seconds <= 0){
+  redirectDisplay.textContent =
+    redirectSeconds;
 
-    clearInterval(timer);
+
+  if(redirectSeconds <= 0){
+
+    clearInterval(
+      redirectTimer
+    );
 
     window.location.href =
-    FORM_URL;
+      FORM_URL;
 
   }
 
 },1000);
 
 
-/* ==========================================
+/* =========================================================
+   PROFESSIONAL URGENT NOTIFICATIONS
+========================================================= */
+
+const notifications = [
+
+  {
+    title:"জরুরি বিজ্ঞপ্তি",
+    text:"আবেদন জমা দেওয়ার সময় শেষ হতে চলেছে। দ্রুত আবেদন করুন।"
+  },
+
+  {
+    title:"দ্রুত আবেদন জমা দিন",
+    text:"আপনার আবেদন এখনো সম্পন্ন না হয়ে থাকলে নির্ধারিত সময়ের মধ্যে জমা দিন।"
+  },
+
+  {
+    title:"সম্মাননা কার্যক্রম ২০২৬",
+    text:"ফর্মটি পূরণ করে আপনার তথ্য ভালোভাবে যাচাই করে Submit করুন।"
+  },
+
+  {
+    title:"সময় সীমিত",
+    text:"আবেদন ফর্ম পূরণ করতে দেরি না করে এখনই আবেদন সম্পন্ন করুন।"
+  }
+
+];
+
+
+let notificationIndex = 0;
+
+const notification =
+document.getElementById(
+  "liveNotification"
+);
+
+const notificationTitle =
+document.getElementById(
+  "notificationTitle"
+);
+
+const notificationText =
+document.getElementById(
+  "notificationText"
+);
+
+
+function showNotification(){
+
+  const item =
+    notifications[
+      notificationIndex
+    ];
+
+
+  notificationTitle.textContent =
+    item.title;
+
+
+  notificationText.textContent =
+    item.text;
+
+
+  notification.classList.add(
+    "show"
+  );
+
+
+  setTimeout(function(){
+
+    notification.classList.remove(
+      "show"
+    );
+
+  },4500);
+
+
+  notificationIndex++;
+
+
+  if(
+    notificationIndex >=
+    notifications.length
+  ){
+
+    notificationIndex = 0;
+
+  }
+
+}
+
+
+/*
+   প্রথম notification
+*/
+
+setTimeout(
+  showNotification,
+  6000
+);
+
+
+/*
+   এরপর প্রতি ১৪ সেকেন্ডে
+*/
+
+setInterval(
+  showNotification,
+  14000
+);
+
+
+/* =========================================================
    SCROLL REVEAL
-========================================== */
+========================================================= */
 
 const revealElements =
-document.querySelectorAll(".reveal");
+document.querySelectorAll(
+  ".reveal"
+);
 
 
 const observer =
@@ -2299,19 +2788,25 @@ new IntersectionObserver(
 
   function(entries){
 
-    entries.forEach(function(entry){
+    entries.forEach(
+      function(entry){
 
-      if(entry.isIntersecting){
+        if(
+          entry.isIntersecting
+        ){
 
-        entry.target.classList.add("show");
+          entry.target.classList.add(
+            "show"
+          );
 
-        observer.unobserve(
-          entry.target
-        );
+          observer.unobserve(
+            entry.target
+          );
+
+        }
 
       }
-
-    });
+    );
 
   },
 
@@ -2325,42 +2820,38 @@ new IntersectionObserver(
 revealElements.forEach(
   function(element){
 
-    observer.observe(element);
+    observer.observe(
+      element
+    );
 
   }
 );
 
 
-/* ==========================================
-   PAUSE FLOATING ANIMATION WHEN TAB HIDDEN
-========================================== */
+/* =========================================================
+   PAUSE ANIMATION WHEN TAB IS HIDDEN
+========================================================= */
 
 document.addEventListener(
   "visibilitychange",
   function(){
 
-    const buttons =
-    document.querySelectorAll(
-      ".apply-nav,.main-button"
+    const animatedButtons =
+      document.querySelectorAll(
+        ".apply-nav,.main-button"
+      );
+
+
+    animatedButtons.forEach(
+      function(button){
+
+        button.style.animationPlayState =
+          document.hidden
+          ? "paused"
+          : "running";
+
+      }
     );
-
-    if(document.hidden){
-
-      buttons.forEach(
-        button =>
-        button.style.animationPlayState =
-        "paused"
-      );
-
-    }else{
-
-      buttons.forEach(
-        button =>
-        button.style.animationPlayState =
-        "running"
-      );
-
-    }
 
   }
 );
