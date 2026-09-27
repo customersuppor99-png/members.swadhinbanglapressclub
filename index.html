@@ -1,1159 +1,2372 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>আজীবন সদস্য সম্মাননা ২০২৬ | স্বাধীন বাংলা প্রেসক্লাব</title>
-
-  <meta name="description"
-        content="স্বাধীন বাংলা প্রেসক্লাবের দীর্ঘদিনের সম্মানিত সদস্যদের আজীবন সদস্যপদ ও সম্মাননা কার্যক্রম ২০২৬।">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&display=swap"
-        rel="stylesheet">
-
-  <style>
-    :root{
-      --primary:#075b45;
-      --primary-dark:#043c30;
-      --gold:#c99a35;
-      --gold-light:#f2d98b;
-      --cream:#fffaf0;
-      --white:#ffffff;
-      --text:#18221f;
-      --muted:#66736f;
-      --border:rgba(201,154,53,.25);
-      --shadow:0 20px 60px rgba(0,0,0,.10);
-    }
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'Hind Siliguri',sans-serif;
-      background:
-        radial-gradient(circle at top left,rgba(201,154,53,.10),transparent 30%),
-        linear-gradient(180deg,#f8faf8,#fffdf7);
-      color:var(--text);
-      overflow-x:hidden;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    .container{
-      width:min(1120px,92%);
-      margin:auto;
-    }
-
-    /* TOP NOTICE */
-    .topbar{
-      background:var(--primary-dark);
-      color:#fff;
-      text-align:center;
-      padding:9px 15px;
-      font-size:14px;
-      letter-spacing:.2px;
-    }
-
-    /* HEADER */
-    header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      backdrop-filter:blur(18px);
-      background:rgba(255,255,255,.90);
-      border-bottom:1px solid rgba(0,0,0,.06);
-    }
-
-    .nav{
-      min-height:72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-
-    .brand-logo{
-      width:45px;
-      height:45px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(135deg,var(--gold),#f8e5a4);
-      color:var(--primary-dark);
-      font-size:23px;
-      box-shadow:0 5px 20px rgba(201,154,53,.25);
-    }
-
-    .brand h1{
-      font-family:'Noto Serif Bengali',serif;
-      color:var(--primary-dark);
-      font-size:19px;
-      line-height:1.2;
-    }
-
-    .brand span{
-      display:block;
-      color:var(--muted);
-      font-size:12px;
-      font-family:'Hind Siliguri',sans-serif;
-      margin-top:2px;
-    }
-
-    .nav-btn{
-      background:var(--primary);
-      color:#fff;
-      padding:10px 18px;
-      border-radius:30px;
-      font-weight:600;
-      transition:.3s;
-    }
-
-    .nav-btn:hover{
-      transform:translateY(-2px);
-      background:var(--primary-dark);
-    }
-
-    /* HERO */
-    .hero{
-      padding:60px 0 35px;
-      text-align:center;
-      position:relative;
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:7px;
-      background:#fff;
-      border:1px solid var(--border);
-      color:var(--primary);
-      padding:7px 16px;
-      border-radius:50px;
-      font-weight:600;
-      box-shadow:0 8px 30px rgba(0,0,0,.06);
-      animation:fadeDown .8s ease both;
-    }
-
-    .hero h2{
-      margin:20px auto 12px;
-      max-width:850px;
-      font-family:'Noto Serif Bengali',serif;
-      font-size:clamp(32px,5vw,58px);
-      line-height:1.18;
-      color:var(--primary-dark);
-      animation:fadeUp .8s .1s ease both;
-    }
-
-    .hero h2 span{
-      color:var(--gold);
-    }
-
-    .hero p{
-      max-width:800px;
-      margin:auto;
-      color:var(--muted);
-      font-size:17px;
-      line-height:1.9;
-      animation:fadeUp .8s .2s ease both;
-    }
-
-    /* VIDEO */
-    .video-section{
-      padding:25px 0 55px;
-    }
-
-    .video-card{
-      max-width:950px;
-      margin:auto;
-      padding:10px;
-      background:#fff;
-      border-radius:25px;
-      box-shadow:var(--shadow);
-      border:1px solid var(--border);
-      animation:scaleIn .8s ease both;
-    }
-
-    .video-wrapper{
-      position:relative;
-      padding-top:56.25%;
-      overflow:hidden;
-      border-radius:18px;
-      background:#111;
-    }
-
-    .video-wrapper iframe{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      border:0;
-    }
-
-    .video-title{
-      padding:14px 10px 5px;
-      text-align:center;
-      font-weight:700;
-      color:var(--primary-dark);
-    }
-
-    .video-link{
-      display:block;
-      text-align:center;
-      color:var(--primary);
-      font-size:14px;
-      padding:3px 10px 10px;
-    }
-
-    /* INTRO */
-    .section{
-      padding:70px 0;
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:42px;
-    }
-
-    .section-title small{
-      color:var(--gold);
-      font-weight:700;
-      letter-spacing:1px;
-    }
-
-    .section-title h3{
-      font-family:'Noto Serif Bengali',serif;
-      color:var(--primary-dark);
-      font-size:clamp(28px,4vw,42px);
-      margin-top:5px;
-    }
-
-    .section-title p{
-      color:var(--muted);
-      max-width:720px;
-      margin:10px auto 0;
-      line-height:1.8;
-    }
-
-    .intro{
-      background:linear-gradient(135deg,#fff,#fffaf0);
-      border:1px solid var(--border);
-      border-radius:25px;
-      padding:35px;
-      box-shadow:0 12px 45px rgba(0,0,0,.06);
-    }
-
-    .intro p{
-      color:#4d5955;
-      font-size:17px;
-      line-height:2;
-      margin-bottom:15px;
-    }
-
-    .highlight{
-      color:var(--primary);
-      font-weight:700;
-    }
-
-    /* BENEFITS */
-    .benefits{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-    }
-
-    .benefit{
-      position:relative;
-      padding:28px 20px;
-      border-radius:22px;
-      background:rgba(255,255,255,.82);
-      border:1px solid var(--border);
-      text-align:center;
-      box-shadow:0 10px 35px rgba(0,0,0,.06);
-      transition:.35s;
-      overflow:hidden;
-    }
-
-    .benefit:before{
-      content:"";
-      position:absolute;
-      width:90px;
-      height:90px;
-      border-radius:50%;
-      background:rgba(201,154,53,.10);
-      top:-35px;
-      right:-35px;
-    }
-
-    .benefit:hover{
-      transform:translateY(-8px);
-      box-shadow:0 20px 45px rgba(0,0,0,.12);
-    }
-
-    .icon{
-      width:65px;
-      height:65px;
-      margin:0 auto 15px;
-      display:grid;
-      place-items:center;
-      border-radius:18px;
-      background:linear-gradient(135deg,#fff3cd,#fff);
-      border:1px solid var(--border);
-      font-size:30px;
-    }
-
-    .benefit h4{
-      color:var(--primary-dark);
-      font-size:19px;
-      margin-bottom:7px;
-    }
-
-    .benefit p{
-      color:var(--muted);
-      line-height:1.7;
-      font-size:14px;
-    }
-
-    /* LIFETIME */
-    .lifetime{
-      margin-top:35px;
-      padding:40px;
-      border-radius:28px;
-      color:#fff;
-      background:
-        radial-gradient(circle at 85% 20%,rgba(242,217,139,.25),transparent 25%),
-        linear-gradient(135deg,#043c30,#075b45);
-      position:relative;
-      overflow:hidden;
-      box-shadow:0 20px 55px rgba(4,60,48,.22);
-    }
-
-    .lifetime:after{
-      content:"∞";
-      position:absolute;
-      right:35px;
-      bottom:-40px;
-      font-size:190px;
-      font-weight:700;
-      opacity:.06;
-    }
-
-    .lifetime h3{
-      font-family:'Noto Serif Bengali',serif;
-      color:var(--gold-light);
-      font-size:30px;
-      margin-bottom:12px;
-    }
-
-    .lifetime p{
-      max-width:850px;
-      line-height:1.9;
-      color:rgba(255,255,255,.86);
-      font-size:16px;
-    }
-
-    /* TRANSPARENCY */
-    .trust-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px;
-    }
-
-    .trust-card{
-      background:#fff;
-      border:1px solid var(--border);
-      padding:30px;
-      border-radius:23px;
-      box-shadow:0 12px 40px rgba(0,0,0,.06);
-    }
-
-    .trust-card h4{
-      color:var(--primary-dark);
-      font-size:21px;
-      margin-bottom:10px;
-    }
-
-    .trust-card p{
-      color:var(--muted);
-      line-height:1.9;
-    }
-
-    /* CTA */
-    .apply{
-      padding:80px 0;
-      text-align:center;
-      background:
-        radial-gradient(circle at 50% 0%,rgba(201,154,53,.18),transparent 40%),
-        #fffaf0;
-    }
-
-    .apply-box{
-      max-width:900px;
-      margin:auto;
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:30px;
-      padding:45px 25px;
-      box-shadow:var(--shadow);
-    }
-
-    .apply-box h3{
-      font-family:'Noto Serif Bengali',serif;
-      color:var(--primary-dark);
-      font-size:34px;
-      margin-bottom:10px;
-    }
-
-    .apply-box p{
-      color:var(--muted);
-      line-height:1.8;
-      max-width:700px;
-      margin:0 auto 22px;
-    }
-
-    .main-btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      background:linear-gradient(135deg,var(--primary),#0b795c);
-      color:#fff;
-      padding:15px 32px;
-      border-radius:50px;
-      font-size:17px;
-      font-weight:700;
-      box-shadow:0 12px 30px rgba(7,91,69,.25);
-      transition:.3s;
-    }
-
-    .main-btn:hover{
-      transform:translateY(-4px) scale(1.02);
-      box-shadow:0 18px 35px rgba(7,91,69,.32);
-    }
-
-    .small-note{
-      margin-top:15px;
-      color:#7b827f;
-      font-size:13px;
-    }
-
-    /* RULES */
-    .rules{
-      max-width:850px;
-      margin:auto;
-    }
-
-    .rule{
-      display:flex;
-      gap:15px;
-      padding:18px;
-      background:#fff;
-      border:1px solid rgba(0,0,0,.06);
-      border-radius:15px;
-      margin-bottom:12px;
-    }
-
-    .rule-number{
-      min-width:35px;
-      height:35px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:var(--primary);
-      color:#fff;
-      font-weight:700;
-    }
-
-    .rule p{
-      color:#4e5956;
-      line-height:1.75;
-    }
-
-    /* REDIRECT TIMER */
-    .redirect{
-      margin-top:25px;
-      background:#f8faf8;
-      border-radius:15px;
-      padding:15px;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    #countdown{
-      color:var(--primary);
-      font-weight:700;
-    }
-
-    /* FOOTER */
-    footer{
-      background:#032f26;
-      color:#dce9e5;
-      text-align:center;
-      padding:35px 15px;
-    }
-
-    footer h4{
-      font-family:'Noto Serif Bengali',serif;
-      color:#fff;
-      font-size:21px;
-      margin-bottom:8px;
-    }
-
-    footer p{
-      font-size:13px;
-      opacity:.75;
-      line-height:1.7;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp{
-      from{opacity:0;transform:translateY(25px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-
-    @keyframes fadeDown{
-      from{opacity:0;transform:translateY(-15px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-
-    @keyframes scaleIn{
-      from{opacity:0;transform:scale(.96)}
-      to{opacity:1;transform:scale(1)}
-    }
-
-    @media(max-width:900px){
-      .benefits{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .trust-grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media(max-width:600px){
-      .nav{
-        min-height:65px;
-      }
-
-      .brand h1{
-        font-size:16px;
-      }
-
-      .brand-logo{
-        width:40px;
-        height:40px;
-      }
-
-      .nav-btn{
-        padding:8px 13px;
-        font-size:13px;
-      }
-
-      .hero{
-        padding-top:42px;
-      }
-
-      .hero p{
-        font-size:15px;
-      }
-
-      .benefits{
-        grid-template-columns:1fr 1fr;
-        gap:10px;
-      }
-
-      .benefit{
-        padding:20px 12px;
-      }
-
-      .benefit h4{
-        font-size:16px;
-      }
-
-      .benefit p{
-        font-size:13px;
-      }
-
-      .intro,
-      .lifetime,
-      .trust-card,
-      .apply-box{
-        padding:25px 18px;
-      }
-
-      .lifetime h3{
-        font-size:25px;
-      }
-
-      .section{
-        padding:50px 0;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>সম্মাননা কার্যক্রম ২০২৬ | স্বাধীন বাংলা প্রেসক্লাব</title>
+
+<meta name="description"
+content="স্বাধীন বাংলা প্রেসক্লাবের দীর্ঘদিনের সম্মানিত সদস্যদের আজীবন সদস্যপদ ও সম্মাননা কার্যক্রম ২০২৬।">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+  --green:#075b45;
+  --green-dark:#033d30;
+  --green-light:#0c8062;
+
+  --gold:#c99a35;
+  --gold-light:#f5dda0;
+
+  --cream:#fffaf0;
+  --white:#ffffff;
+
+  --text:#18231f;
+  --muted:#66736e;
+
+  --border:rgba(201,154,53,.25);
+
+  --shadow:
+    0 20px 60px rgba(0,0,0,.09);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Hind Siliguri',sans-serif;
+
+  color:var(--text);
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(201,154,53,.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(7,91,69,.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #f8faf8,
+      #fffdf8
+    );
+
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  font-family:inherit;
+}
+
+.container{
+  width:min(1140px,92%);
+  margin:auto;
+}
+
+
+/* =========================================================
+   TOP NOTICE
+========================================================= */
+
+.topbar{
+  background:
+    linear-gradient(
+      90deg,
+      #033d30,
+      #075b45,
+      #033d30
+    );
+
+  color:white;
+
+  text-align:center;
+
+  padding:9px 15px;
+
+  font-size:14px;
+  font-weight:500;
+
+  letter-spacing:.2px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:9999;
+
+  background:
+    rgba(255,255,255,.90);
+
+  backdrop-filter:blur(18px);
+
+  border-bottom:
+    1px solid rgba(0,0,0,.06);
+
+  box-shadow:
+    0 5px 25px rgba(0,0,0,.04);
+}
+
+.nav{
+  min-height:76px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo{
+  width:48px;
+  height:48px;
+
+  border-radius:50%;
+
+  display:grid;
+  place-items:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold),
+      var(--gold-light)
+    );
+
+  color:var(--green-dark);
+
+  font-size:24px;
+
+  box-shadow:
+    0 8px 25px rgba(201,154,53,.25);
+}
+
+.brand-title{
+  font-family:'Noto Serif Bengali',serif;
+
+  font-size:19px;
+
+  line-height:1.15;
+
+  color:var(--green-dark);
+
+  font-weight:700;
+}
+
+.brand-subtitle{
+  display:block;
+
+  margin-top:3px;
+
+  color:var(--muted);
+
+  font-size:11px;
+}
+
+
+/* =========================================================
+   FLOATING APPLY BUTTON
+========================================================= */
+
+.apply-nav{
+  position:relative;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:7px;
+
+  padding:11px 21px;
+
+  border-radius:50px;
+
+  color:#fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--green),
+      var(--green-light)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.25);
+
+  font-weight:700;
+  font-size:15px;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 10px 28px rgba(7,91,69,.25),
+    inset 0 1px 0 rgba(255,255,255,.25);
+
+  animation:
+    floatingButton 2.2s ease-in-out infinite;
+
+  transition:.3s ease;
+}
+
+.apply-nav::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-120%;
+
+  width:80%;
+  height:100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255,255,255,.35),
+      transparent
+    );
+
+  transform:skewX(-20deg);
+
+  animation:
+    shine 3.5s ease-in-out infinite;
+}
+
+.apply-nav::after{
+  content:"";
+
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:var(--gold-light);
+
+  box-shadow:
+    0 0 0 0 rgba(245,221,160,.7);
+
+  animation:
+    pulse 1.8s infinite;
+}
+
+.apply-nav:hover{
+  transform:
+    translateY(-5px)
+    scale(1.03);
+
+  box-shadow:
+    0 18px 38px rgba(7,91,69,.35);
+}
+
+@keyframes floatingButton{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-7px);
+  }
+
+}
+
+@keyframes shine{
+
+  0%{
+    left:-120%;
+  }
+
+  45%,100%{
+    left:140%;
+  }
+
+}
+
+@keyframes pulse{
+
+  0%{
+    box-shadow:
+      0 0 0 0 rgba(245,221,160,.65);
+  }
+
+  70%{
+    box-shadow:
+      0 0 0 8px rgba(245,221,160,0);
+  }
+
+  100%{
+    box-shadow:
+      0 0 0 0 rgba(245,221,160,0);
+  }
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  position:relative;
+
+  padding:
+    75px 0
+    55px;
+
+  text-align:center;
+
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  border-radius:50%;
+
+  background:
+    rgba(201,154,53,.07);
+
+  top:-250px;
+  left:-150px;
+}
+
+.hero::after{
+  content:"";
+
+  position:absolute;
+
+  width:360px;
+  height:360px;
+
+  border-radius:50%;
+
+  background:
+    rgba(7,91,69,.06);
+
+  bottom:-220px;
+  right:-120px;
+}
+
+.badge{
+  position:relative;
+  z-index:2;
+
+  display:inline-flex;
+  align-items:center;
+
+  gap:8px;
+
+  padding:8px 18px;
+
+  border-radius:50px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  color:var(--green);
+
+  font-weight:700;
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.06);
+
+  animation:
+    fadeDown .8s ease both;
+}
+
+.hero h1{
+  position:relative;
+  z-index:2;
+
+  max-width:950px;
+
+  margin:
+    20px auto
+    14px;
+
+  font-family:'Noto Serif Bengali',serif;
+
+  font-size:
+    clamp(
+      34px,
+      6vw,
+      60px
+    );
+
+  line-height:1.18;
+
+  color:var(--green-dark);
+
+  animation:
+    fadeUp .8s .1s ease both;
+}
+
+.hero h1 span{
+  display:block;
+
+  color:var(--gold);
+}
+
+.hero-description{
+  position:relative;
+  z-index:2;
+
+  max-width:800px;
+
+  margin:auto;
+
+  color:var(--muted);
+
+  font-size:17px;
+
+  line-height:1.9;
+
+  animation:
+    fadeUp .8s .2s ease both;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.video-section{
+  padding:
+    10px 0
+    65px;
+}
+
+.video-card{
+  max-width:960px;
+
+  margin:auto;
+
+  padding:10px;
+
+  background:white;
+
+  border-radius:28px;
+
+  border:
+    1px solid var(--border);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.11);
+
+  animation:
+    scaleIn .8s ease both;
+}
+
+.video-wrapper{
+  position:relative;
+
+  padding-top:56.25%;
+
+  overflow:hidden;
+
+  border-radius:20px;
+
+  background:#101010;
+}
+
+.video-wrapper iframe{
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  border:0;
+}
+
+.video-caption{
+  text-align:center;
+
+  padding:
+    15px 10px
+    5px;
+
+  font-weight:700;
+
+  font-size:18px;
+
+  color:var(--green-dark);
+}
+
+.video-link{
+  display:block;
+
+  text-align:center;
+
+  padding-bottom:10px;
+
+  font-size:13px;
+
+  color:var(--green);
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+  padding:80px 0;
+}
+
+.section-header{
+  text-align:center;
+
+  margin-bottom:45px;
+}
+
+.section-label{
+  display:inline-flex;
+
+  padding:6px 15px;
+
+  border-radius:50px;
+
+  background:
+    rgba(201,154,53,.09);
+
+  border:
+    1px solid rgba(201,154,53,.25);
+
+  color:#9a721d;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+}
+
+.section-header h2{
+  margin-top:12px;
+
+  font-family:'Noto Serif Bengali',serif;
+
+  font-size:
+    clamp(
+      28px,
+      4vw,
+      43px
+    );
+
+  color:var(--green-dark);
+}
+
+.section-header p{
+  max-width:750px;
+
+  margin:10px auto 0;
+
+  color:var(--muted);
+
+  line-height:1.85;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-card{
+  position:relative;
+
+  padding:40px;
+
+  border-radius:28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff,
+      #fffaf0
+    );
+
+  border:
+    1px solid var(--border);
+
+  box-shadow:
+    var(--shadow);
+
+  overflow:hidden;
+}
+
+.intro-card::after{
+  content:"“";
+
+  position:absolute;
+
+  right:25px;
+  top:-25px;
+
+  font-family:serif;
+
+  font-size:180px;
+
+  color:rgba(201,154,53,.08);
+}
+
+.intro-card p{
+  position:relative;
+  z-index:2;
+
+  color:#4d5955;
+
+  font-size:17px;
+
+  line-height:2;
+
+  margin-bottom:15px;
+}
+
+.highlight{
+  color:var(--green);
+
+  font-weight:700;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.benefits{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:18px;
+}
+
+.benefit{
+  position:relative;
+
+  padding:30px 20px;
+
+  border-radius:24px;
+
+  text-align:center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.98),
+      rgba(255,250,240,.90)
+    );
+
+  border:
+    1px solid var(--border);
+
+  box-shadow:
+    0 12px 38px rgba(0,0,0,.06);
+
+  overflow:hidden;
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.benefit::before{
+  content:"";
+
+  position:absolute;
+
+  width:100px;
+  height:100px;
+
+  border-radius:50%;
+
+  right:-45px;
+  top:-45px;
+
+  background:
+    rgba(201,154,53,.10);
+}
+
+.benefit:hover{
+  transform:
+    translateY(-10px)
+    scale(1.015);
+
+  border-color:
+    rgba(201,154,53,.55);
+
+  box-shadow:
+    0 25px 55px rgba(0,0,0,.13);
+}
+
+.benefit-icon{
+  position:relative;
+
+  width:68px;
+  height:68px;
+
+  margin:
+    0 auto
+    17px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff1c5,
+      #fff
+    );
+
+  border:
+    1px solid var(--border);
+
+  font-size:31px;
+
+  transition:
+    transform .35s ease;
+}
+
+.benefit:hover .benefit-icon{
+  transform:
+    rotate(-6deg)
+    scale(1.08);
+}
+
+.benefit h3{
+  position:relative;
+
+  color:var(--green-dark);
+
+  font-size:19px;
+
+  margin-bottom:8px;
+}
+
+.benefit p{
+  position:relative;
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  line-height:1.75;
+}
+
+
+/* =========================================================
+   LIFETIME CARD
+========================================================= */
+
+.lifetime{
+  position:relative;
+
+  margin-top:30px;
+
+  padding:45px;
+
+  border-radius:30px;
+
+  color:white;
+
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(245,221,160,.23),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #033d30,
+      #075b45,
+      #086e53
+    );
+
+  box-shadow:
+    0 25px 65px rgba(3,61,48,.23);
+
+  overflow:hidden;
+}
+
+.lifetime::after{
+  content:"∞";
+
+  position:absolute;
+
+  right:25px;
+  bottom:-65px;
+
+  font-size:210px;
+
+  color:white;
+
+  opacity:.055;
+
+  font-weight:800;
+}
+
+.lifetime h3{
+  position:relative;
+  z-index:2;
+
+  color:var(--gold-light);
+
+  font-family:'Noto Serif Bengali',serif;
+
+  font-size:
+    clamp(24px,4vw,34px);
+
+  margin-bottom:12px;
+}
+
+.lifetime p{
+  position:relative;
+  z-index:2;
+
+  max-width:900px;
+
+  color:rgba(255,255,255,.87);
+
+  line-height:1.9;
+
+  font-size:16px;
+}
+
+
+/* =========================================================
+   TRUST
+========================================================= */
+
+.trust-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:22px;
+}
+
+.trust-card{
+  position:relative;
+
+  padding:32px;
+
+  border-radius:25px;
+
+  background:white;
+
+  border:
+    1px solid rgba(0,0,0,.06);
+
+  box-shadow:
+    0 15px 45px rgba(0,0,0,.06);
+}
+
+.trust-card::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:20px;
+
+  width:4px;
+  height:65px;
+
+  border-radius:0 10px 10px 0;
+
+  background:
+    linear-gradient(
+      var(--gold),
+      var(--green)
+    );
+}
+
+.trust-card h3{
+  color:var(--green-dark);
+
+  font-size:21px;
+
+  margin-bottom:10px;
+}
+
+.trust-card p{
+  color:var(--muted);
+
+  line-height:1.9;
+}
+
+
+/* =========================================================
+   APPLICATION SECTION
+========================================================= */
+
+.application{
+  padding:90px 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(201,154,53,.18),
+      transparent 42%
+    ),
+    #fffaf0;
+}
+
+.application-box{
+  position:relative;
+
+  max-width:900px;
+
+  margin:auto;
+
+  text-align:center;
+
+  padding:50px 25px;
+
+  border-radius:32px;
+
+  background:white;
+
+  border:
+    1px solid var(--border);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.10);
+
+  overflow:hidden;
+}
+
+.application-box::before{
+  content:"";
+
+  position:absolute;
+
+  width:180px;
+  height:180px;
+
+  border-radius:50%;
+
+  top:-100px;
+  right:-70px;
+
+  background:
+    rgba(201,154,53,.08);
+}
+
+.application-box h2{
+  position:relative;
+
+  font-family:'Noto Serif Bengali',serif;
+
+  color:var(--green-dark);
+
+  font-size:
+    clamp(27px,4vw,38px);
+
+  margin-bottom:10px;
+}
+
+.application-box > p{
+  position:relative;
+
+  max-width:700px;
+
+  margin:
+    0 auto
+    23px;
+
+  color:var(--muted);
+
+  line-height:1.85;
+}
+
+
+/* =========================================================
+   MAIN CTA
+========================================================= */
+
+.main-button{
+  position:relative;
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  min-width:240px;
+
+  padding:16px 30px;
+
+  border-radius:50px;
+
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--green),
+      var(--green-light)
+    );
+
+  font-size:17px;
+
+  font-weight:700;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 13px 32px rgba(7,91,69,.25);
+
+  animation:
+    mainFloat 2.5s ease-in-out infinite;
+
+  transition:.3s ease;
+}
+
+.main-button::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-120%;
+
+  width:70%;
+  height:100%;
+
+  background:
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(255,255,255,.35),
+      transparent
+    );
+
+  transform:skewX(-20deg);
+
+  animation:
+    mainShine 3.8s infinite;
+}
+
+.main-button:hover{
+  transform:
+    translateY(-5px)
+    scale(1.02);
+
+  box-shadow:
+    0 20px 45px rgba(7,91,69,.35);
+}
+
+@keyframes mainFloat{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-5px);
+  }
+
+}
+
+@keyframes mainShine{
+
+  0%{
+    left:-120%;
+  }
+
+  45%,100%{
+    left:140%;
+  }
+
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.redirect-box{
+  position:relative;
+
+  margin:
+    25px auto
+    0;
+
+  max-width:550px;
+
+  padding:15px;
+
+  border-radius:16px;
+
+  background:#f6f8f6;
+
+  border:
+    1px solid rgba(7,91,69,.08);
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  line-height:1.7;
+}
+
+.countdown{
+  display:inline-flex;
+
+  min-width:38px;
+  height:38px;
+
+  margin:0 4px;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:var(--green);
+
+  color:white;
+
+  font-weight:700;
+
+  font-size:16px;
+}
+
+
+/* =========================================================
+   RULES
+========================================================= */
+
+.rules{
+  max-width:850px;
+
+  margin:auto;
+}
+
+.rule{
+  display:flex;
+
+  gap:15px;
+
+  align-items:flex-start;
+
+  padding:18px;
+
+  margin-bottom:12px;
+
+  background:white;
+
+  border:
+    1px solid rgba(0,0,0,.06);
+
+  border-radius:17px;
+
+  box-shadow:
+    0 7px 25px rgba(0,0,0,.035);
+
+  transition:.3s ease;
+}
+
+.rule:hover{
+  transform:
+    translateX(5px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.07);
+}
+
+.rule-number{
+  flex-shrink:0;
+
+  width:36px;
+  height:36px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--green),
+      var(--green-light)
+    );
+
+  color:white;
+
+  font-weight:700;
+}
+
+.rule p{
+  color:#4e5956;
+
+  line-height:1.8;
+
+  padding-top:3px;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-section{
+  padding:80px 0;
+
+  text-align:center;
+}
+
+.final-section h2{
+  font-family:'Noto Serif Bengali',serif;
+
+  color:var(--green-dark);
+
+  font-size:
+    clamp(27px,4vw,40px);
+
+  margin-bottom:10px;
+}
+
+.final-section p{
+  max-width:700px;
+
+  margin:
+    0 auto
+    25px;
+
+  color:var(--muted);
+
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  padding:
+    40px 15px;
+
+  text-align:center;
+
+  color:#dce9e5;
+
+  background:
+    linear-gradient(
+      135deg,
+      #022d24,
+      #033d30
+    );
+}
+
+footer h3{
+  color:white;
+
+  font-family:'Noto Serif Bengali',serif;
+
+  font-size:22px;
+
+  margin-bottom:7px;
+}
+
+footer p{
+  font-size:13px;
+
+  line-height:1.8;
+
+  opacity:.75;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal{
+  opacity:0;
+
+  transform:
+    translateY(35px);
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.show{
+  opacity:1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   BASIC ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+@keyframes fadeDown{
+
+  from{
+    opacity:0;
+    transform:translateY(-15px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+@keyframes scaleIn{
+
+  from{
+    opacity:0;
+    transform:scale(.96);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+  .benefits{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .trust-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .topbar{
+    font-size:12px;
+  }
+
+  .nav{
+    min-height:68px;
+  }
+
+  .brand-title{
+    font-size:15px;
+  }
+
+  .brand-subtitle{
+    font-size:9px;
+  }
+
+  .logo{
+    width:41px;
+    height:41px;
+
+    font-size:20px;
+  }
+
+  .apply-nav{
+    padding:9px 14px;
+
+    font-size:12px;
+  }
+
+  .hero{
+    padding:
+      50px 0
+      40px;
+  }
+
+  .hero-description{
+    font-size:15px;
+  }
+
+  .section{
+    padding:60px 0;
+  }
+
+  .intro-card{
+    padding:25px 19px;
+  }
+
+  .intro-card p{
+    font-size:15px;
+    line-height:1.9;
+  }
+
+  .benefits{
+    grid-template-columns:
+      repeat(2,1fr);
+
+    gap:10px;
+  }
+
+  .benefit{
+    padding:22px 10px;
+  }
+
+  .benefit-icon{
+    width:57px;
+    height:57px;
+
+    font-size:26px;
+  }
+
+  .benefit h3{
+    font-size:15px;
+  }
+
+  .benefit p{
+    font-size:12px;
+    line-height:1.65;
+  }
+
+  .lifetime{
+    padding:28px 20px;
+  }
+
+  .lifetime p{
+    font-size:14px;
+  }
+
+  .trust-card{
+    padding:25px 20px;
+  }
+
+  .application{
+    padding:65px 0;
+  }
+
+  .application-box{
+    padding:35px 17px;
+  }
+
+  .main-button{
+    width:100%;
+    max-width:330px;
+  }
+
+  .rule{
+    padding:15px;
+  }
+
+  .rule p{
+    font-size:14px;
+  }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-  <div class="topbar">
-    স্বাধীন বাংলা প্রেসক্লাব • সম্মাননা কার্যক্রম ২০২৬
-  </div>
 
-  <header>
-    <div class="container nav">
+<!-- ======================================================
+     TOP BAR
+======================================================= -->
 
-      <div class="brand">
-        <div class="brand-logo">🏅</div>
+<div class="topbar">
+  স্বাধীন বাংলা প্রেসক্লাব • সম্মাননা কার্যক্রম ২০২৬
+</div>
 
-        <div>
-          <h1>স্বাধীন বাংলা প্রেসক্লাব</h1>
-          <span>সম্মাননা ও আজীবন সদস্যপদ • ২০২৬</span>
-        </div>
+
+<!-- ======================================================
+     HEADER
+======================================================= -->
+
+<header>
+
+  <div class="container nav">
+
+    <div class="brand">
+
+      <div class="logo">
+        🏅
       </div>
 
-      <a class="nav-btn" href="https://forms.gle/AtKofKqsZ5q6WsTD8">
-        আবেদন করুন
+      <div>
+
+        <div class="brand-title">
+          স্বাধীন বাংলা প্রেসক্লাব
+        </div>
+
+        <span class="brand-subtitle">
+          সম্মাননা ও আজীবন সদস্যপদ • ২০২৬
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <a
+      class="apply-nav"
+      href="https://forms.gle/AtKofKqsZ5q6WsTD8"
+      target="_blank"
+      rel="noopener">
+
+      আবেদন করুন
+
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<!-- ======================================================
+     HERO
+======================================================= -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="badge">
+      ✦ বিশেষ সম্মাননা উদ্যোগ ২০২৬
+    </div>
+
+    <h1>
+
+      দীর্ঘদিনের সদস্যদের জন্য
+
+      <span>
+        আজীবন সদস্যপদের সম্মাননা
+      </span>
+
+    </h1>
+
+    <p class="hero-description">
+
+      স্বাধীন বাংলা প্রেসক্লাবের সঙ্গে দীর্ঘদিন ধরে
+      সম্মানের সঙ্গে যুক্ত থাকা সদস্যদের প্রতি
+      স্বীকৃতি, সম্মান ও মর্যাদা প্রদানের বিশেষ উদ্যোগ।
+
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     VIDEO
+======================================================= -->
+
+<section class="video-section">
+
+  <div class="container">
+
+    <div class="video-card">
+
+      <div class="video-wrapper">
+
+        <iframe
+          src="https://www.youtube.com/embed/JYYzv8i7AKs"
+          title="সম্মাননা কার্যক্রম ২০২৬"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+      <div class="video-caption">
+        সম্মাননা কার্যক্রম ২০২৬
+      </div>
+
+      <a
+        class="video-link"
+        href="https://youtu.be/JYYzv8i7AKs?si=_v-3Uixwdu4aySRy"
+        target="_blank"
+        rel="noopener">
+
+        ▶ YouTube-এ ভিডিওটি দেখুন
+
       </a>
 
     </div>
-  </header>
+
+  </div>
+
+</section>
 
 
-  <!-- HERO -->
-  <section class="hero">
 
-    <div class="container">
+<!-- ======================================================
+     INTRODUCTION
+======================================================= -->
 
-      <div class="badge">
-        ✦ বিশেষ সম্মাননা উদ্যোগ ২০২৬
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        বিশেষ ঘোষণা
       </div>
 
       <h2>
-        দীর্ঘদিনের সদস্যদের জন্য
-        <span>আজীবন সদস্যপদের সম্মাননা</span>
+        আপনাদের দীর্ঘদিনের সম্পৃক্ততার স্বীকৃতি
       </h2>
 
       <p>
-        স্বাধীন বাংলা প্রেসক্লাবের সঙ্গে দীর্ঘদিন ধরে সম্মানের সঙ্গে
-        যুক্ত থাকা সদস্যদের প্রতি স্বীকৃতি ও সম্মান প্রদানের বিশেষ উদ্যোগ।
+        দীর্ঘদিন ধরে সংগঠনের সঙ্গে যুক্ত সম্মানিত
+        সদস্যদের অবদান ও সম্পৃক্ততাকে বিশেষ মর্যাদায়
+        স্বীকৃতি দেওয়ার উদ্যোগ।
       </p>
 
     </div>
 
-  </section>
+
+    <div class="intro-card reveal">
+
+      <p>
+        স্বাধীন বাংলা প্রেসক্লাবের সঙ্গে যারা দীর্ঘদিন ধরে
+        সম্মানের সঙ্গে সদস্য হিসেবে যুক্ত আছেন,
+        তাদের জন্য এটি নিঃসন্দেহে একটি আনন্দের ও গর্বের সংবাদ।
+      </p>
+
+      <p>
+        দীর্ঘদিনের সদস্যদের প্রতি সম্মান ও স্বীকৃতিস্বরূপ
+        কর্তৃপক্ষের সিদ্ধান্ত অনুযায়ী তাদের
+        <span class="highlight">
+          আজীবন সদস্য
+        </span>
+        হিসেবে স্বীকৃতি প্রদান করা হবে।
+      </p>
+
+      <p>
+        আজীবন সদস্যপদের আনুষ্ঠানিক স্বীকৃতি প্রদানের পর
+        সাধারণ সদস্যপদ পুনরায় নবায়নের প্রয়োজন থাকবে না।
+        সদস্যপদ প্রতিষ্ঠানের প্রযোজ্য নীতিমালা ও নিয়ম
+        অনুসরণ সাপেক্ষে দীর্ঘমেয়াদি ভিত্তিতে বহাল থাকবে।
+      </p>
+
+      <p>
+        আপনার দীর্ঘদিনের সম্পৃক্ততা ও অবদানকে
+        একটি সুসংগঠিত ও মর্যাদাপূর্ণ সদস্য পরিচয়ের
+        মাধ্যমে স্বীকৃতি দেওয়াই এই উদ্যোগের অন্যতম উদ্দেশ্য।
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
 
 
-  <!-- VIDEO -->
-  <section class="video-section">
 
-    <div class="container">
+<!-- ======================================================
+     BENEFITS
+======================================================= -->
 
-      <div class="video-card">
+<section class="section">
 
-        <div class="video-wrapper">
+  <div class="container">
 
-          <iframe
-            src="https://www.youtube.com/embed/JYYzv8i7AKs"
-            title="সম্মাননা কার্যক্রম ২০২৬"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+    <div class="section-header">
 
+      <div class="section-label">
+        MEMBERSHIP BENEFITS
+      </div>
+
+      <h2>
+        আজীবন সদস্যপদের বিশেষ সুবিধা
+      </h2>
+
+      <p>
+        একজন সম্মানিত সদস্যের পরিচয়কে আরও আধুনিক,
+        সুসংগঠিত ও মর্যাদাপূর্ণ করার জন্য একাধিক সুবিধা।
+      </p>
+
+    </div>
+
+
+    <div class="benefits">
+
+
+      <div class="benefit reveal">
+
+        <div class="benefit-icon">
+          🎖️
         </div>
 
-        <div class="video-title">
-          সম্মাননা কার্যক্রম ২০২৬
+        <h3>
+          আজীবন সদস্যপদ
+        </h3>
+
+        <p>
+          আজীবন সদস্য হিসেবে আনুষ্ঠানিক স্বীকৃতি।
+          পরবর্তীতে সাধারণ সদস্যপদ নবায়নের প্রয়োজন নেই।
+        </p>
+
+      </div>
+
+
+      <div class="benefit reveal">
+
+        <div class="benefit-icon">
+          📜
         </div>
 
-        <a
-          class="video-link"
-          href="https://youtu.be/JYYzv8i7AKs?si=_v-3Uixwdu4aySRy"
-          target="_blank">
-          ▶ YouTube-এ ভিডিওটি দেখুন
-        </a>
+        <h3>
+          বৈধ সার্টিফিকেট
+        </h3>
+
+        <p>
+          আজীবন সদস্যপদের আনুষ্ঠানিক ও মূল্যবান
+          সার্টিফিকেট প্রদান।
+        </p>
+
+      </div>
+
+
+      <div class="benefit reveal">
+
+        <div class="benefit-icon">
+          👕
+        </div>
+
+        <h3>
+          প্রেসক্লাব টি-শার্ট
+        </h3>
+
+        <p>
+          স্বাধীন বাংলা প্রেসক্লাবের পক্ষ থেকে
+          সদস্যদের জন্য অফিসিয়াল টি-শার্ট।
+        </p>
+
+      </div>
+
+
+      <div class="benefit reveal">
+
+        <div class="benefit-icon">
+          🪪
+        </div>
+
+        <h3>
+          সদস্য ID Card
+        </h3>
+
+        <p>
+          আধুনিক অফিসিয়াল সদস্য পরিচয়পত্র
+          ও ডিজিটাল পরিচয় ব্যবস্থার সুবিধা।
+        </p>
+
+      </div>
+
+
+      <div class="benefit reveal">
+
+        <div class="benefit-icon">
+          📄
+        </div>
+
+        <h3>
+          আনুষ্ঠানিক প্রত্যয়নপত্র
+        </h3>
+
+        <p>
+          দীর্ঘদিনের সম্পৃক্ততার আনুষ্ঠানিক
+          প্রত্যয়ন ও সম্মাননা।
+        </p>
+
+      </div>
+
+
+      <div class="benefit reveal">
+
+        <div class="benefit-icon">
+          🔳
+        </div>
+
+        <h3>
+          Smart QR Code
+        </h3>
+
+        <p>
+          QR কোডের মাধ্যমে সদস্য পরিচয় ও
+          অনলাইন যাচাইয়ের সুবিধা।
+        </p>
+
+      </div>
+
+
+      <div class="benefit reveal">
+
+        <div class="benefit-icon">
+          🌐
+        </div>
+
+        <h3>
+          Online Verification
+        </h3>
+
+        <p>
+          প্রযোজ্য ক্ষেত্রে অনলাইন ভেরিফিকেশনের
+          মাধ্যমে সদস্য পরিচয় যাচাই।
+        </p>
+
+      </div>
+
+
+      <div class="benefit reveal">
+
+        <div class="benefit-icon">
+          🏛️
+        </div>
+
+        <h3>
+          সাংগঠনিক কার্যক্রম
+        </h3>
+
+        <p>
+          প্রতিষ্ঠানের বিভিন্ন কার্যক্রমে অংশগ্রহণের
+          সুযোগ, প্রযোজ্য নিয়ম ও অনুমোদন সাপেক্ষে।
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="lifetime reveal">
+
+      <h3>
+        ♾️ আজীবন সদস্য — একবারের স্বীকৃতি, দীর্ঘমেয়াদি মর্যাদা
+      </h3>
+
+      <p>
+
+        আজীবন সদস্যপদ গ্রহণের পর সাধারণ সদস্যপদ
+        নবায়নের প্রয়োজন থাকবে না। সদস্যরা প্রতিষ্ঠানের
+        নীতিমালা, অনুমোদন ও প্রযোজ্য নিয়ম অনুসরণ করে
+        জেলা কমিটি, উপজেলা কমিটি এবং অন্যান্য সাংগঠনিক
+        কার্যক্রমে অংশগ্রহণের সুযোগ পাবেন।
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     TRANSPARENCY
+======================================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        TRUST & TRANSPARENCY
+      </div>
+
+      <h2>
+        আমাদের স্বচ্ছতা ও দায়বদ্ধতা
+      </h2>
+
+      <p>
+        একটি প্রতিষ্ঠানের প্রকৃত মূল্য তার পরিচয়ের পাশাপাশি
+        স্বচ্ছতা, দায়বদ্ধতা ও সৎ পরিচালনার মাধ্যমেও তৈরি হয়।
+      </p>
+
+    </div>
+
+
+    <div class="trust-grid">
+
+
+      <div class="trust-card reveal">
+
+        <h3>
+          স্বচ্ছতার অঙ্গীকার
+        </h3>
+
+        <p>
+
+          প্রকল্পটি পরিচালনার জন্য যে বাস্তব ও ন্যূনতম
+          ব্যয় হয়, তার একটি পরিষ্কার হিসাব সদস্যদের
+          সামনে তুলে ধরার নীতিকে গুরুত্ব দেওয়া হচ্ছে,
+          যাতে সদস্যরা জানতে পারেন অর্থ কী উদ্দেশ্যে ব্যয় হচ্ছে।
+
+        </p>
+
+      </div>
+
+
+      <div class="trust-card reveal">
+
+        <h3>
+          আপনার সম্মান, আমাদের দায়িত্ব
+        </h3>
+
+        <p>
+
+          আপনার সদস্য পরিচয়, সম্মান এবং আমাদের প্রতি
+          আপনার আস্থাকে সর্বোচ্চ গুরুত্ব দিয়ে পুরো
+          কার্যক্রমটি যথাসম্ভব সুশৃঙ্খল ও স্বচ্ছভাবে
+          পরিচালনা করার অঙ্গীকার করা হচ্ছে।
+
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     APPLICATION
+======================================================= -->
+
+<section class="application">
+
+  <div class="container">
+
+    <div class="application-box reveal">
+
+      <h2>
+        সম্মাননা আবেদন ফর্ম পূরণ করুন
+      </h2>
+
+      <p>
+
+        সম্মাননা কার্যক্রমে অংশগ্রহণের জন্য নিচের
+        Google Form-টি সঠিক তথ্য দিয়ে পূরণ করুন।
+        আবেদন করার আগে সকল নির্দেশনা ভালোভাবে পড়ে নিন।
+
+      </p>
+
+
+      <a
+        class="main-button"
+        href="https://forms.gle/AtKofKqsZ5q6WsTD8"
+        target="_blank"
+        rel="noopener">
+
+        📋 Google Form পূরণ করুন
+
+      </a>
+
+
+      <div class="redirect-box">
+
+        এই পেজটি স্বয়ংক্রিয়ভাবে আবেদন ফর্মে নিয়ে যাবে।
+
+        <br>
+
+        <span
+          id="countdown"
+          class="countdown">
+          50
+        </span>
+
+        সেকেন্ড পর Google Form খুলবে।
 
       </div>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- INTRO -->
-  <section class="section">
 
-    <div class="container">
+<!-- ======================================================
+     RULES
+======================================================= -->
 
-      <div class="section-title">
+<section class="section">
 
-        <small>বিশেষ ঘোষণা</small>
+  <div class="container">
 
-        <h3>আপনাদের দীর্ঘদিনের সম্পৃক্ততার স্বীকৃতি</h3>
+    <div class="section-header">
 
-        <p>
-          দীর্ঘদিন ধরে সংগঠনের সঙ্গে যুক্ত সম্মানিত সদস্যদের
-          অবদান ও সম্পৃক্ততাকে বিশেষ মর্যাদায় স্বীকৃতি দেওয়ার উদ্যোগ।
-        </p>
-
+      <div class="section-label">
+        APPLICATION GUIDE
       </div>
 
+      <h2>
+        সম্মাননা ফর্ম জমা দেওয়ার নিয়ম
+      </h2>
 
-      <div class="intro">
-
-        <p>
-          স্বাধীন বাংলা প্রেসক্লাবের সঙ্গে যারা দীর্ঘদিন ধরে
-          সম্মানের সঙ্গে সদস্য হিসেবে যুক্ত আছেন, তাদের জন্য এটি
-          নিঃসন্দেহে একটি আনন্দের ও গর্বের সংবাদ।
-        </p>
-
-        <p>
-          দীর্ঘদিনের সদস্যদের প্রতি সম্মান ও স্বীকৃতিস্বরূপ
-          কর্তৃপক্ষের সিদ্ধান্ত অনুযায়ী তাদের
-          <span class="highlight">আজীবন সদস্য</span>
-          হিসেবে স্বীকৃতি প্রদান করা হবে।
-        </p>
-
-        <p>
-          আজীবন সদস্যপদ প্রদান সম্পন্ন হলে ভবিষ্যতে
-          সাধারণ সদস্যপদ নবায়নের প্রয়োজন থাকবে না।
-          সদস্যপদের স্বীকৃতি দীর্ঘমেয়াদি ভিত্তিতে বহাল থাকবে,
-          সংগঠনের প্রযোজ্য নিয়ম ও নীতিমালা অনুসরণ সাপেক্ষে।
-        </p>
-
-      </div>
+      <p>
+        আবেদন করার আগে নিচের নির্দেশনাগুলো ভালোভাবে পড়ুন।
+      </p>
 
     </div>
 
-  </section>
+
+    <div class="rules">
 
 
-  <!-- BENEFITS -->
-  <section class="section" id="benefits">
+      <div class="rule reveal">
 
-    <div class="container">
-
-      <div class="section-title">
-
-        <small>MEMBERSHIP BENEFITS</small>
-
-        <h3>আজীবন সদস্যপদের বিশেষ সুবিধা</h3>
+        <div class="rule-number">
+          ১
+        </div>
 
         <p>
-          একজন সম্মানিত সদস্যের পরিচয়কে আরও আধুনিক,
-          সুসংগঠিত ও মর্যাদাপূর্ণ করার জন্য একাধিক সুবিধা।
+          নিচের অথবা উপরের
+          <b>“Google Form পূরণ করুন”</b>
+          বাটনে ক্লিক করুন।
         </p>
 
       </div>
 
 
-      <div class="benefits">
+      <div class="rule reveal">
 
-        <div class="benefit">
-          <div class="icon">🎖️</div>
-          <h4>আজীবন সদস্যপদ</h4>
-          <p>
-            আজীবন সদস্য হিসেবে আনুষ্ঠানিক স্বীকৃতি।
-            পরবর্তীতে সাধারণ সদস্যপদ নবায়নের প্রয়োজন নেই।
-          </p>
+        <div class="rule-number">
+          ২
         </div>
-
-
-        <div class="benefit">
-          <div class="icon">📜</div>
-          <h4>বৈধ সার্টিফিকেট</h4>
-          <p>
-            আজীবন সদস্যপদের আনুষ্ঠানিক ও মূল্যবান
-            সার্টিফিকেট প্রদান।
-          </p>
-        </div>
-
-
-        <div class="benefit">
-          <div class="icon">👕</div>
-          <h4>অফিসিয়াল টি-শার্ট</h4>
-          <p>
-            স্বাধীন বাংলা প্রেসক্লাবের পক্ষ থেকে
-            সদস্যদের জন্য অফিসিয়াল টি-শার্ট।
-          </p>
-        </div>
-
-
-        <div class="benefit">
-          <div class="icon">🪪</div>
-          <h4>সদস্য ID Card</h4>
-          <p>
-            আধুনিক অফিসিয়াল সদস্য পরিচয়পত্র ও
-            ডিজিটাল পরিচয় ব্যবস্থার সুবিধা।
-          </p>
-        </div>
-
-
-        <div class="benefit">
-          <div class="icon">📄</div>
-          <h4>প্রত্যয়নপত্র</h4>
-          <p>
-            দীর্ঘদিনের সম্পৃক্ততার আনুষ্ঠানিক
-            প্রত্যয়ন ও সম্মাননা।
-          </p>
-        </div>
-
-
-        <div class="benefit">
-          <div class="icon">🔳</div>
-          <h4>Smart QR Code</h4>
-          <p>
-            QR কোডের মাধ্যমে সদস্য পরিচয় ও
-            অনলাইন যাচাইয়ের সুবিধা।
-          </p>
-        </div>
-
-
-        <div class="benefit">
-          <div class="icon">🌐</div>
-          <h4>Online Verification</h4>
-          <p>
-            প্রযোজ্য ক্ষেত্রে অনলাইন ভেরিফিকেশন
-            ব্যবস্থার মাধ্যমে পরিচয় যাচাই।
-          </p>
-        </div>
-
-
-        <div class="benefit">
-          <div class="icon">🏛️</div>
-          <h4>কার্যক্রমে অংশগ্রহণ</h4>
-          <p>
-            প্রতিষ্ঠানের বিভিন্ন কার্যক্রমে অংশগ্রহণের
-            সুযোগ, প্রযোজ্য নিয়ম ও অনুমোদন সাপেক্ষে।
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="lifetime">
-
-        <h3>♾️ আজীবন সদস্য — একবারের স্বীকৃতি, দীর্ঘমেয়াদি মর্যাদা</h3>
 
         <p>
-          আজীবন সদস্যপদ গ্রহণের পর সাধারণ সদস্যপদ নবায়নের
-          প্রয়োজন থাকবে না। সদস্যরা প্রতিষ্ঠানের নীতিমালা,
-          অনুমোদন ও প্রযোজ্য নিয়ম অনুসরণ করে জেলা কমিটি,
-          উপজেলা কমিটি এবং অন্যান্য সাংগঠনিক কার্যক্রমে
-          অংশগ্রহণের সুযোগ পাবেন।
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- TRANSPARENCY -->
-  <section class="section">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <small>TRUST & TRANSPARENCY</small>
-
-        <h3>স্বচ্ছতা ও দায়বদ্ধতাকে সর্বোচ্চ গুরুত্ব</h3>
-
-        <p>
-          একটি প্রতিষ্ঠানের বিশ্বাসযোগ্যতা তার স্বচ্ছতা,
-          দায়বদ্ধতা ও সুশৃঙ্খল পরিচালনার মাধ্যমে তৈরি হয়।
+          আপনার সদস্যপদ ও ব্যক্তিগত তথ্য
+          সঠিকভাবে প্রদান করুন।
         </p>
 
       </div>
 
 
-      <div class="trust-grid">
+      <div class="rule reveal">
 
-        <div class="trust-card">
-
-          <h4>স্বচ্ছতার অঙ্গীকার</h4>
-
-          <p>
-            প্রকল্পটি পরিচালনার জন্য যে বাস্তব ও ন্যূনতম ব্যয়
-            হয়, তার বিষয়ে সদস্যদের সামনে যথাসম্ভব পরিষ্কার
-            তথ্য উপস্থাপনের নীতিকে গুরুত্ব দেওয়া হচ্ছে।
-          </p>
-
+        <div class="rule-number">
+          ৩
         </div>
-
-
-        <div class="trust-card">
-
-          <h4>আপনার সম্মান, আমাদের দায়িত্ব</h4>
-
-          <p>
-            আপনার সদস্য পরিচয়, সম্মান এবং আমাদের প্রতি
-            আপনার আস্থাকে গুরুত্ব দিয়ে পুরো কার্যক্রমটি
-            সুশৃঙ্খল ও স্বচ্ছভাবে সম্পন্ন করার লক্ষ্য রাখা হয়েছে।
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- APPLICATION -->
-  <section class="apply" id="apply">
-
-    <div class="container">
-
-      <div class="apply-box">
-
-        <h3>সম্মাননা আবেদন ফর্ম পূরণ করুন</h3>
 
         <p>
-          সম্মাননা কার্যক্রমে অংশগ্রহণের জন্য নিচের
-          Google Form-টি সঠিক তথ্য দিয়ে পূরণ করুন।
-          আবেদন করার আগে সকল তথ্য ভালোভাবে পড়ে নিন।
+          প্রয়োজনীয় ছবি ও অন্যান্য তথ্য
+          নির্ধারিত অপশনে আপলোড করুন।
         </p>
 
-
-        <a
-          class="main-btn"
-          href="https://forms.gle/AtKofKqsZ5q6WsTD8"
-          target="_blank">
-
-          📋 Google Form পূরণ করুন
-
-        </a>
-
-
-        <div class="redirect">
-
-          এই পেজটি কিছুক্ষণ পর স্বয়ংক্রিয়ভাবে
-          আবেদন ফর্মে নিয়ে যাবে।
-
-          <br>
-
-          <span id="countdown">50</span>
-          সেকেন্ড পর Google Form খুলবে।
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- RULES -->
-  <section class="section">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <small>APPLICATION GUIDE</small>
-
-        <h3>সম্মাননা ফর্ম জমা দেওয়ার নিয়ম</h3>
-
       </div>
 
 
-      <div class="rules">
+      <div class="rule reveal">
 
-        <div class="rule">
-
-          <div class="rule-number">১</div>
-
-          <p>
-            নিচের <b>“Google Form পূরণ করুন”</b> বাটনে ক্লিক করুন।
-          </p>
-
+        <div class="rule-number">
+          ৪
         </div>
-
-
-        <div class="rule">
-
-          <div class="rule-number">২</div>
-
-          <p>
-            আপনার সদস্যপদ ও ব্যক্তিগত তথ্য সঠিকভাবে প্রদান করুন।
-          </p>
-
-        </div>
-
-
-        <div class="rule">
-
-          <div class="rule-number">৩</div>
-
-          <p>
-            প্রয়োজনীয় ছবি ও অন্যান্য তথ্য নির্ধারিত
-            অপশনে আপলোড করুন।
-          </p>
-
-        </div>
-
-
-        <div class="rule">
-
-          <div class="rule-number">৪</div>
-
-          <p>
-            ফর্ম জমা দেওয়ার সময় সম্ভব হলে Google Chrome
-            অথবা আপনার ব্যবহৃত নির্ভরযোগ্য ব্রাউজার ব্যবহার করুন।
-          </p>
-
-        </div>
-
-
-        <div class="rule">
-
-          <div class="rule-number">৫</div>
-
-          <p>
-            সব তথ্য যাচাই করে Submit বাটনে ক্লিক করে
-            আবেদন সম্পন্ন করুন।
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FINAL CTA -->
-  <section class="apply">
-
-    <div class="container">
-
-      <div class="apply-box">
-
-        <h3>আপনার সম্মাননা আবেদন এখনই সম্পন্ন করুন</h3>
 
         <p>
-          দীর্ঘদিনের সম্পৃক্ততার এই বিশেষ স্বীকৃতির
-          অংশ হতে সঠিক তথ্য দিয়ে আবেদন ফর্ম জমা দিন।
+          ফর্ম জমা দেওয়ার সময় সম্ভব হলে
+          Google Chrome অথবা আপনার ব্যবহৃত
+          নির্ভরযোগ্য ব্রাউজার ব্যবহার করুন।
         </p>
-
-        <a
-          class="main-btn"
-          href="https://forms.gle/AtKofKqsZ5q6WsTD8"
-          target="_blank">
-
-          আবেদন ফর্মে যান →
-
-        </a>
 
       </div>
 
+
+      <div class="rule reveal">
+
+        <div class="rule-number">
+          ৫
+        </div>
+
+        <p>
+          সব তথ্য ভালোভাবে যাচাই করে
+          Submit বাটনে ক্লিক করে আবেদন সম্পন্ন করুন।
+        </p>
+
+      </div>
+
+
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <footer>
 
-    <h4>স্বাধীন বাংলা প্রেসক্লাব</h4>
+<!-- ======================================================
+     FINAL CTA
+======================================================= -->
+
+<section class="final-section">
+
+  <div class="container">
+
+    <h2>
+      আপনার সম্মাননা আবেদন এখনই সম্পন্ন করুন
+    </h2>
 
     <p>
-      সম্মাননা কার্যক্রম ২০২৬<br>
-      স্বচ্ছতা • দায়বদ্ধতা • সম্মান
+
+      দীর্ঘদিনের সম্পৃক্ততার এই বিশেষ স্বীকৃতির
+      অংশ হতে সঠিক তথ্য দিয়ে আবেদন ফর্ম জমা দিন।
+
     </p>
 
-  </footer>
+
+    <a
+      class="main-button"
+      href="https://forms.gle/AtKofKqsZ5q6WsTD8"
+      target="_blank"
+      rel="noopener">
+
+      আবেদন ফর্মে যান →
+
+    </a>
+
+  </div>
+
+</section>
 
 
-  <script>
 
-    /*
-      ৫০ সেকেন্ড পর Google Form-এ স্বয়ংক্রিয় Redirect
-    */
+<!-- ======================================================
+     FOOTER
+======================================================= -->
 
-    const FORM_URL =
-      "https://forms.gle/AtKofKqsZ5q6WsTD8";
+<footer>
 
-    let seconds = 50;
+  <h3>
+    স্বাধীন বাংলা প্রেসক্লাব
+  </h3>
 
-    const countdown =
-      document.getElementById("countdown");
+  <p>
+    সম্মাননা কার্যক্রম ২০২৬<br>
+    স্বচ্ছতা • দায়বদ্ধতা • সম্মান
+  </p>
 
-    const timer =
-      setInterval(function(){
-
-        seconds--;
-
-        countdown.textContent = seconds;
-
-        if(seconds <= 0){
-
-          clearInterval(timer);
-
-          window.location.href = FORM_URL;
-
-        }
-
-      },1000);
+</footer>
 
 
-    /*
-      Scroll reveal animation
-    */
 
-    const cards =
-      document.querySelectorAll(
-        ".benefit,.trust-card,.rule,.lifetime"
+<!-- ======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
+
+/* ==========================================
+   GOOGLE FORM URL
+========================================== */
+
+const FORM_URL =
+"https://forms.gle/AtKofKqsZ5q6WsTD8";
+
+
+/* ==========================================
+   50 SECOND AUTO REDIRECT
+========================================== */
+
+let seconds = 50;
+
+const countdown =
+document.getElementById("countdown");
+
+
+const timer =
+setInterval(function(){
+
+  seconds--;
+
+  countdown.textContent =
+  seconds;
+
+  if(seconds <= 0){
+
+    clearInterval(timer);
+
+    window.location.href =
+    FORM_URL;
+
+  }
+
+},1000);
+
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+
+const observer =
+new IntersectionObserver(
+
+  function(entries){
+
+    entries.forEach(function(entry){
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add("show");
+
+        observer.unobserve(
+          entry.target
+        );
+
+      }
+
+    });
+
+  },
+
+  {
+    threshold:.12
+  }
+
+);
+
+
+revealElements.forEach(
+  function(element){
+
+    observer.observe(element);
+
+  }
+);
+
+
+/* ==========================================
+   PAUSE FLOATING ANIMATION WHEN TAB HIDDEN
+========================================== */
+
+document.addEventListener(
+  "visibilitychange",
+  function(){
+
+    const buttons =
+    document.querySelectorAll(
+      ".apply-nav,.main-button"
+    );
+
+    if(document.hidden){
+
+      buttons.forEach(
+        button =>
+        button.style.animationPlayState =
+        "paused"
       );
 
-    const observer =
-      new IntersectionObserver(
-        entries => {
+    }else{
 
-          entries.forEach(entry => {
-
-            if(entry.isIntersecting){
-
-              entry.target.style.animation =
-                "fadeUp .7s ease both";
-
-              observer.unobserve(entry.target);
-
-            }
-
-          });
-
-        },
-        {threshold:.12}
+      buttons.forEach(
+        button =>
+        button.style.animationPlayState =
+        "running"
       );
 
+    }
 
-    cards.forEach(card => observer.observe(card));
+  }
+);
 
-  </script>
+</script>
+
 
 </body>
-  </html>
+</html>
