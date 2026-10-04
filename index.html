@@ -3,28 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>স্বাধীন বাংলা প্রেসক্লাব | সদস্য ডকুমেন্ট ও পার্সেল ট্র্যাকিং পোর্টাল</title>
-  <!-- Google Fonts: Hind Siliguri & Playfair Display -->
+  <title>স্বাধীন বাংলা প্রেসক্লাব | সদস্য ভেরিফিকেশন ও পার্সেল ট্র্যাকিং পোর্টাল</title>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --primary-navy: #071326;
-      --secondary-navy: #0e274d;
-      --accent-navy: #183b6b;
-      --golden: #D4AF37;
-      --golden-light: #F3E5AB;
-      --golden-dark: #997A15;
-      --text-main: #1e293b;
-      --text-muted: #556987;
-      --bg-body: #f8fafc;
-      --bg-card: #ffffff;
-      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
-      --shadow-hover: 0 20px 40px rgba(11, 25, 44, 0.12);
+      --bg-dark: #070d18;
+      --bg-surface: #0e1726;
+      --bg-card: rgba(18, 29, 49, 0.7);
+      --gold-gradient: linear-gradient(135deg, #FFE57F 0%, #D4AF37 50%, #997A15 100%);
+      --gold-solid: #D4AF37;
+      --gold-light: #FFF2B2;
+      --gold-glow: rgba(212, 175, 55, 0.25);
+      --text-white: #FFFFFF;
+      --text-muted: #94A3B8;
+      --border-gold: rgba(212, 175, 55, 0.28);
+      --border-light: rgba(255, 255, 255, 0.08);
+      --success: #10B981;
     }
 
     * {
@@ -35,567 +37,768 @@
     }
 
     body {
-      background-color: var(--bg-body);
-      color: var(--text-main);
+      background-color: var(--bg-dark);
+      color: var(--text-white);
       overflow-x: hidden;
       line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(24, 59, 107, 0.15) 0%, transparent 50%);
     }
 
-    /* Top Announcement Bar */
-    .top-bar {
-      background: var(--primary-navy);
-      color: var(--golden-light);
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-dark); }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold-solid); }
+
+    /* Top Strip */
+    .top-strip {
+      background: rgba(14, 23, 38, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 8px 16px;
+      font-size: 13px;
       text-align: center;
-      padding: 8px 15px;
-      font-size: 14px;
+      color: var(--gold-light);
       letter-spacing: 0.5px;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
     }
 
     /* Hero Section */
     .hero {
-      background: radial-gradient(circle at center, var(--accent-navy) 0%, var(--primary-navy) 100%);
-      color: #fff;
-      padding: 60px 20px 80px 20px;
-      text-align: center;
       position: relative;
+      padding: 60px 20px 100px;
+      text-align: center;
+      background: radial-gradient(circle at center, #132238 0%, var(--bg-dark) 100%);
+      border-bottom: 1px solid var(--border-gold);
+      overflow: hidden;
     }
 
-    .hero::after {
+    .hero::before {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 35px;
-      background: var(--bg-body);
-      clip-path: polygon(0 100%, 100% 100%, 100% 0);
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    .brand-logo-badge {
-      display: inline-flex;
+    .brand-emblem {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 20px;
+      background: linear-gradient(145deg, #121c2d, #09121f);
+      border: 2px solid var(--gold-solid);
+      border-radius: 50%;
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 80px;
-      height: 80px;
-      background: rgba(212, 175, 55, 0.1);
-      border: 2px solid var(--golden);
-      border-radius: 50%;
-      margin-bottom: 20px;
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+      box-shadow: 0 0 35px var(--gold-glow);
+      animation: float 4s ease-in-out infinite;
     }
 
-    .brand-logo-badge i {
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .brand-emblem i {
+      font-size: 42px;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-title {
       font-size: 38px;
-      color: var(--golden);
-    }
-
-    .hero h1 {
-      font-size: 36px;
       font-weight: 700;
-      letter-spacing: 1px;
-      color: #fff;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      letter-spacing: 0.5px;
       margin-bottom: 8px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .hero-motto {
-      font-size: 19px;
-      color: var(--golden);
-      font-weight: 500;
+    .hero-tagline {
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 600;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 15px;
+      letter-spacing: 1px;
     }
 
-    .hero p {
-      max-width: 680px;
-      margin: 0 auto 30px auto;
-      color: #cbd5e1;
-      font-size: 16px;
+    .hero-desc {
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 15px;
+      color: var(--text-muted);
     }
 
-    /* Floating Search Area */
-    .search-wrapper {
-      max-width: 680px;
-      margin: -50px auto 40px auto;
-      padding: 0 15px;
+    /* Container */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Search Float Box */
+    .search-section {
+      margin-top: -55px;
       position: relative;
-      z-index: 10;
+      z-index: 20;
+      margin-bottom: 70px;
     }
 
-    .search-card {
-      background: var(--bg-card);
-      border: 2px solid var(--golden);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    .search-box-card {
+      background: rgba(14, 23, 38, 0.92);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.12);
+      max-width: 720px;
+      margin: 0 auto;
     }
 
-    .search-box-label {
+    .search-header-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--primary-navy);
-      margin-bottom: 12px;
     }
 
-    .search-group {
+    .search-bar-wrap {
       display: flex;
       gap: 10px;
     }
 
-    .search-input {
+    .phone-input {
       flex: 1;
-      padding: 14px 18px;
-      border: 2px solid #e2e8f0;
-      border-radius: 10px;
+      background: rgba(7, 13, 24, 0.85);
+      border: 1.5px solid rgba(212, 175, 55, 0.3);
+      padding: 15px 20px;
+      border-radius: 12px;
+      color: #fff;
       font-size: 16px;
       outline: none;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .search-input:focus {
-      border-color: var(--golden);
-      box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+    .phone-input:focus {
+      border-color: var(--gold-solid);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
     }
 
-    .search-btn {
-      background: linear-gradient(135deg, var(--golden) 0%, var(--golden-dark) 100%);
-      color: #fff;
-      font-weight: 700;
+    .search-action-btn {
+      background: var(--gold-gradient);
+      color: #070d18;
       border: none;
-      padding: 0 28px;
-      border-radius: 10px;
-      cursor: pointer;
+      padding: 0 32px;
+      font-weight: 700;
       font-size: 16px;
-      transition: all 0.3s;
+      border-radius: 12px;
+      cursor: pointer;
       display: flex;
       align-items: center;
       gap: 8px;
+      transition: all 0.3s ease;
       white-space: nowrap;
     }
 
-    .search-btn:hover {
-      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    .search-action-btn:hover {
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
       transform: translateY(-2px);
     }
 
-    /* Result Container */
+    /* Verification Result Card */
     #searchResultArea {
       display: none;
       margin-top: 30px;
-      animation: slideDown 0.4s ease forwards;
+      animation: expandResult 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-15px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes expandResult {
+      from { opacity: 0; transform: translateY(-20px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    .member-result-card {
-      background: #ffffff;
-      border-radius: 16px;
-      border: 2px solid var(--golden);
+    .result-sheet {
+      background: linear-gradient(145deg, rgba(14, 23, 38, 0.98), rgba(7, 13, 24, 0.98));
+      border: 1.5px solid var(--gold-solid);
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-      margin-bottom: 40px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.15);
     }
 
-    .result-badge-header {
-      background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
-      color: #fff;
-      padding: 22px 28px;
+    .result-top-banner {
+      background: linear-gradient(90deg, #132238 0%, #1c3252 100%);
+      border-bottom: 2px solid var(--gold-solid);
+      padding: 24px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 15px;
-      border-bottom: 3px solid var(--golden);
     }
 
-    .member-meta h2 {
-      font-size: 24px;
+    .member-title h2 {
+      font-size: 26px;
       font-weight: 700;
-      color: #ffffff;
+      color: #FFFFFF;
     }
 
-    .member-meta p {
-      color: var(--golden-light);
-      font-size: 15px;
+    .member-title p {
+      font-size: 14.5px;
+      color: var(--gold-light);
       margin-top: 4px;
     }
 
-    .status-pill {
-      background: rgba(212, 175, 55, 0.15);
-      border: 1px solid var(--golden);
-      color: var(--golden-light);
-      padding: 6px 16px;
+    .courier-status-tag {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid var(--success);
+      color: #34D399;
+      padding: 8px 18px;
       border-radius: 50px;
-      font-weight: 600;
       font-size: 14px;
-      display: flex;
+      font-weight: 600;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
     }
 
-    .result-content {
-      padding: 28px;
+    .result-body-wrap {
+      padding: 30px;
     }
 
-    .result-msg-box {
-      background: #fdfbf7;
-      border-left: 5px solid var(--golden);
-      padding: 18px 22px;
+    .formal-message-card {
+      background: rgba(212, 175, 55, 0.05);
+      border-left: 4px solid var(--gold-solid);
+      padding: 20px;
       border-radius: 8px;
       margin-bottom: 25px;
-      font-size: 16px;
-    }
-
-    /* Container Standard */
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Section Headers */
-    .section-title-wrap {
-      text-align: center;
-      margin: 60px 0 35px 0;
-    }
-
-    .section-sub {
-      color: var(--golden-dark);
-      font-weight: 700;
       font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-      display: block;
+      color: #E2E8F0;
     }
 
-    .section-title {
+    /* Section Styling */
+    .section-head-wrap {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-accent-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-solid);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .section-main-title {
       font-size: 32px;
       font-weight: 700;
-      color: var(--primary-navy);
-      position: relative;
-      display: inline-block;
-      padding-bottom: 12px;
+      color: #fff;
     }
 
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 70px;
-      height: 3px;
-      background: var(--golden);
-    }
-
-    /* Document Showcase Cards */
-    .grid-cards {
+    /* Modern Visual Grid */
+    .showcase-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-      gap: 25px;
-      margin-bottom: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-bottom: 70px;
     }
 
-    .item-card {
+    .visual-card {
       background: var(--bg-card);
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 25px;
-      transition: all 0.3s ease;
-      position: relative;
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: var(--shadow-soft);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
       display: flex;
       flex-direction: column;
     }
 
-    .item-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--golden);
+    .visual-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold-solid);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.15);
     }
 
-    .item-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--golden) 0%, var(--primary-navy) 100%);
-    }
-
-    .item-icon-box {
-      width: 58px;
-      height: 58px;
-      background: #fdfaf0;
-      border: 1px solid var(--golden-light);
-      border-radius: 12px;
+    /* Realistic Graphic Displays */
+    .mockup-preview-zone {
+      height: 180px;
+      background: linear-gradient(135deg, #070d18 0%, #16243a 100%);
+      border-bottom: 1px solid var(--border-light);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 18px;
-      color: var(--golden-dark);
-      font-size: 24px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .item-card h3 {
-      font-size: 19px;
+    /* Visual Mockups */
+    .certificate-mockup {
+      width: 170px;
+      height: 120px;
+      background: #FFFDF8;
+      border: 3px double #C49B27;
+      border-radius: 4px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+
+    .visual-card:hover .certificate-mockup {
+      transform: scale(1.06) rotate(-1deg);
+    }
+
+    .cert-seal {
+      width: 24px;
+      height: 24px;
+      background: var(--gold-gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .cert-line {
+      width: 80%;
+      height: 3px;
+      background: #E2E8F0;
+      border-radius: 2px;
+      margin: 2px 0;
+    }
+
+    .id-card-mockup {
+      width: 100px;
+      height: 140px;
+      background: linear-gradient(180deg, #101c2d 0%, #080f1a 100%);
+      border: 2px solid var(--gold-solid);
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px;
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+
+    .visual-card:hover .id-card-mockup {
+      transform: scale(1.06) rotate(1deg);
+    }
+
+    .id-photo-placeholder {
+      width: 40px;
+      height: 44px;
+      background: #1e293b;
+      border: 1px solid var(--gold-solid);
+      border-radius: 4px;
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-solid);
+      font-size: 18px;
+    }
+
+    .id-lanyard-band {
+      position: absolute;
+      top: -20px;
+      width: 14px;
+      height: 24px;
+      background: var(--gold-solid);
+      border-radius: 3px;
+    }
+
+    .tshirt-mockup {
+      position: relative;
+      font-size: 85px;
+      color: #0b1424;
+      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.7));
+      transition: transform 0.4s ease;
+    }
+
+    .visual-card:hover .tshirt-mockup {
+      transform: scale(1.08);
+      color: #0f1c31;
+    }
+
+    .tshirt-logo-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -45%);
+      font-size: 15px;
+      color: var(--gold-solid);
+    }
+
+    /* Visual Card Details */
+    .visual-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-meta-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .visual-card-body h3 {
+      font-size: 20px;
       font-weight: 700;
-      color: var(--primary-navy);
-      margin-bottom: 10px;
+      color: #FFFFFF;
     }
 
-    .item-card p {
+    .visual-card-body p {
       font-size: 14.5px;
       color: var(--text-muted);
       line-height: 1.6;
       flex-grow: 1;
     }
 
-    .item-badge-pill {
-      margin-top: 15px;
+    .verified-pill {
+      margin-top: 18px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       font-size: 13px;
       font-weight: 600;
-      color: #065f46;
-      background: #d1fae5;
-      padding: 4px 12px;
-      border-radius: 20px;
+      color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 5px 14px;
+      border-radius: 30px;
       width: fit-content;
     }
 
-    /* Courier & Delivery Protocol Card */
-    .delivery-protocol-card {
-      background: linear-gradient(135deg, #0e274d 0%, #071326 100%);
-      color: #fff;
-      border-radius: 18px;
+    /* Courier Section */
+    .courier-command-box {
+      background: linear-gradient(145deg, #0e1a2d 0%, #08111e 100%);
+      border: 1.5px solid var(--border-gold);
+      border-radius: 20px;
       padding: 40px;
-      margin-bottom: 60px;
-      border: 2px solid var(--golden);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      margin-bottom: 80px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
     }
 
-    .delivery-protocol-card h3 {
-      color: var(--golden);
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 15px;
+    .courier-title-bar {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 15px;
+      margin-bottom: 25px;
     }
 
-    .protocol-steps {
+    .courier-title-bar i {
+      font-size: 32px;
+      color: var(--gold-solid);
+    }
+
+    .courier-steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
-      margin-top: 25px;
     }
 
-    .step-box {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 12px;
+    .step-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-light);
+      padding: 22px;
+      border-radius: 14px;
     }
 
-    .step-box i {
-      font-size: 22px;
-      color: var(--golden);
-      margin-bottom: 10px;
-      display: block;
+    .step-item span {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold-solid);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .step-box h4 {
-      font-size: 16px;
-      margin-bottom: 6px;
+    .step-item h4 {
+      font-size: 17px;
       color: #fff;
+      margin: 6px 0;
     }
 
-    .step-box p {
+    .step-item p {
       font-size: 13.5px;
-      color: #cbd5e1;
-      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    /* Error Alert */
+    .search-error-msg {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #FCA5A5;
+      padding: 22px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 15px;
     }
 
     /* Footer */
     footer {
-      background: var(--primary-navy);
-      color: #94a3b8;
-      padding: 40px 20px 20px 20px;
+      background: #040810;
+      border-top: 1px solid var(--border-gold);
+      padding: 50px 20px 30px;
       text-align: center;
-      border-top: 3px solid var(--golden);
     }
 
-    .footer-quote {
-      font-size: 18px;
-      color: var(--golden-light);
-      font-weight: 600;
+    .footer-brand {
+      font-size: 22px;
+      font-weight: 700;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 8px;
     }
 
-    /* Error Message Box */
-    .error-notfound {
-      background: #FFF1F2;
-      border: 1px solid #FECDD3;
-      color: #9F1239;
-      padding: 24px;
-      border-radius: 12px;
-      text-align: center;
-      font-size: 16px;
-    }
-
-    @media (max-width: 650px) {
-      .hero h1 { font-size: 26px; }
-      .search-group { flex-direction: column; }
-      .search-btn { padding: 14px; justify-content: center; }
-      .delivery-protocol-card { padding: 25px; }
+    @media (max-width: 768px) {
+      .hero-title { font-size: 28px; }
+      .search-bar-wrap { flex-direction: column; }
+      .search-action-btn { padding: 14px; justify-content: center; }
+      .result-top-banner { flex-direction: column; align-items: flex-start; }
+      .courier-command-box { padding: 25px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <i class="fa-solid fa-certificate" style="color: var(--golden);"></i> সততা ও নিষ্ঠায় গণমানুষের কণ্ঠস্বর — স্বাধীন বাংলা প্রেসক্লাব
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <i class="fa-solid fa-star" style="color: var(--gold-solid); font-size: 11px;"></i> 
+    স্বাধীন বাংলা প্রেসক্লাব — সাংবাদিকতা ও জাতীয় মূল্যবোধের বিশ্বস্ত প্রতিষ্ঠান
   </div>
 
   <!-- Hero Header -->
   <header class="hero">
-    <div class="brand-logo-badge">
-      <i class="fa-solid fa-award"></i>
+    <div class="brand-emblem">
+      <i class="fa-solid fa-feather-pointed"></i>
     </div>
-    <h1>স্বাধীন বাংলা প্রেসক্লাব</h1>
-    <div class="hero-motto">“একনিষ্ঠতা আমাদের পথচলা”</div>
-    <p>সম্মানিত সদস্যদের স্বীকৃতি, প্রাতিষ্ঠানিক ডকুমেন্ট ও প্রেরিত উপহার সামগ্রীর সার্বিক অবস্থা যাচাই পোর্টাল। আপনার নিবন্ধিত নম্বর দিয়ে এক ক্লিকেই জানুন আপনার পার্সেল স্ট্যাটাস।</p>
+    <h1 class="hero-title">স্বাধীন বাংলা প্রেসক্লাব</h1>
+    <div class="hero-tagline">“একনিষ্ঠতা আমাদের পথচলা”</div>
+    <p class="hero-desc">
+      সম্মানিত সদস্যদের স্বীকৃতি, প্রাতিষ্ঠানিক ডকুমেন্টস ও উপহার সামগ্রী যাচাই পোর্টাল। মোবাইল নম্বর লিখে আপনার পার্সেল ট্র্যাকিং নিশ্চিত করুন।
+    </p>
   </header>
 
-  <!-- Interactive Search Section -->
-  <div class="search-wrapper">
-    <div class="search-card">
-      <div class="search-box-label">
-        <i class="fa-solid fa-search" style="color: var(--golden-dark); font-size: 20px;"></i>
+  <!-- Floating Search Area -->
+  <div class="container search-section">
+    <div class="search-box-card">
+      <div class="search-header-text">
+        <i class="fa-solid fa-shield-halved" style="color: var(--gold-solid);"></i>
         <span>আপনার নিবন্ধিত মোবাইল নম্বর লিখুন</span>
       </div>
-      <div class="search-group">
-        <input type="text" id="phoneInput" class="search-input" placeholder="যেমন: 017XXXXXXXX" maxlength="15">
-        <button class="search-btn" onclick="searchMember()">
-          <i class="fa-solid fa-shield-check"></i> তথ্য দেখুন
+      <div class="search-bar-wrap">
+        <input type="text" id="phoneInput" class="phone-input" placeholder="01XXXXXXXXX" maxlength="15">
+        <button class="search-action-btn" onclick="executeSearch()">
+          <i class="fa-solid fa-magnifying-glass"></i> তথ্য দেখুন
         </button>
       </div>
-    </div>
 
-    <!-- Search Output Card -->
-    <div id="searchResultArea"></div>
+      <!-- Result Dropdown Card -->
+      <div id="searchResultArea"></div>
+    </div>
   </div>
 
-  <!-- Landing Content Starts: সব সুযোগ-সুবিধা ও প্রেরিত সামগ্রীর দৃশ্যমান শোকেস -->
+  <!-- Main Showcase Content -->
   <main class="container">
-
-    <div class="section-title-wrap">
-      <span class="section-sub">মর্যাদা ও স্বীকৃতির স্মারক</span>
-      <h2 class="section-title">সদস্যদের জন্য প্রেরিত ডকুমেন্টস ও উপহার সামগ্রী</h2>
+    
+    <div class="section-head-wrap">
+      <span class="section-accent-title">প্রিমিয়াম উপহার সামগ্রী ও স্মারক</span>
+      <h2 class="section-main-title">সদস্যদের জন্য প্রেরিত ডকুমেন্টস</h2>
     </div>
 
-    <!-- ৬টি ডকুমেন্ট ও উপহারের বিস্তারিত কার্ড -->
-    <div class="grid-cards">
+    <!-- 6 Visual Feature Cards -->
+    <div class="showcase-grid">
 
-      <!-- ১. আজীবন সম্মাননা -->
-      <div class="item-card">
-        <div class="item-icon-box">
-          <i class="fa-solid fa-medal"></i>
+      <!-- 1. সম্মাননা সনদ -->
+      <div class="visual-card">
+        <div class="mockup-preview-zone">
+          <div class="certificate-mockup">
+            <div class="cert-seal"><i class="fa-solid fa-crown"></i></div>
+            <div style="width: 100%; text-align: center;">
+              <div class="cert-line" style="margin: 0 auto 4px auto; background: var(--gold-solid); width: 60%;"></div>
+              <div class="cert-line"></div>
+              <div class="cert-line" style="width: 70%;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+              <div style="width: 25px; height: 1px; background: #000;"></div>
+              <div style="width: 25px; height: 1px; background: #000;"></div>
+            </div>
+          </div>
         </div>
-        <h3>আজীবন সাংবাদিক সম্মাননা সনদ</h3>
-        <p>আপনার দীর্ঘ সাংবাদিকতা ও সমাজসেবামূলক কাজের স্বীকৃতিস্বরূপ এই স্মারক প্রস্তুত করা হয়েছে। এটি আপনার পেশাগত সম্মাননা ও আজীবন স্বীকৃতির এক অনন্য দলিল হিসেবে চিরকাল সংরক্ষণযোগ্য।</p>
-        <div class="item-badge-pill"><i class="fa-solid fa-check-circle"></i> পার্সেলভুক্ত সামগ্রী</div>
+        <div class="visual-card-body">
+          <div class="card-meta-head">
+            <h3>আজীবন সাংবাদিক সম্মাননা সনদ</h3>
+          </div>
+          <p>আপনার দীর্ঘ নিষ্ঠাবান সাংবাদিকতা ও সমাজসেবামূলক কাজের স্বীকৃতি। এটি সদস্যের সম্মাননা ও আজীবন স্বীকৃতির স্মারক হিসেবে চিরকাল সংরক্ষণযোগ্য এক অমূল্য দলিল।</p>
+          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> পার্সেলভুক্ত সামগ্রী</div>
+        </div>
       </div>
 
-      <!-- ২. আজীবন সদস্য সনদ -->
-      <div class="item-card">
-        <div class="item-icon-box">
-          <i class="fa-solid fa-file-contract"></i>
+      <!-- 2. আজীবন সদস্য সনদ -->
+      <div class="visual-card">
+        <div class="mockup-preview-zone">
+          <div class="certificate-mockup" style="border-color: #1E3E62;">
+            <div class="cert-seal" style="background: linear-gradient(135deg, #1E3E62, #0A192F); color: #fff;">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div style="width: 100%; text-align: center;">
+              <div class="cert-line" style="margin: 0 auto 4px auto; background: #1E3E62; width: 70%;"></div>
+              <div class="cert-line"></div>
+              <div class="cert-line"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+              <div style="width: 25px; height: 1px; background: #000;"></div>
+              <div style="width: 25px; height: 1px; background: #000;"></div>
+            </div>
+          </div>
         </div>
-        <h3>আজীবন সদস্য সনদপত্র</h3>
-        <p>সরাসরি কম্পিউটারে নিখুঁত টাইপিং ও এক্সক্লুসিভ প্রফেশনাল ফরম্যাটিংয়ে প্রস্তুত। স্বাধীন বাংলা প্রেসক্লাবের আনুষ্ঠানিক লোগো ও সীলমোহরসহ আপনার স্থায়ী সদস্যপদের বৈধ স্বীকৃতিপত্র।</p>
-        <div class="item-badge-pill"><i class="fa-solid fa-check-circle"></i> পার্সেলভুক্ত সামগ্রী</div>
+        <div class="visual-card-body">
+          <div class="card-meta-head">
+            <h3>আজীবন সদস্য সনদ</h3>
+          </div>
+          <p>সরাসরি কম্পিউটারে নিখুঁত টাইপিং ও এক্সক্লুসিভ প্রফেশনাল ফরম্যাটিংয়ে প্রস্তুতকৃত সনদ। প্রতিষ্ঠানের নির্ধারিত সিল ও স্বাক্ষরে আপনার স্থায়ী সদস্যপদের পূর্ণাঙ্গ প্রমাণ।</p>
+          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> পার্সেলভুক্ত সামগ্রী</div>
+        </div>
       </div>
 
-      <!-- ৩. অফিশিয়াল প্রত্যয়নপত্র -->
-      <div class="item-card">
-        <div class="item-icon-box">
-          <i class="fa-solid fa-stamp"></i>
+      <!-- 3. অফিসিয়াল প্রত্যয়নপত্র -->
+      <div class="visual-card">
+        <div class="mockup-preview-zone">
+          <div class="certificate-mockup" style="border: 1px solid #cbd5e1; background: #fff;">
+            <div style="font-size: 8px; font-weight: bold; color: #1E3E62; text-align: center;">OFFICIAL LETTER</div>
+            <div style="width: 100%;">
+              <div class="cert-line"></div>
+              <div class="cert-line"></div>
+              <div class="cert-line"></div>
+              <div class="cert-line" style="width: 50%;"></div>
+            </div>
+            <div style="display: flex; justify-content: flex-end; width: 100%;">
+              <i class="fa-solid fa-signature" style="font-size: 14px; color: #1E3E62;"></i>
+            </div>
+          </div>
         </div>
-        <h3>অফিসিয়াল প্রত্যয়নপত্র</h3>
-        <p>প্রেসক্লাবের পক্ষ থেকে পেশাগত যেকোনো কাজে ব্যবহারের জন্য যথাযথ তথ্য, স্মারক নম্বর ও শীর্ষ নেতৃত্বের স্বাক্ষর সম্বলিত অত্যন্ত মর্যাদাপূর্ণ অফিশিয়াল প্রত্যয়নপত্র।</p>
-        <div class="item-badge-pill"><i class="fa-solid fa-check-circle"></i> পার্সেলভুক্ত সামগ্রী</div>
+        <div class="visual-card-body">
+          <div class="card-meta-head">
+            <h3>অফিসিয়াল প্রত্যয়নপত্র</h3>
+          </div>
+          <p>স্বাধীন বাংলা প্রেসক্লাবের পক্ষ থেকে পেশাগত যেকোনো অফিশিয়াল কাজে ব্যবহারের জন্য সুনির্দিষ্ট তথ্য ও প্রতিষ্ঠানের লোগো সমন্বয়ে প্রফেশনাল প্রত্যয়নপত্র।</p>
+          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> পার্সেলভুক্ত সামগ্রী</div>
+        </div>
       </div>
 
-      <!-- ৪. আধুনিক সদস্য আইডি কার্ড -->
-      <div class="item-card">
-        <div class="item-icon-box">
-          <i class="fa-solid fa-id-card"></i>
+      <!-- 4. আধুনিক সদস্য আইডি কার্ড -->
+      <div class="visual-card">
+        <div class="mockup-preview-zone">
+          <div class="id-card-mockup">
+            <div style="font-size: 7px; color: var(--gold-solid); font-weight: 700;">PRESS CLUB ID</div>
+            <div class="id-photo-placeholder">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="cert-line" style="width: 80%; background: var(--gold-solid);"></div>
+            <div class="cert-line" style="width: 60%; background: #475569;"></div>
+          </div>
         </div>
-        <h3>আধুনিক প্রফেশনাল আইডি কার্ড</h3>
-        <p>স্মার্ট কালার টোন, ছবি, নির্ধারিত সদস্য আইডি ও সিকিউরিটি ফিচার সম্বলিত আকর্ষণীয় প্লাস্টিক আইডি কার্ড। যা আপনার সাংবাদিক পরিচয় তুলে ধরতে ভূমিকা রাখবে।</p>
-        <div class="item-badge-pill"><i class="fa-solid fa-check-circle"></i> পার্সেলভুক্ত সামগ্রী</div>
+        <div class="visual-card-body">
+          <div class="card-meta-head">
+            <h3>আধুনিক ডিজাইনের আইডি কার্ড</h3>
+          </div>
+          <p>প্রিমিয়াম ও আধুনিক ডিজাইন, সদস্য পরিচিতি, রক্তের গ্রুপ ও সিকিউরিটি ফিচার সমন্বয়ে পেশাগত দায়িত্ব পালনে ব্যবহারযোগ্য আধুনিক আইডি কার্ড।</p>
+          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> পার্সেলভুক্ত সামগ্রী</div>
+        </div>
       </div>
 
-      <!-- ৫. আইডি কার্ডের ফিতা -->
-      <div class="item-card">
-        <div class="item-icon-box">
-          <i class="fa-solid fa-ribbon"></i>
+      <!-- 5. আইডি কার্ডের ফিতা -->
+      <div class="visual-card">
+        <div class="mockup-preview-zone">
+          <div style="position: relative; display: flex; align-items: center; justify-content: center;">
+            <i class="fa-solid fa-ribbon" style="font-size: 75px; color: var(--gold-solid); filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));"></i>
+            <i class="fa-solid fa-shield" style="position: absolute; top: 22px; font-size: 16px; color: #070d18;"></i>
+          </div>
         </div>
-        <h3>লোগো খচিত প্রিমিয়াম ফিতা (Lanyard)</h3>
-        <p>আইডি কার্ডটি সহজে বহন ও পেশাগত ফিল্ডওয়ার্কে গলায় ঝুলিয়ে মর্যাদার সাথে প্রদর্শন করার জন্য উন্নতমানের টেকসই এবং প্রেসক্লাবের ব্র্যান্ডেড ফিতা।</p>
-        <div class="item-badge-pill"><i class="fa-solid fa-check-circle"></i> পার্সেলভুক্ত সামগ্রী</div>
+        <div class="visual-card-body">
+          <div class="card-meta-head">
+            <h3>লোগোযুক্ত প্রিমিয়াম ফিতা</h3>
+          </div>
+          <p>আইডি কার্ডটি সহজে বহন করার জন্য টেকসই উন্নতমানের ফিতা। এতে প্রেসক্লাবের লোগো ও ব্র্যান্ডিং সুস্পষ্টভাবে ফুটিয়ে তোলা হয়েছে।</p>
+          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> পার্সেলভুক্ত সামগ্রী</div>
+        </div>
       </div>
 
-      <!-- ৬. লোগোযুক্ত প্রিমিয়াম টি-শার্ট -->
-      <div class="item-card">
-        <div class="item-icon-box">
-          <i class="fa-solid fa-shirt"></i>
+      <!-- 6. প্রিমিয়াম টি-শার্ট -->
+      <div class="visual-card">
+        <div class="mockup-preview-zone">
+          <div class="tshirt-mockup">
+            <i class="fa-solid fa-shirt"></i>
+            <div class="tshirt-logo-badge">
+              <i class="fa-solid fa-newspaper"></i>
+            </div>
+          </div>
         </div>
-        <h3>লোগোযুক্ত প্রিমিয়াম টি-শার্ট</h3>
-        <p>ক্লাবের লোগো সম্বলিত সামনে ও পেছনে নান্দনিক ডিজাইনে তৈরি আরামদায়ক কটন টি-শার্ট। সাংবাদিকদের একতা ও সংহতি প্রকাশের অনন্য পোশাক।</p>
-        <div class="item-badge-pill"><i class="fa-solid fa-check-circle"></i> পার্সেলভুক্ত সামগ্রী</div>
+        <div class="visual-card-body">
+          <div class="card-meta-head">
+            <h3>লোগোযুক্ত প্রিমিয়াম টি-শার্ট</h3>
+          </div>
+          <p>প্রতিষ্ঠানের লোগো সমন্বয়ে সামনে ও পেছনে নিখুঁত ডিজাইনে তৈরি আরামদায়ক কটন টি-শার্ট। যা আমাদের ঐক্য, সংহতি ও মর্যাদার অনন্য প্রতীক।</p>
+          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> পার্সেলভুক্ত সামগ্রী</div>
+        </div>
       </div>
 
     </div>
 
     <!-- কুরিয়ার ও পার্সেল গ্রহণের গুরুত্বপূর্ণ নির্দেশনা -->
-    <div class="delivery-protocol-card">
-      <h3><i class="fa-solid fa-truck-fast"></i> পার্সেল ডেলিভারি সংক্রান্ত জরুরি তথ্য ও গাইডলাইন</h3>
-      <p style="color: #e2e8f0; font-size: 15.5px;">
-        স্বাধীন বাংলা প্রেসক্লাবের সম্মানিত সকল সদস্যের মূল্যবান ডকুমেন্টস ও উপহার সামগ্রী যত্নসহকারে প্যাক করে <strong>স্টেডফাস্ট কুরিয়ার (Steadfast Courier)</strong>-এর মাধ্যমে আপনার ঠিকানায় বুকিং করা হয়েছে।
-      </p>
-
-      <div class="protocol-steps">
-        <div class="step-box">
-          <i class="fa-solid fa-phone-volume"></i>
-          <h4>১. কল রিসিভ করুন</h4>
-          <p>কুরিয়ারের ডেলিভারি রাইডার আপনাকে ফোন দিলে অনুগ্রহ করে যোগাযোগ রক্ষা করে পার্সেলটি রিসিভ করুন।</p>
+    <div class="courier-command-box">
+      <div class="courier-title-bar">
+        <i class="fa-solid fa-truck-fast"></i>
+        <div>
+          <h3 style="font-size: 22px; color: #fff;">পার্সেল ডেলিভারি ও রিসিভ করার গাইডলাইন</h3>
+          <p style="color: var(--gold-light); font-size: 14px;">স্টেডফাস্ট কুরিয়ারের মাধ্যমে দেশব্যাপী দ্রুত ডেলিভারি চলমান</p>
         </div>
+      </div>
 
-        <div class="step-box">
-          <i class="fa-solid fa-box-open"></i>
-          <h4>২. পার্সেল যাচাই</h4>
-          <p>ডেলিভারি ম্যানের উপস্থিতিতে আপনার নাম, সদস্য আইডি ও প্যাকেট অক্ষত রয়েছে কিনা নিশ্চিত হয়ে গ্রহণ করুন।</p>
+      <div class="courier-steps">
+        <div class="step-item">
+          <span>ধাপ ০১</span>
+          <h4>কল রিসিভ করুন</h4>
+          <p>স্টেডফাস্ট কুরিয়ারের রাইডার আপনার এলাকায় পৌঁছে ফোন করলে অনুগ্রহ করে দ্রুত কল রিসিভ করে যোগাযোগ করুন।</p>
         </div>
-
-        <div class="step-box">
-          <i class="fa-solid fa-folder-heart"></i>
-          <h4>৩. যত্নসহকারে সংরক্ষণ</h4>
-          <p>সনদ ও প্রত্যয়নপত্র আপনার সাংবাদিক জীবনের অমূল্য স্মারক। এগুলো নিরাপদ স্থানে সংরক্ষণ করুন।</p>
+        <div class="step-item">
+          <span>ধাপ ০২</span>
+          <h4>পার্সেল অক্ষত যাচাই</h4>
+          <p>ডেলিভারি ম্যানের উপস্থিতিতে আপনার নাম, আইডি ও পার্সেলের সিল অক্ষত আছে কিনা যাচাই করে গ্রহণ করুন।</p>
+        </div>
+        <div class="step-item">
+          <span>ধাপ ০৩</span>
+          <h4>যথাযথ সংরক্ষণ</h4>
+          <p>সনদ ও প্রত্যয়নপত্র আপনার সাংবাদিক জীবনের অমূল্য স্মারক। এগুলো নিরাপদ স্থানে যত্নসহকারে সংরক্ষণ করুন।</p>
         </div>
       </div>
     </div>
@@ -604,10 +807,10 @@
 
   <!-- Footer -->
   <footer>
-    <div class="footer-quote">স্বাধীন বাংলা প্রেসক্লাব</div>
-    <p>একনিষ্ঠতা আমাদের পথচলা। সদস্যদের পাশে সবসময় সততার সাথে।</p>
-    <p style="margin-top: 15px; font-size: 12px; color: #64748b;">
-      &copy; ২০২৬ স্বাধীন বাংলা প্রেসক্লাব | সর্বস্বত্ব সংরক্ষিত।
+    <div class="footer-brand">স্বাধীন বাংলা প্রেসক্লাব</div>
+    <p style="color: var(--text-muted); font-size: 14px;">একনিষ্ঠতা আমাদের পথচলা। সদস্যদের আস্থার অনন্য প্ল্যাটফর্ম।</p>
+    <p style="margin-top: 20px; font-size: 12px; color: #475569;">
+      &copy; ২০২৬ স্বাধীন বাংলা প্রেসক্লাব | সকল অধিকার সংরক্ষিত।
     </p>
   </footer>
 
@@ -701,86 +904,85 @@
       { name: "Arian Antar", district: "Gazipur", upazila: "Kaliakair", phone: "01333603275", memberId: "SBP 86" }
     ];
 
-    // মোবাইল নম্বর ফিল্টারিং ও পিউরিফাই
-    function normalizePhone(num) {
-      if (!num) return "";
-      let cleaned = num.toString().replace(/[^0-9]/g, '');
-      if (cleaned.startsWith('880')) {
-        cleaned = cleaned.substring(2);
+    // মোবাইল নম্বর স্বাভাবিকীকরণ (+88, স্পেস ও হাইফেন বাদ দেওয়া)
+    function sanitizeNumber(n) {
+      if (!n) return "";
+      let clean = n.toString().replace(/[^0-9]/g, '');
+      if (clean.startsWith('880')) {
+        clean = clean.substring(2);
       }
-      return cleaned;
+      return clean;
     }
 
-    // তথ্য অনুসন্ধান
-    function searchMember() {
-      const input = document.getElementById("phoneInput").value.trim();
-      const resultArea = document.getElementById("searchResultArea");
-      const normalizedInput = normalizePhone(input);
+    // সার্চ ফাংশন
+    function executeSearch() {
+      const inputVal = document.getElementById("phoneInput").value.trim();
+      const resultBox = document.getElementById("searchResultArea");
+      const cleanedQuery = sanitizeNumber(inputVal);
 
-      if (!normalizedInput) {
-        alert("অনুগ্রহ করে একটি মোবাইল নম্বর লিখুন।");
+      if (!cleanedQuery) {
+        alert("অনুগ্রহ করে একটি সঠিক মোবাইল নম্বর লিখুন।");
         return;
       }
 
-      const member = membersData.find(m => normalizePhone(m.phone) === normalizedInput);
-      resultArea.style.display = "block";
+      const match = membersData.find(m => sanitizeNumber(m.phone) === cleanedQuery);
+      resultBox.style.display = "block";
 
-      if (member) {
-        resultArea.innerHTML = `
-          <div class="member-result-card">
-            <div class="result-badge-header">
-              <div class="member-meta">
-                <h2>${member.name}</h2>
-                <p><i class="fa-solid fa-id-badge"></i> আইডি: <strong>${member.memberId}</strong> | মোবাইল: ${member.phone}</p>
-                <p><i class="fa-solid fa-location-dot"></i> এলাকা: ${member.upazila}, ${member.district}</p>
+      if (match) {
+        resultBox.innerHTML = `
+          <div class="result-sheet">
+            <div class="result-top-banner">
+              <div class="member-title">
+                <h2>${match.name}</h2>
+                <p><i class="fa-solid fa-id-badge" style="color: var(--gold-solid);"></i> আইডি: <strong>${match.memberId}</strong> &nbsp;|&nbsp; <i class="fa-solid fa-phone" style="color: var(--gold-solid);"></i> ${match.phone}</p>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--gold-solid);"></i> ঠিকানা: ${match.upazila}, ${match.district}</p>
               </div>
-              <div class="status-pill">
-                <i class="fa-solid fa-truck-ramp-box"></i> কুরিয়ারে বুকিং সম্পন্ন
+              <div class="courier-status-tag">
+                <i class="fa-solid fa-box-open"></i> পার্সেল বুকিং সম্পন্ন
               </div>
             </div>
 
-            <div class="result-content">
-              <div class="result-msg-box">
-                <strong style="color: var(--primary-navy); font-size: 17px;">শ্রদ্ধেয় সদস্য,</strong><br>
-                স্বাধীন বাংলা প্রেসক্লাবের পক্ষ থেকে আপনার প্রতি রইল আন্তরিক অভিনন্দন ও শুভেচ্ছা। আপনার আজীবন সদস্যপদ, সাংবাদিক সম্মাননা স্মারক, আইডি কার্ড ও প্রাতিষ্ঠানিক উপহার সামগ্রী প্রস্তুত করে <strong>স্টেডফাস্ট কুরিয়ারে</strong> পাঠানো হয়েছে।
+            <div class="result-body-wrap">
+              <div class="formal-message-card">
+                <strong style="color: var(--gold-light); font-size: 16px;">শ্রদ্ধেয় সদস্য,</strong><br>
+                স্বাধীন বাংলা প্রেসক্লাবের পক্ষ থেকে আপনার প্রতি রইল আন্তরিক অভিনন্দন ও শুভেচ্ছা। আপনার গুরুত্বপূর্ণ অফিশিয়াল ডকুমেন্টস ও উপহার সামগ্রী প্রস্তুত করে <strong>স্টেডফাস্ট কুরিয়ারের</strong> মাধ্যমে আপনার ঠিকানায় বুকিং করা হয়েছে।
               </div>
 
-              <div style="background: #f1f5f9; padding: 18px; border-radius: 10px; margin-bottom: 20px;">
-                <h4 style="color: var(--primary-navy); margin-bottom: 10px;"><i class="fa-solid fa-box-check" style="color: #10b981;"></i> আপনার প্যাকেটে অন্তর্ভুক্ত ডকুমেন্টস ও উপহার:</h4>
-                <ul style="list-style: none; padding-left: 5px; font-size: 14.5px; color: #334155;">
-                  <li style="margin-bottom: 6px;"><i class="fa-solid fa-check" style="color: #10b981; margin-right: 8px;"></i> আজীবন সাংবাদিক সম্মাননা সনদ</li>
-                  <li style="margin-bottom: 6px;"><i class="fa-solid fa-check" style="color: #10b981; margin-right: 8px;"></i> প্রাতিষ্ঠানিক আজীবন সদস্য সনদ</li>
-                  <li style="margin-bottom: 6px;"><i class="fa-solid fa-check" style="color: #10b981; margin-right: 8px;"></i> অফিসিয়াল প্রত্যয়নপত্র</li>
-                  <li style="margin-bottom: 6px;"><i class="fa-solid fa-check" style="color: #10b981; margin-right: 8px;"></i> আধুনিক প্রফেশনাল সদস্য আইডি কার্ড</li>
-                  <li style="margin-bottom: 6px;"><i class="fa-solid fa-check" style="color: #10b981; margin-right: 8px;"></i> আইডি কার্ডের প্রিমিয়াম ফিতা</li>
-                  <li><i class="fa-solid fa-check" style="color: #10b981; margin-right: 8px;"></i> প্রেসক্লাবের লোগোযুক্ত আধুনিক টি-শার্ট</li>
-                </ul>
+              <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-light); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                <h4 style="color: var(--gold-solid); margin-bottom: 12px; font-size: 16px;"><i class="fa-solid fa-clipboard-check"></i> আপনার জন্য প্রেরিত ডকুমেন্টস ও উপহার:</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; font-size: 14px; color: #cbd5e1;">
+                  <div><i class="fa-solid fa-check" style="color: #10B981; margin-right: 6px;"></i> আজীবন সাংবাদিক সম্মাননা সনদ</div>
+                  <div><i class="fa-solid fa-check" style="color: #10B981; margin-right: 6px;"></i> আজীবন সদস্য সনদ</div>
+                  <div><i class="fa-solid fa-check" style="color: #10B981; margin-right: 6px;"></i> অফিশিয়াল প্রত্যয়নপত্র</div>
+                  <div><i class="fa-solid fa-check" style="color: #10B981; margin-right: 6px;"></i> আধুনিক সদস্য আইডি কার্ড</div>
+                  <div><i class="fa-solid fa-check" style="color: #10B981; margin-right: 6px;"></i> আইডি কার্ডের ফিতা</div>
+                  <div><i class="fa-solid fa-check" style="color: #10B981; margin-right: 6px;"></i> লোগোযুক্ত প্রিমিয়াম টি-শার্ট</div>
+                </div>
               </div>
 
-              <div style="text-align: center; color: var(--golden-dark); font-weight: 600; font-size: 15px; border-top: 1px dashed #cbd5e1; padding-top: 15px;">
-                ডেলিভারি সংক্রান্ত যেকোনো তথ্যে প্রেসক্লাবের কেন্দ্রীয় সেলে যোগাযোগ বজায় রাখুন।
+              <div style="text-align: center; color: var(--gold-light); font-size: 14px; border-top: 1px dashed var(--border-light); padding-top: 15px;">
+                কুরিয়ার থেকে ডেলিভারি ম্যান আপনাকে ফোন করলে অনুগ্রহ করে তাঁর সঙ্গে যোগাযোগ করে দ্রুত পার্সেলটি গ্রহণ করবেন।
               </div>
             </div>
           </div>
         `;
       } else {
-        resultArea.innerHTML = `
-          <div class="error-notfound">
-            <i class="fa-solid fa-circle-exclamation" style="font-size: 32px; margin-bottom: 12px; display: block;"></i>
-            <strong>কোনো তথ্য খুঁজে পাওয়া যায়নি!</strong><br>
-            আপনার প্রদত্ত মোবাইল নম্বরটি (${input}) আমাদের নিবন্ধিত ডেটাবেজে মেলেনি। অনুগ্রহ করে সঠিক নম্বরটি লিখুন অথবা স্বাধীন বাংলা প্রেসক্লাবের পরিচালনা পর্ষদের সাথে যোগাযোগ করুন।
+        resultBox.innerHTML = `
+          <div class="search-error-msg">
+            <i class="fa-solid fa-triangle-exclamation" style="font-size: 30px; margin-bottom: 8px; display: block;"></i>
+            দুঃখিত, এই মোবাইল নম্বরের বিপরীতে কোনো তথ্য পাওয়া যায়নি।<br>
+            অনুগ্রহ করে নম্বরটি যাচাই করুন অথবা স্বাধীন বাংলা প্রেসক্লাবের পরিচালনা পর্ষদের সাথে যোগাযোগ করুন।
           </div>
         `;
       }
 
-      // অটো-স্ক্রোল করে ফলাফলের কাছে নিয়ে যাওয়া
-      resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
-    // কীবোর্ডে Enter প্রেস করলে সার্চ কাজ করবে
+    // Enter Key Handler
     document.getElementById("phoneInput").addEventListener("keyup", function(e) {
       if (e.key === "Enter") {
-        searchMember();
+        executeSearch();
       }
     });
   </script>
