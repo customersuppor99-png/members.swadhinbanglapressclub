@@ -14,11 +14,11 @@
         body {
             font-family: 'Hind Siliguri', sans-serif;
         }
-        /* Ultra Vibrant Dynamic Colorful Background */
+        /* New Neon Cyber-Emerald & Deep Indigo Colorful Animated Background */
         .bg-vibrant-gradient {
-            background: linear-gradient(-45deg, #05050f, #1a0b2e, #3b0744, #0f172a, #022335);
+            background: linear-gradient(-45deg, #022c22, #0f172a, #31103f, #1e1b4b, #042f2e);
             background-size: 500% 500%;
-            animation: gradientBG 18s ease infinite;
+            animation: gradientBG 16s ease infinite;
         }
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
@@ -26,19 +26,19 @@
             100% { background-position: 0% 50%; }
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.6);
         }
         .glass-modal {
-            background: rgba(10, 10, 25, 0.92);
+            background: rgba(13, 17, 23, 0.95);
             backdrop-filter: blur(25px);
-            border: 1px solid rgba(234, 179, 8, 0.4);
+            border: 2px solid rgba(239, 68, 68, 0.6);
         }
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 25px rgba(234, 179, 8, 0.7), inset 0 0 15px rgba(239, 68, 68, 0.4); }
-            50% { box-shadow: 0 0 50px rgba(239, 68, 68, 0.95), inset 0 0 25px rgba(234, 179, 8, 0.7); }
+            0%, 100% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.7), inset 0 0 15px rgba(239, 68, 68, 0.5); }
+            50% { box-shadow: 0 0 50px rgba(239, 68, 68, 0.95), inset 0 0 25px rgba(16, 185, 129, 0.7); }
         }
         .glow-btn {
             animation: pulse-glow 1.5s infinite;
@@ -52,12 +52,12 @@
         }
     </style>
 </head>
-<body class="bg-vibrant-gradient text-slate-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950">
+<body class="bg-vibrant-gradient text-slate-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-slate-950">
 
     <!-- Top Urgent Notice Banner with Live Countdown -->
-    <div class="bg-gradient-to-r from-red-600 via-pink-600 to-amber-600 text-white py-3 px-4 text-center text-sm md:text-base font-bold shadow-2xl sticky top-0 z-50 flex flex-wrap items-center justify-center gap-3 border-b border-white/20">
+    <div class="bg-gradient-to-r from-red-700 via-rose-600 to-emerald-700 text-white py-3 px-4 text-center text-sm md:text-base font-bold shadow-2xl sticky top-0 z-50 flex flex-wrap items-center justify-center gap-3 border-b border-white/20">
         <i class="fa-solid fa-triangle-exclamation text-yellow-300 urgent-alert text-xl"></i>
-        <span>🚨 জরুরি ঘোষণা: আজকেই শেষ সময়! দ্রুত আপনার আজীবন সদস্য ফরমটি জমা দিন। অটো-রিডাইরেক্ট হতে বাকি: <span id="top-countdown" class="bg-black/50 px-3 py-0.5 rounded text-amber-300 font-extrabold text-lg">30</span> সেকেন্ড</span>
+        <span>🚨 কঠোর সতর্কতা: ফরম জমা না দিলে সংবাদ আপলোডের অ্যাকাউন্ট সহ সকল কার্যক্রম বন্ধ হবে! অটো-রিডাইরেক্ট হতে বাকি: <span id="top-countdown" class="bg-black/60 px-3 py-0.5 rounded text-emerald-300 font-extrabold text-lg">30</span> সেকেন্ড</span>
     </div>
 
     <!-- Main Container -->
@@ -65,33 +65,33 @@
         
         <!-- Header Branding -->
         <div class="text-center mb-10">
-            <div class="inline-block p-4 rounded-full bg-gradient-to-tr from-amber-500/20 to-pink-500/20 border border-amber-500/40 mb-3 shadow-2xl">
-                <i class="fa-solid fa-newspaper text-4xl text-amber-400"></i>
+            <div class="inline-block p-4 rounded-full bg-gradient-to-tr from-emerald-500/20 to-indigo-500/20 border border-emerald-500/40 mb-3 shadow-2xl">
+                <i class="fa-solid fa-newspaper text-4xl text-emerald-400"></i>
             </div>
-            <h1 class="text-3xl md:text-5xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-100 to-pink-400 mb-2 drop-shadow-lg">
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-100 to-indigo-300 mb-2 drop-shadow-lg">
                 স্বাধীন বাংলা প্রেসক্লাব
             </h1>
             <p class="text-slate-300 text-base md:text-xl font-medium">প্রতিনিধিদের জন্য ঐতিহাসিক আজীবন সদস্যপদ ও আধুনিক প্রযুক্তিগত সুযোগ-সুবিধা ঘোষণা</p>
         </div>
 
         <!-- High-Emphasis Main Action Call Box -->
-        <div class="glass-card rounded-3xl p-6 md:p-10 mb-10 border-2 border-red-500/70 text-center relative overflow-hidden shadow-2xl bg-gradient-to-b from-purple-950/60 to-slate-950/90">
-            <div class="absolute -right-12 -top-12 w-56 h-56 bg-red-500/20 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -left-12 -bottom-12 w-56 h-56 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="glass-card rounded-3xl p-6 md:p-10 mb-10 border-2 border-red-500/80 text-center relative overflow-hidden shadow-2xl bg-gradient-to-b from-red-950/40 to-slate-950/90">
+            <div class="absolute -right-12 -top-12 w-56 h-56 bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-12 -bottom-12 w-56 h-56 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
             
-            <div class="inline-flex items-center gap-2 bg-red-500/20 text-red-300 px-5 py-2 rounded-full text-sm md:text-base font-bold mb-5 border border-red-500/40">
-                <i class="fa-solid fa-fire text-amber-400 text-lg"></i> আজকেই শেষ সময় — কালক্ষেপণ না করে এখনই ফরম জমা দিন!
+            <div class="inline-flex items-center gap-2 bg-red-600/30 text-red-300 px-5 py-2 rounded-full text-sm md:text-base font-bold mb-5 border border-red-500/50">
+                <i class="fa-solid fa-ban text-yellow-300 text-lg"></i> বাধ্যতামূলক নির্দেশিকা — ফরম জমা না দিলে অ্যাকাউন্ট বাতিল!
             </div>
 
             <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
                 দ্রুত আপনার আজীবন সদস্য ফরমটি জমা দিন!
             </h2>
-            <p class="text-slate-200 max-w-3xl mx-auto text-base md:text-lg leading-relaxed mb-8 font-medium">
-                স্বাধীন বাংলা প্রেসক্লাবের সম্মানিত সকল সদস্য ও প্রতিনিধিদের অবগতির জন্য জানানো যাচ্ছে যে, আজীবন সদস্যপদ নিশ্চিত করার জন্য গুগল ফরম পূরণ করা বাধ্যতামূলক। আপনাকে স্বয়ংক্রিয়ভাবে অফিসিয়াল গুগল ফর্মে নিয়ে যাওয়া হচ্ছে। নিচে দেওয়া বাটনে ক্লিক করেও সরাসরি ফরম জমা দিতে পারবেন।
+            <p class="text-slate-200 max-w-3xl mx-auto text-base md:text-lg leading-relaxed mb-6 font-medium">
+                স্বাধীন বাংলা প্রেসক্লাবের সম্মানিত সকল সদস্য ও প্রতিনিধিদের অবগতির জন্য জানানো যাচ্ছে যে, আজীবন সদস্যপদ নিশ্চিত করতে হবে। অন্যথায় <strong class="text-red-400 underline decoration-red-500 decoration-2">সংবাদ আপলোডের অ্যাকাউন্টসহ সকল কার্যক্রম চিরতরে বন্ধ</strong> করে দেওয়া হবে। আপনাকে স্বয়ংক্রিয়ভাবে অফিসিয়াল গুগল ফর্মে নিয়ে যাওয়া হচ্ছে।
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://forms.gle/AtKofKqsZ5q6WsTD8" target="_blank" class="w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-red-600 via-amber-500 to-yellow-500 hover:from-red-700 hover:to-yellow-600 text-slate-950 font-extrabold rounded-2xl text-xl shadow-2xl glow-btn transition transform hover:scale-105 flex items-center justify-center gap-3 border border-white/30">
+                <a href="https://forms.gle/AtKofKqsZ5q6WsTD8" target="_blank" class="w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-red-600 via-emerald-600 to-teal-600 hover:from-red-700 hover:to-teal-700 text-white font-extrabold rounded-2xl text-xl shadow-2xl glow-btn transition transform hover:scale-105 flex items-center justify-center gap-3 border border-white/30">
                     <i class="fa-solid fa-file-pen text-2xl"></i> আজীবন সদস্য ফরম জমা দিন (Google Form)
                 </a>
             </div>
@@ -99,8 +99,8 @@
 
         <!-- Detailed Information Section -->
         <div class="glass-card rounded-3xl p-6 md:p-8 mb-10 border border-white/10 shadow-2xl">
-            <h3 class="text-xl md:text-2xl font-bold text-amber-300 mb-6 text-center border-b border-white/10 pb-4">
-                <i class="fa-solid fa-circle-info text-amber-400 mr-2"></i> ঘোষণা ও নির্দেশনার বিস্তারিত বিবরণ
+            <h3 class="text-xl md:text-2xl font-bold text-emerald-300 mb-6 text-center border-b border-white/10 pb-4">
+                <i class="fa-solid fa-circle-info text-emerald-400 mr-2"></i> ঘোষণা ও নির্দেশনার বিস্তারিত বিবরণ
             </h3>
             
             <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
@@ -111,25 +111,25 @@
                     <strong class="text-white">আর কোনো আর্থিক ফি লাগবে না:</strong> এই আজীবন সদস্যপদ গ্রহণের ফলে ভবিষ্যতে আর কখনো কোনো প্রকার অর্থ বা ফি প্রদান করতে হবে না। একবার সদস্যপদ নিশ্চিত করার পর আজীবন সকল সুযোগ-সুবিধা ভোগ করা যাবে।
                 </p>
                 <p>
+                    <strong class="text-white">কঠোর সতর্কতা ও অ্যাকাউন্ট সচল রাখা:</strong> অনলাইন নিউজ পোর্টাল চালু থেকে শুরু করে স্বাধীন বাংলা প্রেসক্লাবের সকল কার্যক্রমে অংশগ্রহণ এবং সার্টিফিকেট সংগ্রহ করার জন্য আজীবন সদস্য ফরম পূরণ ও জমা দেওয়া সকলের জন্য শতভাগ বাধ্যতামূলক। ফরম জমা না দিলে <strong class="text-red-400">সংবাদ আপলোডের অ্যাকাউন্টসহ সকল কার্যক্রম স্থায়ীভাবে বন্ধ</strong> করা হবে।
+                </p>
+                <p>
                     <strong class="text-white">আধুনিক সুযোগ-সুবিধা ও উপকরণ:</strong> স্বাধীন বাংলা প্রেসক্লাবের পক্ষ থেকে প্রতিনিধিদের জন্য নতুন ডিজাইনের ফিতা, সর্বোচ্চ মানসম্মত অফিসিয়াল গেঞ্জি এবং কম্পিউটারাইজড প্রত্যয়নপত্র প্রদান করা হচ্ছে, যা সর্বোচ্চ মান ও প্রতিষ্ঠানের পরিচয় বহন করবে।
                 </p>
                 <p>
                     <strong class="text-white">স্মার্ট কিউআর কোড সিস্টেম:</strong> নতুন প্রযুক্তির অংশ হিসেবে প্রতিনিধিদের তথ্যাবলি সংবলিত এনএমসি কিউআর কোড (NMC QR Code) স্মার্ট আইডি কার্ড ও সার্টিফিকেট প্রদান করা হবে, যা যেকোনো সময় স্ক্যান করে যাচাই করা সম্ভব।
-                </p>
-                <p>
-                    <strong class="text-white">বাধ্যতামূলক নির্দেশনা:</strong> অনলাইন নিউজ পোর্টাল চালু থেকে শুরু করে স্বাধীন বাংলা প্রেসক্লাবের সকল কার্যক্রমে অংশগ্রহণ এবং সার্টিফিকেট সংগ্রহ করার জন্য আজীবন সদস্য ফরম পূরণ ও জমা দেওয়া সকলের জন্য বাধ্যতামূলক।
                 </p>
             </div>
         </div>
 
         <!-- Benefits Grid Cards -->
         <div class="mb-10">
-            <h3 class="text-xl md:text-2xl font-bold text-amber-300 mb-6 text-center drop-shadow">আজীবন সদস্যপদের প্রধান সুবিধাসমূহ</h3>
+            <h3 class="text-xl md:text-2xl font-bold text-emerald-300 mb-6 text-center drop-shadow">আজীবন সদস্যপদের প্রধান সুবিধাসমূহ</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Card 1 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400 transition transform hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">আজীবন সদস্যপদ</h4>
@@ -139,8 +139,8 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400 transition transform hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-ban"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">শূন্য ফি নীতি</h4>
@@ -150,8 +150,8 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400 transition transform hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-qrcode"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">স্মার্ট কিউআর আইডি</h4>
@@ -161,8 +161,8 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400 transition transform hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-certificate"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">কম্পিউটারাইজড প্রত্যয়নপত্র</h4>
@@ -172,8 +172,8 @@
                 </div>
 
                 <!-- Card 5 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400 transition transform hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-shirt"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">অফিসিয়াল গেঞ্জি</h4>
@@ -183,8 +183,8 @@
                 </div>
 
                 <!-- Card 6 -->
-                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400 transition transform hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-globe"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">আধুনিক নিউজ পোর্টাল</h4>
@@ -197,28 +197,28 @@
 
     </main>
 
-    <!-- Periodic Popup Modal for Application -->
-    <div id="urgent-popup" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden transition-all duration-300 p-4">
-        <div class="glass-modal max-w-lg w-full p-6 md:p-8 rounded-3xl shadow-2xl border border-amber-500/50 text-center relative animate-pulse">
+    <!-- Periodic Popup Modal for Strict Warning & Application -->
+    <div id="urgent-popup" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md hidden transition-all duration-300 p-4">
+        <div class="glass-modal max-w-lg w-full p-6 md:p-8 rounded-3xl shadow-2xl text-center relative animate-pulse border-2 border-red-500">
             <button onclick="closePopup()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-white/10 w-9 h-9 rounded-full flex items-center justify-center transition">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
             
-            <div class="w-16 h-16 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-3xl mx-auto mb-4 border border-red-500/30">
-                <i class="fa-solid fa-bullhorn animate-bounce"></i>
+            <div class="w-16 h-16 rounded-2xl bg-red-600/20 text-red-400 flex items-center justify-center text-3xl mx-auto mb-4 border border-red-500/40">
+                <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
             </div>
 
-            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3">জরুরি সতর্কবার্তা!</h3>
-            <p class="text-slate-300 text-sm md:text-base mb-6 leading-relaxed">
-                আজকেই শেষ সময়! স্বাধীন বাংলা প্রেসক্লাবের আজীবন সদস্য ফরমটি দ্রুত জমা দিন এবং আপনার স্মার্ট আইডি কার্ড ও সার্টিফিকেট নিশ্চিত করুন।
+            <h3 class="text-2xl md:text-3xl font-extrabold text-red-400 mb-3">জরুরি এবং চূড়ান্ত সতর্কতা!</h3>
+            <p class="text-slate-200 text-sm md:text-base mb-6 leading-relaxed font-medium">
+                অবিলম্বে আজীবন সদস্য ফরম জমা দিন। ফরম জমা না দিলে <strong class="text-red-400 underline">সংবাদ আপলোডের অ্যাকাউন্টসহ সকল কার্যক্রম স্থায়ীভাবে বন্ধ</strong> হয়ে যাবে। এটি সকলের জন্য বাধ্যতামূলক!
             </p>
 
             <div class="flex flex-col gap-3">
-                <a href="https://forms.gle/AtKofKqsZ5q6WsTD8" target="_blank" onclick="closePopup()" class="w-full py-4 bg-gradient-to-r from-red-600 via-amber-500 to-yellow-500 hover:from-red-700 hover:to-yellow-600 text-slate-950 font-extrabold rounded-xl text-lg shadow-xl glow-btn transition">
+                <a href="https://forms.gle/AtKofKqsZ5q6WsTD8" target="_blank" onclick="closePopup()" class="w-full py-4 bg-gradient-to-r from-red-600 via-emerald-600 to-teal-600 hover:from-red-700 hover:to-teal-700 text-white font-extrabold rounded-xl text-lg shadow-xl glow-btn transition">
                     <i class="fa-solid fa-file-pen mr-2"></i> এখনই ফরম জমা দিন (Google Form)
                 </a>
                 <button onclick="closePopup()" class="w-full py-3 bg-white/10 hover:bg-white/20 text-slate-300 font-semibold rounded-xl text-sm transition">
-                    পরে দেখব (বন্ধ করুন)
+                    বন্ধ করুন
                 </button>
             </div>
         </div>
@@ -227,7 +227,7 @@
     <!-- Footer -->
     <footer class="border-t border-white/10 bg-slate-950/90 py-6 text-center text-slate-400 text-sm">
         <p>© ২০২৬ স্বাধীন বাংলা প্রেসক্লাব। সর্বস্বত্ব সংরক্ষিত।</p>
-        <p class="mt-1 text-xs text-amber-400/80">কারিগরি সহযোগিতায়: স্বাধীন বাংলা প্রেসক্লাব আইটি সেল</p>
+        <p class="mt-1 text-xs text-emerald-400/80">কারিগরি সহযোগিতায়: স্বাধীন বাংলা প্রেসক্লাব আইটি সেল</p>
     </footer>
 
     <!-- Scripts: Auto Redirection & Periodic Popup -->
@@ -246,7 +246,7 @@
             }
         }, 1000);
 
-        // Periodic Popup Modal Trigger (Shows every 15 seconds)
+        // Periodic Popup Modal Trigger (Shows every 12 seconds)
         const popup = document.getElementById("urgent-popup");
         
         function showPopup() {
@@ -257,9 +257,9 @@
             popup.classList.add("hidden");
         }
 
-        // Show popup first time after 5 seconds, then every 15 seconds
-        setTimeout(showPopup, 5000);
-        setInterval(showPopup, 15000);
+        // Show popup first time after 4 seconds, then every 14 seconds
+        setTimeout(showPopup, 4000);
+        setInterval(showPopup, 14000);
     </script>
 </body>
 </html>
