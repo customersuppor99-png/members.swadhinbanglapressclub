@@ -1,990 +1,192 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>স্বাধীন বাংলা প্রেসক্লাব | সদস্য ভেরিফিকেশন ও পার্সেল ট্র্যাকিং পোর্টাল</title>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
-  
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    :root {
-      --bg-dark: #070d18;
-      --bg-surface: #0e1726;
-      --bg-card: rgba(18, 29, 49, 0.7);
-      --gold-gradient: linear-gradient(135deg, #FFE57F 0%, #D4AF37 50%, #997A15 100%);
-      --gold-solid: #D4AF37;
-      --gold-light: #FFF2B2;
-      --gold-glow: rgba(212, 175, 55, 0.25);
-      --text-white: #FFFFFF;
-      --text-muted: #94A3B8;
-      --border-gold: rgba(212, 175, 55, 0.28);
-      --border-light: rgba(255, 255, 255, 0.08);
-      --success: #10B981;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Hind Siliguri', sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-white);
-      overflow-x: hidden;
-      line-height: 1.6;
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(24, 59, 107, 0.15) 0%, transparent 50%);
-    }
-
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: var(--bg-dark); }
-    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--gold-solid); }
-
-    /* Top Strip */
-    .top-strip {
-      background: rgba(14, 23, 38, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-light);
-      padding: 8px 16px;
-      font-size: 13px;
-      text-align: center;
-      color: var(--gold-light);
-      letter-spacing: 0.5px;
-    }
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      padding: 60px 20px 100px;
-      text-align: center;
-      background: radial-gradient(circle at center, #132238 0%, var(--bg-dark) 100%);
-      border-bottom: 1px solid var(--border-gold);
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 300px;
-      background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .brand-emblem {
-      width: 90px;
-      height: 90px;
-      margin: 0 auto 20px;
-      background: linear-gradient(145deg, #121c2d, #09121f);
-      border: 2px solid var(--gold-solid);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 35px var(--gold-glow);
-      animation: float 4s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-
-    .brand-emblem i {
-      font-size: 42px;
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-title {
-      font-size: 38px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
-      background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-tagline {
-      display: inline-block;
-      font-size: 18px;
-      font-weight: 600;
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-    }
-
-    .hero-desc {
-      max-width: 620px;
-      margin: 0 auto;
-      font-size: 15px;
-      color: var(--text-muted);
-    }
-
-    /* Container */
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Search Float Box */
-    .search-section {
-      margin-top: -55px;
-      position: relative;
-      z-index: 20;
-      margin-bottom: 70px;
-    }
-
-    .search-box-card {
-      background: rgba(14, 23, 38, 0.92);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--border-gold);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.12);
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .search-header-text {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--gold-light);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .search-bar-wrap {
-      display: flex;
-      gap: 10px;
-    }
-
-    .phone-input {
-      flex: 1;
-      background: rgba(7, 13, 24, 0.85);
-      border: 1.5px solid rgba(212, 175, 55, 0.3);
-      padding: 15px 20px;
-      border-radius: 12px;
-      color: #fff;
-      font-size: 16px;
-      outline: none;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .phone-input:focus {
-      border-color: var(--gold-solid);
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
-    }
-
-    .search-action-btn {
-      background: var(--gold-gradient);
-      color: #070d18;
-      border: none;
-      padding: 0 32px;
-      font-weight: 700;
-      font-size: 16px;
-      border-radius: 12px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-      white-space: nowrap;
-    }
-
-    .search-action-btn:hover {
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
-      transform: translateY(-2px);
-    }
-
-    /* Verification Result Card */
-    #searchResultArea {
-      display: none;
-      margin-top: 30px;
-      animation: expandResult 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    @keyframes expandResult {
-      from { opacity: 0; transform: translateY(-20px) scale(0.98); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    .result-sheet {
-      background: linear-gradient(145deg, rgba(14, 23, 38, 0.98), rgba(7, 13, 24, 0.98));
-      border: 1.5px solid var(--gold-solid);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.15);
-    }
-
-    .result-top-banner {
-      background: linear-gradient(90deg, #132238 0%, #1c3252 100%);
-      border-bottom: 2px solid var(--gold-solid);
-      padding: 24px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .member-title h2 {
-      font-size: 26px;
-      font-weight: 700;
-      color: #FFFFFF;
-    }
-
-    .member-title p {
-      font-size: 14.5px;
-      color: var(--gold-light);
-      margin-top: 4px;
-    }
-
-    .courier-status-tag {
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid var(--success);
-      color: #34D399;
-      padding: 8px 18px;
-      border-radius: 50px;
-      font-size: 14px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .result-body-wrap {
-      padding: 30px;
-    }
-
-    .formal-message-card {
-      background: rgba(212, 175, 55, 0.05);
-      border-left: 4px solid var(--gold-solid);
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 25px;
-      font-size: 15px;
-      color: #E2E8F0;
-    }
-
-    /* Section Styling */
-    .section-head-wrap {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-accent-title {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--gold-solid);
-      font-weight: 600;
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .section-main-title {
-      font-size: 32px;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    /* Modern Visual Grid */
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-      margin-bottom: 70px;
-    }
-
-    .visual-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--border-light);
-      border-radius: 18px;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .visual-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--gold-solid);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.15);
-    }
-
-    /* Realistic Graphic Displays */
-    .mockup-preview-zone {
-      height: 180px;
-      background: linear-gradient(135deg, #070d18 0%, #16243a 100%);
-      border-bottom: 1px solid var(--border-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Visual Mockups */
-    .certificate-mockup {
-      width: 170px;
-      height: 120px;
-      background: #FFFDF8;
-      border: 3px double #C49B27;
-      border-radius: 4px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-      padding: 8px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-      transition: transform 0.4s ease;
-    }
-
-    .visual-card:hover .certificate-mockup {
-      transform: scale(1.06) rotate(-1deg);
-    }
-
-    .cert-seal {
-      width: 24px;
-      height: 24px;
-      background: var(--gold-gradient);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #000;
-      font-size: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    }
-
-    .cert-line {
-      width: 80%;
-      height: 3px;
-      background: #E2E8F0;
-      border-radius: 2px;
-      margin: 2px 0;
-    }
-
-    .id-card-mockup {
-      width: 100px;
-      height: 140px;
-      background: linear-gradient(180deg, #101c2d 0%, #080f1a 100%);
-      border: 2px solid var(--gold-solid);
-      border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 8px;
-      position: relative;
-      transition: transform 0.4s ease;
-    }
-
-    .visual-card:hover .id-card-mockup {
-      transform: scale(1.06) rotate(1deg);
-    }
-
-    .id-photo-placeholder {
-      width: 40px;
-      height: 44px;
-      background: #1e293b;
-      border: 1px solid var(--gold-solid);
-      border-radius: 4px;
-      margin: 8px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold-solid);
-      font-size: 18px;
-    }
-
-    .id-lanyard-band {
-      position: absolute;
-      top: -20px;
-      width: 14px;
-      height: 24px;
-      background: var(--gold-solid);
-      border-radius: 3px;
-    }
-
-    .tshirt-mockup {
-      position: relative;
-      font-size: 85px;
-      color: #0b1424;
-      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.7));
-      transition: transform 0.4s ease;
-    }
-
-    .visual-card:hover .tshirt-mockup {
-      transform: scale(1.08);
-      color: #0f1c31;
-    }
-
-    .tshirt-logo-badge {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -45%);
-      font-size: 15px;
-      color: var(--gold-solid);
-    }
-
-    /* Visual Card Details */
-    .visual-card-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .card-meta-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 12px;
-    }
-
-    .visual-card-body h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #FFFFFF;
-    }
-
-    .visual-card-body p {
-      font-size: 14.5px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      flex-grow: 1;
-    }
-
-    .verified-pill {
-      margin-top: 18px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--gold-light);
-      background: rgba(212, 175, 55, 0.1);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      padding: 5px 14px;
-      border-radius: 30px;
-      width: fit-content;
-    }
-
-    /* Courier Section */
-    .courier-command-box {
-      background: linear-gradient(145deg, #0e1a2d 0%, #08111e 100%);
-      border: 1.5px solid var(--border-gold);
-      border-radius: 20px;
-      padding: 40px;
-      margin-bottom: 80px;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-    }
-
-    .courier-title-bar {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
-    .courier-title-bar i {
-      font-size: 32px;
-      color: var(--gold-solid);
-    }
-
-    .courier-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .step-item {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-light);
-      padding: 22px;
-      border-radius: 14px;
-    }
-
-    .step-item span {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--gold-solid);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .step-item h4 {
-      font-size: 17px;
-      color: #fff;
-      margin: 6px 0;
-    }
-
-    .step-item p {
-      font-size: 13.5px;
-      color: var(--text-muted);
-    }
-
-    /* Error Alert */
-    .search-error-msg {
-      background: rgba(239, 68, 68, 0.1);
-      border: 1px solid rgba(239, 68, 68, 0.4);
-      color: #FCA5A5;
-      padding: 22px;
-      border-radius: 12px;
-      text-align: center;
-      font-size: 15px;
-    }
-
-    /* Footer */
-    footer {
-      background: #040810;
-      border-top: 1px solid var(--border-gold);
-      padding: 50px 20px 30px;
-      text-align: center;
-    }
-
-    .footer-brand {
-      font-size: 22px;
-      font-weight: 700;
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 8px;
-    }
-
-    @media (max-width: 768px) {
-      .hero-title { font-size: 28px; }
-      .search-bar-wrap { flex-direction: column; }
-      .search-action-btn { padding: 14px; justify-content: center; }
-      .result-top-banner { flex-direction: column; align-items: flex-start; }
-      .courier-command-box { padding: 25px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আজীবন সদস্যপদ ঘোষণা ও আবেদন | স্বাধীন বাংলা প্রেসক্লাব</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (SolaimanLipi / Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(234, 179, 8, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(234, 179, 8, 0.9); }
+        }
+        .glow-btn {
+            animation: pulse-glow 2s infinite;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950">
 
-  <!-- Top Strip -->
-  <div class="top-strip">
-    <i class="fa-solid fa-star" style="color: var(--gold-solid); font-size: 11px;"></i> 
-    স্বাধীন বাংলা প্রেসক্লাব — সাংবাদিকতা ও জাতীয় মূল্যবোধের বিশ্বস্ত প্রতিষ্ঠান
-  </div>
-
-  <!-- Hero Header -->
-  <header class="hero">
-    <div class="brand-emblem">
-      <i class="fa-solid fa-feather-pointed"></i>
-    </div>
-    <h1 class="hero-title">স্বাধীন বাংলা প্রেসক্লাব</h1>
-    <div class="hero-tagline">“একনিষ্ঠতা আমাদের পথচলা”</div>
-    <p class="hero-desc">
-      সম্মানিত সদস্যদের স্বীকৃতি, প্রাতিষ্ঠানিক ডকুমেন্টস ও উপহার সামগ্রী যাচাই পোর্টাল। মোবাইল নম্বর লিখে আপনার পার্সেল ট্র্যাকিং নিশ্চিত করুন।
-    </p>
-  </header>
-
-  <!-- Floating Search Area -->
-  <div class="container search-section">
-    <div class="search-box-card">
-      <div class="search-header-text">
-        <i class="fa-solid fa-shield-halved" style="color: var(--gold-solid);"></i>
-        <span>আপনার নিবন্ধিত মোবাইল নম্বর লিখুন</span>
-      </div>
-      <div class="search-bar-wrap">
-        <input type="text" id="phoneInput" class="phone-input" placeholder="01XXXXXXXXX" maxlength="15">
-        <button class="search-action-btn" onclick="executeSearch()">
-          <i class="fa-solid fa-magnifying-glass"></i> তথ্য দেখুন
-        </button>
-      </div>
-
-      <!-- Result Dropdown Card -->
-      <div id="searchResultArea"></div>
-    </div>
-  </div>
-
-  <!-- Main Showcase Content -->
-  <main class="container">
-    
-    <div class="section-head-wrap">
-      <span class="section-accent-title">প্রিমিয়াম উপহার সামগ্রী ও স্মারক</span>
-      <h2 class="section-main-title">সদস্যদের জন্য প্রেরিত ডকুমেন্টস</h2>
+    <!-- Top Urgent Notice Banner -->
+    <div class="bg-gradient-to-r from-red-600 via-amber-600 to-red-600 text-white py-2.5 px-4 text-center text-sm md:text-base font-semibold shadow-lg sticky top-0 z-50 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
+        <span>জরুরি নোটিশ: ৩০ সেকেন্ডের মধ্যে নিচের অফিসিয়াল গুগল ফরমটি পূরণ করে আজীবন সদস্যপদ নিশ্চিত করুন!</span>
     </div>
 
-    <!-- 6 Visual Feature Cards -->
-    <div class="showcase-grid">
-
-      <!-- 1. সম্মাননা সনদ -->
-      <div class="visual-card">
-        <div class="mockup-preview-zone">
-          <div class="certificate-mockup">
-            <div class="cert-seal"><i class="fa-solid fa-crown"></i></div>
-            <div style="width: 100%; text-align: center;">
-              <div class="cert-line" style="margin: 0 auto 4px auto; background: var(--gold-solid); width: 60%;"></div>
-              <div class="cert-line"></div>
-              <div class="cert-line" style="width: 70%;"></div>
+    <!-- Main Container -->
+    <main class="max-w-5xl mx-auto px-4 py-8 w-full flex-grow">
+        
+        <!-- Header Branding -->
+        <div class="text-center mb-8">
+            <div class="inline-block p-3 rounded-full bg-amber-500/10 border border-amber-500/30 mb-3">
+                <i class="fa-solid fa-newspaper text-3xl text-amber-400"></i>
             </div>
-            <div style="display: flex; justify-content: space-between; width: 100%;">
-              <div style="width: 25px; height: 1px; background: #000;"></div>
-              <div style="width: 25px; height: 1px; background: #000;"></div>
-            </div>
-          </div>
+            <h1 class="text-3xl md:text-5xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 mb-2">
+                স্বাধীন বাংলা প্রেসক্লাব
+            </h1>
+            <p class="text-slate-400 text-sm md:text-lg">প্রতিনিধিদের জন্য আজীবন সদস্যপদ ও আধুনিক প্রযুক্তিগত সুযোগ-সুবিধা ঘোষণা</p>
         </div>
-        <div class="visual-card-body">
-          <div class="card-meta-head">
-            <h3>আজীবন সাংবাদিক সম্মাননা সনদ</h3>
-          </div>
-          <p>আপনার দীর্ঘ নিষ্ঠাবান সাংবাদিকতা ও সমাজসেবামূলক কাজের স্বীকৃতি। এটি সদস্যের সম্মাননা ও আজীবন স্বীকৃতির স্মারক হিসেবে চিরকাল সংরক্ষণযোগ্য এক অমূল্য দলিল।</p>
-          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> পার্সেলভুক্ত সামগ্রী</div>
-        </div>
-      </div>
 
-      <!-- 2. আজীবন সদস্য সনদ -->
-      <div class="visual-card">
-        <div class="mockup-preview-zone">
-          <div class="certificate-mockup" style="border-color: #1E3E62;">
-            <div class="cert-seal" style="background: linear-gradient(135deg, #1E3E62, #0A192F); color: #fff;">
-              <i class="fa-solid fa-award"></i>
-            </div>
-            <div style="width: 100%; text-align: center;">
-              <div class="cert-line" style="margin: 0 auto 4px auto; background: #1E3E62; width: 70%;"></div>
-              <div class="cert-line"></div>
-              <div class="cert-line"></div>
-            </div>
-            <div style="display: flex; justify-content: space-between; width: 100%;">
-              <div style="width: 25px; height: 1px; background: #000;"></div>
-              <div style="width: 25px; height: 1px; background: #000;"></div>
-            </div>
-          </div>
-        </div>
-        <div class="visual-card-body">
-          <div class="card-meta-head">
-            <h3>আজীবন সদস্য সনদ</h3>
-          </div>
-          <p>সরাসরি কম্পিউটারে নিখুঁত টাইপিং ও এক্সক্লুসিভ প্রফেশনাল ফরম্যাটিংয়ে প্রস্তুতকৃত সনদ। প্রতিষ্ঠানের নির্ধারিত সিল ও স্বাক্ষরে আপনার স্থায়ী সদস্যপদের পূর্ণাঙ্গ প্রমাণ।</p>
-          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> পার্সেলভুক্ত সামগ্রী</div>
-        </div>
-      </div>
-
-      <!-- 3. অফিসিয়াল প্রত্যয়নপত্র -->
-      <div class="visual-card">
-        <div class="mockup-preview-zone">
-          <div class="certificate-mockup" style="border: 1px solid #cbd5e1; background: #fff;">
-            <div style="font-size: 8px; font-weight: bold; color: #1E3E62; text-align: center;">OFFICIAL LETTER</div>
-            <div style="width: 100%;">
-              <div class="cert-line"></div>
-              <div class="cert-line"></div>
-              <div class="cert-line"></div>
-              <div class="cert-line" style="width: 50%;"></div>
-            </div>
-            <div style="display: flex; justify-content: flex-end; width: 100%;">
-              <i class="fa-solid fa-signature" style="font-size: 14px; color: #1E3E62;"></i>
-            </div>
-          </div>
-        </div>
-        <div class="visual-card-body">
-          <div class="card-meta-head">
-            <h3>অফিসিয়াল প্রত্যয়নপত্র</h3>
-          </div>
-          <p>স্বাধীন বাংলা প্রেসক্লাবের পক্ষ থেকে পেশাগত যেকোনো অফিশিয়াল কাজে ব্যবহারের জন্য সুনির্দিষ্ট তথ্য ও প্রতিষ্ঠানের লোগো সমন্বয়ে প্রফেশনাল প্রত্যয়নপত্র।</p>
-          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> পার্সেলভুক্ত সামগ্রী</div>
-        </div>
-      </div>
-
-      <!-- 4. আধুনিক সদস্য আইডি কার্ড -->
-      <div class="visual-card">
-        <div class="mockup-preview-zone">
-          <div class="id-card-mockup">
-            <div style="font-size: 7px; color: var(--gold-solid); font-weight: 700;">PRESS CLUB ID</div>
-            <div class="id-photo-placeholder">
-              <i class="fa-solid fa-user"></i>
-            </div>
-            <div class="cert-line" style="width: 80%; background: var(--gold-solid);"></div>
-            <div class="cert-line" style="width: 60%; background: #475569;"></div>
-          </div>
-        </div>
-        <div class="visual-card-body">
-          <div class="card-meta-head">
-            <h3>আধুনিক ডিজাইনের আইডি কার্ড</h3>
-          </div>
-          <p>প্রিমিয়াম ও আধুনিক ডিজাইন, সদস্য পরিচিতি, রক্তের গ্রুপ ও সিকিউরিটি ফিচার সমন্বয়ে পেশাগত দায়িত্ব পালনে ব্যবহারযোগ্য আধুনিক আইডি কার্ড।</p>
-          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> পার্সেলভুক্ত সামগ্রী</div>
-        </div>
-      </div>
-
-      <!-- 5. আইডি কার্ডের ফিতা -->
-      <div class="visual-card">
-        <div class="mockup-preview-zone">
-          <div style="position: relative; display: flex; align-items: center; justify-content: center;">
-            <i class="fa-solid fa-ribbon" style="font-size: 75px; color: var(--gold-solid); filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));"></i>
-            <i class="fa-solid fa-shield" style="position: absolute; top: 22px; font-size: 16px; color: #070d18;"></i>
-          </div>
-        </div>
-        <div class="visual-card-body">
-          <div class="card-meta-head">
-            <h3>লোগোযুক্ত প্রিমিয়াম ফিতা</h3>
-          </div>
-          <p>আইডি কার্ডটি সহজে বহন করার জন্য টেকসই উন্নতমানের ফিতা। এতে প্রেসক্লাবের লোগো ও ব্র্যান্ডিং সুস্পষ্টভাবে ফুটিয়ে তোলা হয়েছে।</p>
-          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> পার্সেলভুক্ত সামগ্রী</div>
-        </div>
-      </div>
-
-      <!-- 6. প্রিমিয়াম টি-শার্ট -->
-      <div class="visual-card">
-        <div class="mockup-preview-zone">
-          <div class="tshirt-mockup">
-            <i class="fa-solid fa-shirt"></i>
-            <div class="tshirt-logo-badge">
-              <i class="fa-solid fa-newspaper"></i>
-            </div>
-          </div>
-        </div>
-        <div class="visual-card-body">
-          <div class="card-meta-head">
-            <h3>লোগোযুক্ত প্রিমিয়াম টি-শার্ট</h3>
-          </div>
-          <p>প্রতিষ্ঠানের লোগো সমন্বয়ে সামনে ও পেছনে নিখুঁত ডিজাইনে তৈরি আরামদায়ক কটন টি-শার্ট। যা আমাদের ঐক্য, সংহতি ও মর্যাদার অনন্য প্রতীক।</p>
-          <div class="verified-pill"><i class="fa-solid fa-circle-check"></i> পার্সেলভুক্ত সামগ্রী</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- কুরিয়ার ও পার্সেল গ্রহণের গুরুত্বপূর্ণ নির্দেশনা -->
-    <div class="courier-command-box">
-      <div class="courier-title-bar">
-        <i class="fa-solid fa-truck-fast"></i>
-        <div>
-          <h3 style="font-size: 22px; color: #fff;">পার্সেল ডেলিভারি ও রিসিভ করার গাইডলাইন</h3>
-          <p style="color: var(--gold-light); font-size: 14px;">স্টেডফাস্ট কুরিয়ারের মাধ্যমে দেশব্যাপী দ্রুত ডেলিভারি চলমান</p>
-        </div>
-      </div>
-
-      <div class="courier-steps">
-        <div class="step-item">
-          <span>ধাপ ০১</span>
-          <h4>কল রিসিভ করুন</h4>
-          <p>স্টেডফাস্ট কুরিয়ারের রাইডার আপনার এলাকায় পৌঁছে ফোন করলে অনুগ্রহ করে দ্রুত কল রিসিভ করে যোগাযোগ করুন।</p>
-        </div>
-        <div class="step-item">
-          <span>ধাপ ০২</span>
-          <h4>পার্সেল অক্ষত যাচাই</h4>
-          <p>ডেলিভারি ম্যানের উপস্থিতিতে আপনার নাম, আইডি ও পার্সেলের সিল অক্ষত আছে কিনা যাচাই করে গ্রহণ করুন।</p>
-        </div>
-        <div class="step-item">
-          <span>ধাপ ০৩</span>
-          <h4>যথাযথ সংরক্ষণ</h4>
-          <p>সনদ ও প্রত্যয়নপত্র আপনার সাংবাদিক জীবনের অমূল্য স্মারক। এগুলো নিরাপদ স্থানে যত্নসহকারে সংরক্ষণ করুন।</p>
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-brand">স্বাধীন বাংলা প্রেসক্লাব</div>
-    <p style="color: var(--text-muted); font-size: 14px;">একনিষ্ঠতা আমাদের পথচলা। সদস্যদের আস্থার অনন্য প্ল্যাটফর্ম।</p>
-    <p style="margin-top: 20px; font-size: 12px; color: #475569;">
-      &copy; ২০২৬ স্বাধীন বাংলা প্রেসক্লাব | সকল অধিকার সংরক্ষিত।
-    </p>
-  </footer>
-
-  <script>
-    // ৮৩ জন সদস্যের পূর্ণ ডেটাবেজ
-    const membersData = [
-      { name: "Ibtesam Zakaria Tasin", district: "Chattogram", upazila: "Chandgaon", phone: "01852908009", memberId: "SBP 01" },
-      { name: "Md. Sajib Babu", district: "Dhaka", upazila: "Dhamrai", phone: "01942316868", memberId: "SBP 02" },
-      { name: "Md. Mahbubul Hasan", district: "Cumilla", upazila: "Laksam", phone: "01728133655", memberId: "SBP 03" },
-      { name: "Md. Chanowar Hossain", district: "Dinajpur", upazila: "Birampur", phone: "01762706244", memberId: "SBP 04" },
-      { name: "Milon Ahmed", district: "Ashulia Savar Narsinghpur", upazila: "Ashulia", phone: "01754329832", memberId: "SBP 05" },
-      { name: "Md. Elahi Sheikh", district: "Gopalganj", upazila: "Kashiani", phone: "01797431931", memberId: "SBP 06" },
-      { name: "Mamun Chowdhury", district: "Manikganj", upazila: "Shibalaya", phone: "01711005288", memberId: "SBP 07" },
-      { name: "Mohammad Omar Faruk", district: "Chattogram", upazila: "Boalkhali", phone: "01727027045", memberId: "SBP 08" },
-      { name: "A. H. M. Rezwanul Sayed Romeo", district: "Dhaka", upazila: "Dhaka", phone: "01642419774", memberId: "SBP 09" },
-      { name: "Md. Ferdous", district: "Barguna", upazila: "Barguna Sadar Upazila", phone: "01814075457", memberId: "SBP 10" },
-      { name: "Muha. Mujammel Hossain", district: "Barishal", upazila: "Muladi", phone: "01717155729", memberId: "SBP 11" },
-      { name: "Anamul Haque", district: "Noakhali", upazila: "Subarnachar", phone: "01811169210", memberId: "SBP 12" },
-      { name: "Md. Sajjad Alam", district: "Barishal", upazila: "Barishal Sadar", phone: "01575774092", memberId: "SBP 13" },
-      { name: "Md. Moinul Hasan Sadik", district: "Bogura", upazila: "Shahjahanpur", phone: "01771502637", memberId: "SBP 14" },
-      { name: "Md. Saimun Mia", district: "Barguna", upazila: "Barguna Sadar", phone: "01609320308", memberId: "SBP 15" },
-      { name: "Md. Asaduzzaman Khan", district: "Meherpur", upazila: "Meherpur Sadar Upazila", phone: "01857554993", memberId: "SBP 16" },
-      { name: "Md. Minarul Khan", district: "Jhenaidah", upazila: "Moheshpur", phone: "01922858354", memberId: "SBP 17" },
-      { name: "Muhammad Shah Alamgir Hossain", district: "Brahmanbaria", upazila: "Sadar", phone: "01616258093", memberId: "SBP 18" },
-      { name: "Mahmudul Hasan", district: "Chattogram", upazila: "Sandwip", phone: "01862228282", memberId: "SBP 19" },
-      { name: "Md. Nasim Mahmud", district: "Dhaka", upazila: "Keraniganj", phone: "01521750133", memberId: "SBP 20" },
-      { name: "Md. Fazlul Abbas Chowdhury", district: "Chattogram", upazila: "Chandanaish", phone: "01819931009", memberId: "SBP 21" },
-      { name: "K M Samchuzzaman", district: "Meherpur", upazila: "Gangni", phone: "01998740810", memberId: "SBP 22" },
-      { name: "Mohammad Sajjad Kibria Pappu", district: "Nilphamari", upazila: "Domar", phone: "01712836587", memberId: "SBP 23" },
-      { name: "Mohammad Ismail Hossain", district: "Dhaka", upazila: "Badda", phone: "01971444495", memberId: "SBP 24" },
-      { name: "Md. Sumon Chowdhury", district: "Rajshahi", upazila: "Tanore", phone: "01759736023", memberId: "SBP 25" },
-      { name: "Mohammad Mazbaul Islam", district: "Shariatpur", upazila: "Zajira", phone: "01733634939", memberId: "SBP 26" },
-      { name: "Anichur Rahman (Kabir)", district: "Satkhira", upazila: "Shyamnagar", phone: "01408307166", memberId: "SBP 27" },
-      { name: "Md. Milon Hossain", district: "Jashore", upazila: "Sharsha", phone: "01714155089", memberId: "SBP 28" },
-      { name: "Md. Alamgir Hossain", district: "Rangamati", upazila: "Langadu", phone: "01826356292", memberId: "SBP 29" },
-      { name: "Sadi Hasan", district: "Faridpur", upazila: "Alfadanga", phone: "01747017447", memberId: "SBP 30" },
-      { name: "Md. Abdul Khalek", district: "Khagrachhari", upazila: "Matiranga", phone: "01641398408", memberId: "SBP 31" },
-      { name: "Shafiqul Islam", district: "Kushtia", upazila: "Mirpur", phone: "01747883465", memberId: "SBP 32" },
-      { name: "Md. Abu Saleh Biplob", district: "Dhaka", upazila: "Mohammadpur", phone: "01617727263", memberId: "SBP 33" },
-      { name: "Md. Hafizur Rahman", district: "Mymensingh", upazila: "Sadar", phone: "01754046616", memberId: "SBP 34" },
-      { name: "Md. Ashraful Islam Asad Mondal", district: "Jhenaidah District Sadar", upazila: "Jhenaidah District Sadar Upazila", phone: "01734619833", memberId: "SBP 35" },
-      { name: "Sabuj Chandra Das", district: "Gazipur", upazila: "Kaliganj", phone: "01892727242", memberId: "SBP 36" },
-      { name: "Uttam Kumar Raptan", district: "Satkhira", upazila: "Shyamnagar", phone: "01749646364", memberId: "SBP 37" },
-      { name: "Md. Akash Sharif", district: "Faridpur", upazila: "Alfadanga", phone: "01580772647", memberId: "SBP 38" },
-      { name: "G M Alimun Hossain", district: "Satkhira District", upazila: "Shyamnagar Upazila", phone: "01577180057", memberId: "SBP 39" },
-      { name: "Aibur Rahman", district: "Sunamganj", upazila: "Tahirpur", phone: "01710210957", memberId: "SBP 40" },
-      { name: "Mohammad Amir Hossain", district: "Noakhali", upazila: "Hatiya Upazila", phone: "01851083873", memberId: "SBP 41" },
-      { name: "Md. Anisuzzaman Antar", district: "Dhaka", upazila: "Mirpur", phone: "01319541875", memberId: "SBP 42" },
-      { name: "Md. Mobarak Hossain", district: "Bandarban", upazila: "Bandarban Sadar", phone: "01913300773", memberId: "SBP 43" },
-      { name: "Amir Ali", district: "Gazipur", upazila: "Sreepur", phone: "01577433432", memberId: "SBP 44" },
-      { name: "Ashikuzzaman Rabbi", district: "Faridpur", upazila: "Boalmari", phone: "01712515293", memberId: "SBP 45" },
-      { name: "Fakir Md. Hasan", district: "Sunamganj", upazila: "Chhatak", phone: "01723236355", memberId: "SBP 46" },
-      { name: "Sohel Rana", district: "Sherpur", upazila: "Jhenaigati", phone: "01927199109", memberId: "SBP 47" },
-      { name: "Md. Mujammel Hossain", district: "Dhaka", upazila: "Demra", phone: "01717155729", memberId: "SBP 48" },
-      { name: "Sultan Mahmud", district: "Sirajganj", upazila: "Raiganj", phone: "01751650128", memberId: "SBP 49" },
-      { name: "Md. Sohanur Rahman Soukhin", district: "Bagerhat", upazila: "Sarankhola", phone: "01786791874", memberId: "SBP 50" },
-      { name: "Jaharul Islam Jibon", district: "Meherpur", upazila: "Meherpur Sadar Upazila", phone: "01718325958", memberId: "SBP 51" },
-      { name: "Md. Abu Huraira Gazi", district: "Meherpur", upazila: "Mujibnagar", phone: "01625983515", memberId: "SBP 52" },
-      { name: "Syed Muhammad Waliulullah", district: "Rajbari", upazila: "Kalukhali", phone: "01315988022", memberId: "SBP 54" },
-      { name: "Md. Raju Akon", district: "Barguna", upazila: "Amtali", phone: "01323776012", memberId: "SBP 55" },
-      { name: "Sujon Chandra Das", district: "Gazipur", upazila: "Kaliganj", phone: "01711326392", memberId: "SBP 56" },
-      { name: "Jahangir Alam Rubel", district: "Sirajganj", upazila: "Kazipur", phone: "01779205421", memberId: "SBP 57" },
-      { name: "Mahmudul Hasan", district: "Gazipur", upazila: "Gazipur Sadar", phone: "01713803001", memberId: "SBP 58" },
-      { name: "Md. Mizanur Rahman Sabuj", district: "Pirojpur", upazila: "Pirojpur Sadar", phone: "01330771076", memberId: "SBP 59" },
-      { name: "Md. Riduwan Chowdhury", district: "Chattogram", upazila: "Patiya", phone: "01307869794", memberId: "SBP 60" },
-      { name: "Mohammad Anwar Hossain", district: "Gazipur", upazila: "Kaliakair", phone: "01318630439", memberId: "SBP 61" },
-      { name: "Dr. Md. Abu Bakkar", district: "Chattogram", upazila: "Rangunia", phone: "01868578580", memberId: "SBP 62" },
-      { name: "Mrityunjoy Sarkar", district: "Natore", upazila: "Bagatipara", phone: "01317254296", memberId: "SBP 63" },
-      { name: "Md. Abu Taher", district: "Chattogram", upazila: "Banshkhali", phone: "01954891378", memberId: "SBP 64" },
-      { name: "Milon Ahmed", district: "Bogura", upazila: "Sonatola", phone: "01754329832", memberId: "SBP 65" },
-      { name: "Md. Mahibullah", district: "Dhaka", upazila: "Mohammadpur", phone: "01611220552", memberId: "SBP 66" },
-      { name: "Md. Ashikur Rahman", district: "Bogura", upazila: "Shibganj", phone: "01600303946", memberId: "SBP 67" },
-      { name: "Naim Mahmud Ontu", district: "Rajbari", upazila: "Pangsha", phone: "01945115994", memberId: "SBP 68" },
-      { name: "Md. Nazmul Islam (Rana)", district: "Brahmanbaria", upazila: "Nabinagar", phone: "01619699183", memberId: "SBP 69" },
-      { name: "Imran Muhammad Sakib", district: "Chattogram", upazila: "Banshkhali", phone: "01829603057", memberId: "SBP 70" },
-      { name: "Md. Hasan Ali", district: "Naogaon", upazila: "Patnitala", phone: "01739714015", memberId: "SBP 71" },
-      { name: "Md. Anik", district: "Bhola", upazila: "Char Fasson", phone: "01806091565", memberId: "SBP 72" },
-      { name: "Abusufian", district: "Sylhet", upazila: "South Surma", phone: "01782522907", memberId: "SBP 73" },
-      { name: "Shahriar Hossain Jipu", district: "Dhaka North 1230", upazila: "Dakshinkhan", phone: "01337221292", memberId: "SBP 74" },
-      { name: "A B M Sadi", district: "Cumilla", upazila: "Sadar South", phone: "01521730580", memberId: "SBP 75" },
-      { name: "Ishak Dewan", district: "Narsingdi District", upazila: "Narsingdi Sadar", phone: "01711775440", memberId: "SBP 76" },
-      { name: "Md. Abul Kashem", district: "Sylhet", upazila: "Beanibazar", phone: "01875409668", memberId: "SBP 77" },
-      { name: "Md. Rakib Hossain", district: "Patuakhali", upazila: "Galachipa", phone: "01770548771", memberId: "SBP 78" },
-      { name: "Rubel Sheikh", district: "Narail", upazila: "Narail Sadar", phone: "01781935112", memberId: "SBP 79" },
-      { name: "Rijvi Alamin", district: "Kurigram", upazila: "Bhurungamari", phone: "01751405555", memberId: "SBP 80" },
-      { name: "Md. Shahidul Alam Joni", district: "Barguna", upazila: "Bamna", phone: "01712041942", memberId: "SBP 81" },
-      { name: "E M A Sakib Khandaker", district: "Narsingdi", upazila: "Shibpur", phone: "01312785222", memberId: "SBP 82" },
-      { name: "Md. Arif Rayhan", district: "Bhola", upazila: "Char Fasson", phone: "01726554391", memberId: "SBP 83" },
-      { name: "Rasel Ahmed", district: "Kushtia", upazila: "Kushtia Sadar", phone: "01307259000", memberId: "SBP 84" },
-      { name: "Md. Jubayer Hossain", district: "Jashore", upazila: "Sharsha", phone: "01917073085", memberId: "SBP 85" },
-      { name: "Arian Antar", district: "Gazipur", upazila: "Kaliakair", phone: "01333603275", memberId: "SBP 86" }
-    ];
-
-    // মোবাইল নম্বর স্বাভাবিকীকরণ (+88, স্পেস ও হাইফেন বাদ দেওয়া)
-    function sanitizeNumber(n) {
-      if (!n) return "";
-      let clean = n.toString().replace(/[^0-9]/g, '');
-      if (clean.startsWith('880')) {
-        clean = clean.substring(2);
-      }
-      return clean;
-    }
-
-    // সার্চ ফাংশন
-    function executeSearch() {
-      const inputVal = document.getElementById("phoneInput").value.trim();
-      const resultBox = document.getElementById("searchResultArea");
-      const cleanedQuery = sanitizeNumber(inputVal);
-
-      if (!cleanedQuery) {
-        alert("অনুগ্রহ করে একটি সঠিক মোবাইল নম্বর লিখুন।");
-        return;
-      }
-
-      const match = membersData.find(m => sanitizeNumber(m.phone) === cleanedQuery);
-      resultBox.style.display = "block";
-
-      if (match) {
-        resultBox.innerHTML = `
-          <div class="result-sheet">
-            <div class="result-top-banner">
-              <div class="member-title">
-                <h2>${match.name}</h2>
-                <p><i class="fa-solid fa-id-badge" style="color: var(--gold-solid);"></i> আইডি: <strong>${match.memberId}</strong> &nbsp;|&nbsp; <i class="fa-solid fa-phone" style="color: var(--gold-solid);"></i> ${match.phone}</p>
-                <p><i class="fa-solid fa-location-dot" style="color: var(--gold-solid);"></i> ঠিকানা: ${match.upazila}, ${match.district}</p>
-              </div>
-              <div class="courier-status-tag">
-                <i class="fa-solid fa-box-open"></i> পার্সেল বুকিং সম্পন্ন
-              </div>
-            </div>
-
-            <div class="result-body-wrap">
-              <div class="formal-message-card">
-                <strong style="color: var(--gold-light); font-size: 16px;">শ্রদ্ধেয় সদস্য,</strong><br>
-                স্বাধীন বাংলা প্রেসক্লাবের পক্ষ থেকে আপনার প্রতি রইল আন্তরিক অভিনন্দন ও শুভেচ্ছা। আপনার গুরুত্বপূর্ণ অফিশিয়াল ডকুমেন্টস ও উপহার সামগ্রী প্রস্তুত করে <strong>স্টেডফাস্ট কুরিয়ারের</strong> মাধ্যমে আপনার ঠিকানায় বুকিং করা হয়েছে।
-              </div>
-
-              <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-light); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
-                <h4 style="color: var(--gold-solid); margin-bottom: 12px; font-size: 16px;"><i class="fa-solid fa-clipboard-check"></i> আপনার জন্য প্রেরিত ডকুমেন্টস ও উপহার:</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; font-size: 14px; color: #cbd5e1;">
-                  <div><i class="fa-solid fa-check" style="color: #10B981; margin-right: 6px;"></i> আজীবন সাংবাদিক সম্মাননা সনদ</div>
-                  <div><i class="fa-solid fa-check" style="color: #10B981; margin-right: 6px;"></i> আজীবন সদস্য সনদ</div>
-                  <div><i class="fa-solid fa-check" style="color: #10B981; margin-right: 6px;"></i> অফিশিয়াল প্রত্যয়নপত্র</div>
-                  <div><i class="fa-solid fa-check" style="color: #10B981; margin-right: 6px;"></i> আধুনিক সদস্য আইডি কার্ড</div>
-                  <div><i class="fa-solid fa-check" style="color: #10B981; margin-right: 6px;"></i> আইডি কার্ডের ফিতা</div>
-                  <div><i class="fa-solid fa-check" style="color: #10B981; margin-right: 6px;"></i> লোগোযুক্ত প্রিমিয়াম টি-শার্ট</div>
+        <!-- Top YouTube Video Section -->
+        <div class="mb-10">
+            <div class="glass-card rounded-2xl p-3 md:p-5 shadow-2xl border border-amber-500/30">
+                <div class="flex items-center justify-between mb-3 px-2">
+                    <h2 class="text-amber-400 font-bold text-base md:text-lg flex items-center gap-2">
+                        <i class="fa-brands fa-youtube text-red-500 text-xl"></i> বিশেষ ভিডিও বার্তা (অটো প্লে)
+                    </h2>
+                    <span class="text-xs bg-red-500/20 text-red-400 px-3 py-1 rounded-full border border-red-500/30">লাইভ সম্প্রচার</span>
                 </div>
-              </div>
-
-              <div style="text-align: center; color: var(--gold-light); font-size: 14px; border-top: 1px dashed var(--border-light); padding-top: 15px;">
-                কুরিয়ার থেকে ডেলিভারি ম্যান আপনাকে ফোন করলে অনুগ্রহ করে তাঁর সঙ্গে যোগাযোগ করে দ্রুত পার্সেলটি গ্রহণ করবেন।
-              </div>
+                <!-- Responsive YouTube Embed with autoplay and unmuted sound -->
+                <div class="relative w-full overflow-hidden rounded-xl shadow-inner aspect-video bg-black">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full border-0" 
+                        src="https://www.youtube.com/embed/MeE2kJDSlXU?autoplay=1&mute=0&controls=1&loop=1&playlist=MeE2kJDSlXU" 
+                        title="Swadhin Bangla Press Club Video" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
-          </div>
-        `;
-      } else {
-        resultBox.innerHTML = `
-          <div class="search-error-msg">
-            <i class="fa-solid fa-triangle-exclamation" style="font-size: 30px; margin-bottom: 8px; display: block;"></i>
-            দুঃখিত, এই মোবাইল নম্বরের বিপরীতে কোনো তথ্য পাওয়া যায়নি।<br>
-            অনুগ্রহ করে নম্বরটি যাচাই করুন অথবা স্বাধীন বাংলা প্রেসক্লাবের পরিচালনা পর্ষদের সাথে যোগাযোগ করুন।
-          </div>
-        `;
-      }
+        </div>
 
-      resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
+        <!-- Countdown & Action Alert Box -->
+        <div class="glass-card rounded-2xl p-6 md:p-8 mb-10 border-2 border-amber-500/40 text-center relative overflow-hidden shadow-2xl">
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="inline-flex items-center gap-2 bg-amber-500/20 text-amber-300 px-4 py-1.5 rounded-full text-sm font-semibold mb-4 border border-amber-500/30">
+                <i class="fa-regular fa-clock"></i> অটো-রিডাইরেক্ট কাউন্টডাউন: <span id="countdown" class="text-white font-bold text-lg">30</span> সেকেন্ড
+            </div>
 
-    // Enter Key Handler
-    document.getElementById("phoneInput").addEventListener("keyup", function(e) {
-      if (e.key === "Enter") {
-        executeSearch();
-      }
-    });
-  </script>
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">আজীবন সদস্য ফরম দ্রুত জমা দিন</h3>
+            <p class="text-slate-300 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-6">
+                আপনাকে স্বয়ংক্রিয়ভাবে অফিসিয়াল গুগল ফর্মে নিয়ে যাওয়া হচ্ছে। ৩০ সেকেন্ডের মধ্যে নিচের বাটনে ক্লিক করুন অথবা নিজে থেকেই ফর্মে চলে যান। আজীবন সদস্য ফি ও ফরম জমা দেওয়া সকল প্রতিনিধির জন্য বাধ্যতামূলক।
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://forms.gle/AtKofKqsZ5q6WsTD8" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-slate-950 font-bold rounded-xl text-lg shadow-xl glow-btn transition transform hover:scale-105 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-file-pen text-xl"></i> আজীবন সদস্য ফরম জমা দিন (Google Form)
+                </a>
+            </div>
+        </div>
+
+        <!-- Details & Benefits Grid -->
+        <div class="mb-10">
+            <h3 class="text-xl md:text-2xl font-bold text-amber-400 mb-6 text-center">আজীবন সদস্যপদের প্রধান সুযোগ-সুবিধা ও ঘোষণাসমূহ</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">আজীবন সদস্য ঘোষণা</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        প্রতিটি প্রতিনিধিকে আজীবনের জন্য সদস্য ঘোষণা করা হলো। মৃত্যুর আগ পর্যন্ত বা সারাজীবন এই সদস্যপদ বহাল থাকবে।
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">কোনো অতিরিক্ত ফি নেই</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        একবার আজীবন সদস্য ফি জমা দেওয়ার পর ভবিষ্যতে আর কখনো কোনো প্রকার আর্থিক লেনদেন বা ফি দিতে হবে না।
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">এনএমসি কিউআর কোড আইডি</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        আধুনিক প্রযুক্তিসম্পন্ন কিউআর কোড সংবলিত স্মার্ট আইডি কার্ড ও নতুন ডিজাইনের ফিতা প্রদান করা হবে।
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">বিশেষ প্রত্যয়নপত্র ও সার্টিফিকেট</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        সরাসরি প্রতিনিধির তথ্য এবং কিউআর কোড সিস্টেমযুক্ত আজীবন প্রত্যয়নপত্র ও সার্টিফিকেট কম্পিউটারাইজড তৈরি করে দেওয়া হবে।
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">অফিসিয়াল প্রিমিয়াম গেঞ্জি</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        সর্বোচ্চ মানসম্মত ও প্রিমিয়াম ডিজাইনের অফিসিয়াল গেঞ্জি প্রদান করা হবে যা প্রতিষ্ঠানের পরিচয় বহন করবে।
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">আধুনিক নিউজ পোর্টাল ও প্রযুক্তি</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        নতুন ওয়েবসাইট ও আধুনিক নিউজ পোর্টাল থেকে শুরু করে সমস্ত কার্যক্রম প্রযুক্তির মাধ্যমে উন্মুক্ত ও সহজ করা হয়েছে।
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 bg-slate-950/80 py-6 text-center text-slate-500 text-sm">
+        <p>© ২০২৬ স্বাধীন বাংলা প্রেসক্লাব। সর্বস্বত্ব সংরক্ষিত।</p>
+        <p class="mt-1 text-xs text-slate-400">কারিগরি সহযোগিতায়: স্বাধীন বাংলা প্রেসক্লাব আইটি সেল</p>
+    </footer>
+
+    <!-- Auto Redirection Script (30 Seconds) -->
+    <script>
+        const targetUrl = "https://forms.gle/AtKofKqsZ5q6WsTD8";
+        let timeLeft = 30;
+        const countdownEl = document.getElementById("countdown");
+
+        const timer = setInterval(() => {
+            timeLeft--;
+            countdownEl.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = targetUrl;
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
