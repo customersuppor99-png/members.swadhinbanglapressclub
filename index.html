@@ -8,32 +8,51 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts (SolaimanLipi / Inter) -->
+    <!-- Google Fonts (Hind Siliguri) -->
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Hind Siliguri', sans-serif;
         }
+        /* Colorful Vibrant Animated Background */
+        .bg-vibrant-gradient {
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #31103f, #172554, #0f172a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
         .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 15px rgba(234, 179, 8, 0.5); }
-            50% { box-shadow: 0 0 30px rgba(234, 179, 8, 0.9); }
+            0%, 100% { box-shadow: 0 0 20px rgba(234, 179, 8, 0.6); }
+            50% { box-shadow: 0 0 40px rgba(239, 68, 68, 0.9); }
         }
         .glow-btn {
-            animation: pulse-glow 2s infinite;
+            animation: pulse-glow 1.5s infinite;
+        }
+        @keyframes alert-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .urgent-alert {
+            animation: alert-bounce 1s infinite;
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950">
+<body class="bg-vibrant-gradient text-slate-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950">
 
-    <!-- Top Urgent Notice Banner -->
-    <div class="bg-gradient-to-r from-red-600 via-amber-600 to-red-600 text-white py-2.5 px-4 text-center text-sm md:text-base font-semibold shadow-lg sticky top-0 z-50 flex items-center justify-center gap-2">
-        <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
-        <span>জরুরি নোটিশ: ৩০ সেকেন্ডের মধ্যে নিচের অফিসিয়াল গুগল ফরমটি পূরণ করে আজীবন সদস্যপদ নিশ্চিত করুন!</span>
+    <!-- Top Urgent Notice Banner with Live Countdown & Deadline Message -->
+    <div class="bg-gradient-to-r from-red-600 via-pink-600 to-amber-600 text-white py-3 px-4 text-center text-sm md:text-base font-bold shadow-xl sticky top-0 z-50 flex flex-wrap items-center justify-center gap-3 border-b border-white/20">
+        <i class="fa-solid fa-triangle-exclamation text-yellow-300 urgent-alert text-xl"></i>
+        <span>🚨 জরুরি ঘোষণা: আজকেই শেষ সময়! দ্রুত আপনার আজীবন সদস্য ফরমটি জমা দিন। অটো-রিডাইরেক্ট হতে বাকি: <span id="top-countdown" class="bg-black/40 px-2.5 py-0.5 rounded text-amber-300 font-extrabold text-lg">30</span> সেকেন্ড</span>
     </div>
 
     <!-- Main Container -->
@@ -41,29 +60,29 @@
         
         <!-- Header Branding -->
         <div class="text-center mb-8">
-            <div class="inline-block p-3 rounded-full bg-amber-500/10 border border-amber-500/30 mb-3">
-                <i class="fa-solid fa-newspaper text-3xl text-amber-400"></i>
+            <div class="inline-block p-3.5 rounded-full bg-gradient-to-tr from-amber-500/20 to-pink-500/20 border border-amber-500/40 mb-3 shadow-lg">
+                <i class="fa-solid fa-newspaper text-3xl md:text-4xl text-amber-400"></i>
             </div>
-            <h1 class="text-3xl md:text-5xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 mb-2">
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-100 to-pink-400 mb-2 drop-shadow">
                 স্বাধীন বাংলা প্রেসক্লাব
             </h1>
-            <p class="text-slate-400 text-sm md:text-lg">প্রতিনিধিদের জন্য আজীবন সদস্যপদ ও আধুনিক প্রযুক্তিগত সুযোগ-সুবিধা ঘোষণা</p>
+            <p class="text-slate-300 text-sm md:text-lg font-medium">প্রতিনিধিদের জন্য আজীবন সদস্যপদ ও আধুনিক প্রযুক্তিগত সুযোগ-সুবিধা ঘোষণা</p>
         </div>
 
-        <!-- Top YouTube Video Section -->
+        <!-- Top YouTube Video Section (Updated Link) -->
         <div class="mb-10">
             <div class="glass-card rounded-2xl p-3 md:p-5 shadow-2xl border border-amber-500/30">
                 <div class="flex items-center justify-between mb-3 px-2">
                     <h2 class="text-amber-400 font-bold text-base md:text-lg flex items-center gap-2">
-                        <i class="fa-brands fa-youtube text-red-500 text-xl"></i> বিশেষ ভিডিও বার্তা (অটো প্লে)
+                        <i class="fa-brands fa-youtube text-red-500 text-2xl"></i> বিশেষ ভিডিও বার্তা (লাইভ প্লে)
                     </h2>
-                    <span class="text-xs bg-red-500/20 text-red-400 px-3 py-1 rounded-full border border-red-500/30">লাইভ সম্প্রচার</span>
+                    <span class="text-xs bg-red-500/20 text-red-300 px-3 py-1 rounded-full border border-red-500/40 font-semibold animate-pulse">🔴 সরাসরি সম্প্রচার</span>
                 </div>
-                <!-- Responsive YouTube Embed with autoplay and unmuted sound -->
-                <div class="relative w-full overflow-hidden rounded-xl shadow-inner aspect-video bg-black">
+                <!-- Responsive YouTube Embed with autoplay and sound -->
+                <div class="relative w-full overflow-hidden rounded-xl shadow-inner aspect-video bg-black border border-white/10">
                     <iframe 
                         class="absolute top-0 left-0 w-full h-full border-0" 
-                        src="https://www.youtube.com/embed/MeE2kJDSlXU?autoplay=1&mute=0&controls=1&loop=1&playlist=MeE2kJDSlXU" 
+                        src="https://www.youtube.com/embed/JYYzv8i7AKs?autoplay=1&mute=0&controls=1&loop=1&playlist=JYYzv8i7AKs" 
                         title="Swadhin Bangla Press Club Video" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen>
@@ -72,21 +91,22 @@
             </div>
         </div>
 
-        <!-- Countdown & Action Alert Box -->
-        <div class="glass-card rounded-2xl p-6 md:p-8 mb-10 border-2 border-amber-500/40 text-center relative overflow-hidden shadow-2xl">
-            <div class="absolute -right-10 -top-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- High-Emphasis Action Alert Box -->
+        <div class="glass-card rounded-2xl p-6 md:p-8 mb-10 border-2 border-red-500/60 text-center relative overflow-hidden shadow-2xl bg-gradient-to-b from-purple-950/40 to-slate-950/80">
+            <div class="absolute -right-10 -top-10 w-48 h-48 bg-red-500/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-10 -bottom-10 w-48 h-48 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
             
-            <div class="inline-flex items-center gap-2 bg-amber-500/20 text-amber-300 px-4 py-1.5 rounded-full text-sm font-semibold mb-4 border border-amber-500/30">
-                <i class="fa-regular fa-clock"></i> অটো-রিডাইরেক্ট কাউন্টডাউন: <span id="countdown" class="text-white font-bold text-lg">30</span> সেকেন্ড
+            <div class="inline-flex items-center gap-2 bg-red-500/20 text-red-300 px-4 py-1.5 rounded-full text-sm font-bold mb-4 border border-red-500/40">
+                <i class="fa-solid fa-fire text-amber-400"></i> আজকেই শেষ সময় — আর দেরি করবেন না!
             </div>
 
-            <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">আজীবন সদস্য ফরম দ্রুত জমা দিন</h3>
-            <p class="text-slate-300 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-6">
-                আপনাকে স্বয়ংক্রিয়ভাবে অফিসিয়াল গুগল ফর্মে নিয়ে যাওয়া হচ্ছে। ৩০ সেকেন্ডের মধ্যে নিচের বাটনে ক্লিক করুন অথবা নিজে থেকেই ফর্মে চলে যান। আজীবন সদস্য ফি ও ফরম জমা দেওয়া সকল প্রতিনিধির জন্য বাধ্যতামূলক।
+            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3">দ্রুত আপনার আজীবন সদস্য ফরমটি জমা দিন!</h3>
+            <p class="text-slate-200 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-6 font-medium">
+                স্বাধীন বাংলা প্রেসক্লাবের পক্ষ থেকে জানানো যাচ্ছে যে, আজীবন সদস্যপদ নিশ্চিত করতে এবং সকল সুযোগ-সুবিধা পেতে এখনই গুগল ফরম পূরণ করা বাধ্যতামূলক। আপনাকে স্বয়ংক্রিয়ভাবে গুগল ফর্মে নিয়ে যাওয়া হচ্ছে।
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://forms.gle/AtKofKqsZ5q6WsTD8" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-slate-950 font-bold rounded-xl text-lg shadow-xl glow-btn transition transform hover:scale-105 flex items-center justify-center gap-3">
+                <a href="https://forms.gle/AtKofKqsZ5q6WsTD8" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-red-600 via-amber-500 to-yellow-500 hover:from-red-700 hover:to-yellow-600 text-slate-950 font-extrabold rounded-xl text-lg shadow-2xl glow-btn transition transform hover:scale-105 flex items-center justify-center gap-3">
                     <i class="fa-solid fa-file-pen text-xl"></i> আজীবন সদস্য ফরম জমা দিন (Google Form)
                 </a>
             </div>
@@ -94,71 +114,71 @@
 
         <!-- Details & Benefits Grid -->
         <div class="mb-10">
-            <h3 class="text-xl md:text-2xl font-bold text-amber-400 mb-6 text-center">আজীবন সদস্যপদের প্রধান সুযোগ-সুবিধা ও ঘোষণাসমূহ</h3>
+            <h3 class="text-xl md:text-2xl font-bold text-amber-300 mb-6 text-center drop-shadow">আজীবন সদস্যপদের প্রধান সুযোগ-সুবিধা ও ঘোষণাসমূহ</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Card 1 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400 transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">আজীবন সদস্য ঘোষণা</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p class="text-slate-300 text-sm leading-relaxed">
                         প্রতিটি প্রতিনিধিকে আজীবনের জন্য সদস্য ঘোষণা করা হলো। মৃত্যুর আগ পর্যন্ত বা সারাজীবন এই সদস্যপদ বহাল থাকবে।
                     </p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400 transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-ban"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">কোনো অতিরিক্ত ফি নেই</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p class="text-slate-300 text-sm leading-relaxed">
                         একবার আজীবন সদস্য ফি জমা দেওয়ার পর ভবিষ্যতে আর কখনো কোনো প্রকার আর্থিক লেনদেন বা ফি দিতে হবে না।
                     </p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400 transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-qrcode"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">এনএমসি কিউআর কোড আইডি</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p class="text-slate-300 text-sm leading-relaxed">
                         আধুনিক প্রযুক্তিসম্পন্ন কিউআর কোড সংবলিত স্মার্ট আইডি কার্ড ও নতুন ডিজাইনের ফিতা প্রদান করা হবে।
                     </p>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400 transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-certificate"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">বিশেষ প্রত্যয়নপত্র ও সার্টিফিকেট</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p class="text-slate-300 text-sm leading-relaxed">
                         সরাসরি প্রতিনিধির তথ্য এবং কিউআর কোড সিস্টেমযুক্ত আজীবন প্রত্যয়নপত্র ও সার্টিফিকেট কম্পিউটারাইজড তৈরি করে দেওয়া হবে।
                     </p>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400 transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-shirt"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">অফিসিয়াল প্রিমিয়াম গেঞ্জি</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p class="text-slate-300 text-sm leading-relaxed">
                         সর্বোচ্চ মানসম্মত ও প্রিমিয়াম ডিজাইনের অফিসিয়াল গেঞ্জি প্রদান করা হবে যা প্রতিষ্ঠানের পরিচয় বহন করবে।
                     </p>
                 </div>
 
                 <!-- Card 6 -->
-                <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400 transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-globe"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">আধুনিক নিউজ পোর্টাল ও প্রযুক্তি</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p class="text-slate-300 text-sm leading-relaxed">
                         নতুন ওয়েবসাইট ও আধুনিক নিউজ পোর্টাল থেকে শুরু করে সমস্ত কার্যক্রম প্রযুক্তির মাধ্যমে উন্মুক্ত ও সহজ করা হয়েছে।
                     </p>
                 </div>
@@ -168,16 +188,16 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-900 bg-slate-950/80 py-6 text-center text-slate-500 text-sm">
+    <footer class="border-t border-white/10 bg-slate-950/90 py-6 text-center text-slate-400 text-sm">
         <p>© ২০২৬ স্বাধীন বাংলা প্রেসক্লাব। সর্বস্বত্ব সংরক্ষিত।</p>
-        <p class="mt-1 text-xs text-slate-400">কারিগরি সহযোগিতায়: স্বাধীন বাংলা প্রেসক্লাব আইটি সেল</p>
+        <p class="mt-1 text-xs text-amber-400/80">কারিগরি সহযোগিতায়: স্বাধীন বাংলা প্রেসক্লাব আইটি সেল</p>
     </footer>
 
-    <!-- Auto Redirection Script (30 Seconds) -->
+    <!-- Auto Redirection & Dynamic Alert Script -->
     <script>
         const targetUrl = "https://forms.gle/AtKofKqsZ5q6WsTD8";
         let timeLeft = 30;
-        const countdownEl = document.getElementById("countdown");
+        const countdownEl = document.getElementById("top-countdown");
 
         const timer = setInterval(() => {
             timeLeft--;
