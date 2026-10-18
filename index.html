@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আজীবন সদস্যপদ ঘোষণা ও আবেদন | স্বাধীন বাংলা প্রেসক্লাব</title>
+    <title>আজীবন সদস্যপদ ঘোষণা ও আবেদন ফরম | স্বাধীন বাংলা প্রেসক্লাব</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
@@ -16,7 +16,7 @@
         }
         /* Colorful Vibrant Animated Background */
         .bg-vibrant-gradient {
-            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #31103f, #172554, #0f172a);
+            background: linear-gradient(-45deg, #090d16, #171033, #2e0838, #0f2027, #090d16);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
         }
@@ -32,15 +32,15 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(234, 179, 8, 0.6); }
-            50% { box-shadow: 0 0 40px rgba(239, 68, 68, 0.9); }
+            0%, 100% { box-shadow: 0 0 25px rgba(234, 179, 8, 0.7); }
+            50% { box-shadow: 0 0 50px rgba(239, 68, 68, 0.95); }
         }
         .glow-btn {
             animation: pulse-glow 1.5s infinite;
         }
         @keyframes alert-bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+            50% { transform: translateY(-4px); }
         }
         .urgent-alert {
             animation: alert-bounce 1s infinite;
@@ -49,72 +49,77 @@
 </head>
 <body class="bg-vibrant-gradient text-slate-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950">
 
-    <!-- Top Urgent Notice Banner with Live Countdown & Deadline Message -->
+    <!-- Top Urgent Notice Banner with Live Countdown -->
     <div class="bg-gradient-to-r from-red-600 via-pink-600 to-amber-600 text-white py-3 px-4 text-center text-sm md:text-base font-bold shadow-xl sticky top-0 z-50 flex flex-wrap items-center justify-center gap-3 border-b border-white/20">
         <i class="fa-solid fa-triangle-exclamation text-yellow-300 urgent-alert text-xl"></i>
-        <span>🚨 জরুরি ঘোষণা: আজকেই শেষ সময়! দ্রুত আপনার আজীবন সদস্য ফরমটি জমা দিন। অটো-রিডাইরেক্ট হতে বাকি: <span id="top-countdown" class="bg-black/40 px-2.5 py-0.5 rounded text-amber-300 font-extrabold text-lg">30</span> সেকেন্ড</span>
+        <span>🚨 জরুরি ঘোষণা: আজকেই শেষ সময়! দ্রুত আপনার আজীবন সদস্য ফরমটি জমা দিন। অটো-রিডাইরেক্ট হতে বাকি: <span id="top-countdown" class="bg-black/50 px-3 py-0.5 rounded text-amber-300 font-extrabold text-lg">30</span> সেকেন্ড</span>
     </div>
 
     <!-- Main Container -->
-    <main class="max-w-5xl mx-auto px-4 py-8 w-full flex-grow">
+    <main class="max-w-5xl mx-auto px-4 py-10 w-full flex-grow">
         
         <!-- Header Branding -->
-        <div class="text-center mb-8">
-            <div class="inline-block p-3.5 rounded-full bg-gradient-to-tr from-amber-500/20 to-pink-500/20 border border-amber-500/40 mb-3 shadow-lg">
-                <i class="fa-solid fa-newspaper text-3xl md:text-4xl text-amber-400"></i>
+        <div class="text-center mb-10">
+            <div class="inline-block p-4 rounded-full bg-gradient-to-tr from-amber-500/20 to-pink-500/20 border border-amber-500/40 mb-3 shadow-2xl">
+                <i class="fa-solid fa-newspaper text-4xl text-amber-400"></i>
             </div>
-            <h1 class="text-3xl md:text-5xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-100 to-pink-400 mb-2 drop-shadow">
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-100 to-pink-400 mb-2 drop-shadow-lg">
                 স্বাধীন বাংলা প্রেসক্লাব
             </h1>
-            <p class="text-slate-300 text-sm md:text-lg font-medium">প্রতিনিধিদের জন্য আজীবন সদস্যপদ ও আধুনিক প্রযুক্তিগত সুযোগ-সুবিধা ঘোষণা</p>
+            <p class="text-slate-300 text-base md:text-xl font-medium">প্রতিনিধিদের জন্য ঐতিহাসিক আজীবন সদস্যপদ ও আধুনিক প্রযুক্তিগত সুযোগ-সুবিধা ঘোষণা</p>
         </div>
 
-        <!-- Top YouTube Video Section (Updated Link) -->
-        <div class="mb-10">
-            <div class="glass-card rounded-2xl p-3 md:p-5 shadow-2xl border border-amber-500/30">
-                <div class="flex items-center justify-between mb-3 px-2">
-                    <h2 class="text-amber-400 font-bold text-base md:text-lg flex items-center gap-2">
-                        <i class="fa-brands fa-youtube text-red-500 text-2xl"></i> বিশেষ ভিডিও বার্তা (লাইভ প্লে)
-                    </h2>
-                    <span class="text-xs bg-red-500/20 text-red-300 px-3 py-1 rounded-full border border-red-500/40 font-semibold animate-pulse">🔴 সরাসরি সম্প্রচার</span>
-                </div>
-                <!-- Responsive YouTube Embed with autoplay and sound -->
-                <div class="relative w-full overflow-hidden rounded-xl shadow-inner aspect-video bg-black border border-white/10">
-                    <iframe 
-                        class="absolute top-0 left-0 w-full h-full border-0" 
-                        src="https://www.youtube.com/embed/JYYzv8i7AKs?autoplay=1&mute=0&controls=1&loop=1&playlist=JYYzv8i7AKs" 
-                        title="Swadhin Bangla Press Club Video" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </div>
-
-        <!-- High-Emphasis Action Alert Box -->
-        <div class="glass-card rounded-2xl p-6 md:p-8 mb-10 border-2 border-red-500/60 text-center relative overflow-hidden shadow-2xl bg-gradient-to-b from-purple-950/40 to-slate-950/80">
-            <div class="absolute -right-10 -top-10 w-48 h-48 bg-red-500/20 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -left-10 -bottom-10 w-48 h-48 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- High-Emphasis Main Action Call Box -->
+        <div class="glass-card rounded-3xl p-6 md:p-10 mb-10 border-2 border-red-500/70 text-center relative overflow-hidden shadow-2xl bg-gradient-to-b from-purple-950/60 to-slate-950/90">
+            <div class="absolute -right-12 -top-12 w-56 h-56 bg-red-500/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-12 -bottom-12 w-56 h-56 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
             
-            <div class="inline-flex items-center gap-2 bg-red-500/20 text-red-300 px-4 py-1.5 rounded-full text-sm font-bold mb-4 border border-red-500/40">
-                <i class="fa-solid fa-fire text-amber-400"></i> আজকেই শেষ সময় — আর দেরি করবেন না!
+            <div class="inline-flex items-center gap-2 bg-red-500/20 text-red-300 px-5 py-2 rounded-full text-sm md:text-base font-bold mb-5 border border-red-500/40">
+                <i class="fa-solid fa-fire text-amber-400 text-lg"></i> আজকেই শেষ সময় — কালক্ষেপণ না করে এখনই ফরম জমা দিন!
             </div>
 
-            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3">দ্রুত আপনার আজীবন সদস্য ফরমটি জমা দিন!</h3>
-            <p class="text-slate-200 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-6 font-medium">
-                স্বাধীন বাংলা প্রেসক্লাবের পক্ষ থেকে জানানো যাচ্ছে যে, আজীবন সদস্যপদ নিশ্চিত করতে এবং সকল সুযোগ-সুবিধা পেতে এখনই গুগল ফরম পূরণ করা বাধ্যতামূলক। আপনাকে স্বয়ংক্রিয়ভাবে গুগল ফর্মে নিয়ে যাওয়া হচ্ছে।
+            <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
+                দ্রুত আপনার আজীবন সদস্য ফরমটি জমা দিন!
+            </h2>
+            <p class="text-slate-200 max-w-3xl mx-auto text-base md:text-lg leading-relaxed mb-8 font-medium">
+                স্বাধীন বাংলা প্রেসক্লাবের সম্মানিত সকল সদস্য ও প্রতিনিধিদের অবগতির জন্য জানানো যাচ্ছে যে, আজীবন সদস্যপদ নিশ্চিত করার জন্য গুগল ফরম পূরণ করা বাধ্যতামূলক। আপনাকে স্বয়ংক্রিয়ভাবে অফিসিয়াল গুগল ফর্মে নিয়ে যাওয়া হচ্ছে। নিচে দেওয়া বাটনে ক্লিক করেও সরাসরি ফরম জমা দিতে পারবেন।
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://forms.gle/AtKofKqsZ5q6WsTD8" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-red-600 via-amber-500 to-yellow-500 hover:from-red-700 hover:to-yellow-600 text-slate-950 font-extrabold rounded-xl text-lg shadow-2xl glow-btn transition transform hover:scale-105 flex items-center justify-center gap-3">
-                    <i class="fa-solid fa-file-pen text-xl"></i> আজীবন সদস্য ফরম জমা দিন (Google Form)
+                <a href="https://forms.gle/AtKofKqsZ5q6WsTD8" target="_blank" class="w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-red-600 via-amber-500 to-yellow-500 hover:from-red-700 hover:to-yellow-600 text-slate-950 font-extrabold rounded-2xl text-xl shadow-2xl glow-btn transition transform hover:scale-105 flex items-center justify-center gap-3 border border-white/30">
+                    <i class="fa-solid fa-file-pen text-2xl"></i> আজীবন সদস্য ফরম জমা দিন (Google Form)
                 </a>
             </div>
         </div>
 
-        <!-- Details & Benefits Grid -->
+        <!-- Detailed Information Section -->
+        <div class="glass-card rounded-3xl p-6 md:p-8 mb-10 border border-white/10 shadow-2xl">
+            <h3 class="text-xl md:text-2xl font-bold text-amber-300 mb-6 text-center border-b border-white/10 pb-4">
+                <i class="fa-solid fa-circle-info text-amber-400 mr-2"></i> ঘোষণা ও নির্দেশনার বিস্তারিত বিবরণ
+            </h3>
+            
+            <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                <p>
+                    <strong class="text-white">আজীবন সদস্য ঘোষণা:</strong> স্বাধীন বাংলা প্রেসক্লাব একটি অত্যন্ত গুরুত্বপূর্ণ সিদ্ধান্ত গ্রহণ করেছে। এর প্রতিটি প্রতিনিধিকে আজীবনের জন্য প্রতিষ্ঠানের সদস্য ঘোষণা করা হলো। একজন ব্যক্তি এই আজীবন ঘোষণাপত্রের মাধ্যমে মৃত্যুর আগ পর্যন্ত প্রতিষ্ঠানের গর্বিত সদস্য হিসেবে বহাল থাকবেন।
+                </p>
+                <p>
+                    <strong class="text-white">আর কোনো আর্থিক ফি লাগবে না:</strong> এই আজীবন সদস্যপদ গ্রহণের ফলে ভবিষ্যতে আর কখনো কোনো প্রকার অর্থ বা ফি প্রদান করতে হবে না। একবার সদস্যপদ নিশ্চিত করার পর আজীবন সকল সুযোগ-সুবিধা ভোগ করা যাবে।
+                </p>
+                <p>
+                    <strong class="text-white">আধুনিক সুযোগ-সুবিধা ও উপকরণ:</strong> স্বাধীন বাংলা প্রেসক্লাবের পক্ষ থেকে প্রতিনিধিদের জন্য নতুন ডিজাইনের ফিতা, সর্বোচ্চ মানসম্মত অফিসিয়াল গেঞ্জি এবং কম্পিউটারাইজড প্রত্যয়নপত্র প্রদান করা হচ্ছে, যা সর্বোচ্চ মান ও প্রতিষ্ঠানের পরিচয় বহন করবে।
+                </p>
+                <p>
+                    <strong class="text-white">স্মার্ট কিউআর কোড সিস্টেম:</strong> নতুন প্রযুক্তির অংশ হিসেবে প্রতিনিধিদের তথ্যাবলি সংবলিত এনএমসি কিউআর কোড (NMC QR Code) স্মার্ট আইডি কার্ড ও সার্টিফিকেট প্রদান করা হবে, যা যেকোনো সময় স্ক্যান করে যাচাই করা সম্ভব।
+                </p>
+                <p>
+                    <strong class="text-white">বাধ্যতামূলক নির্দেশনা:</strong> অনলাইন নিউজ পোর্টাল চালু থেকে শুরু করে স্বাধীন বাংলা প্রেসক্লাবের সকল কার্যক্রমে অংশগ্রহণ এবং সার্টিফিকেট সংগ্রহ করার জন্য আজীবন সদস্য ফরম পূরণ ও জমা দেওয়া সকলের জন্য বাধ্যতামূলক।
+                </p>
+            </div>
+        </div>
+
+        <!-- Benefits Grid Cards -->
         <div class="mb-10">
-            <h3 class="text-xl md:text-2xl font-bold text-amber-300 mb-6 text-center drop-shadow">আজীবন সদস্যপদের প্রধান সুযোগ-সুবিধা ও ঘোষণাসমূহ</h3>
+            <h3 class="text-xl md:text-2xl font-bold text-amber-300 mb-6 text-center drop-shadow">আজীবন সদস্যপদের প্রধান সুবিধাসমূহ</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Card 1 -->
@@ -122,9 +127,9 @@
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-white mb-2">আজীবন সদস্য ঘোষণা</h4>
+                    <h4 class="text-lg font-bold text-white mb-2">আজীবন সদস্যপদ</h4>
                     <p class="text-slate-300 text-sm leading-relaxed">
-                        প্রতিটি প্রতিনিধিকে আজীবনের জন্য সদস্য ঘোষণা করা হলো। মৃত্যুর আগ পর্যন্ত বা সারাজীবন এই সদস্যপদ বহাল থাকবে।
+                        জীবনের শেষ দিন পর্যন্ত স্বাধীন বাংলা প্রেসক্লাবের অফিশিয়াল প্রতিনিধি ও সদস্য হিসেবে বহাল থাকার সুবর্ণ সুযোগ।
                     </p>
                 </div>
 
@@ -133,9 +138,9 @@
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-ban"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-white mb-2">কোনো অতিরিক্ত ফি নেই</h4>
+                    <h4 class="text-lg font-bold text-white mb-2">শূন্য ফি নীতি</h4>
                     <p class="text-slate-300 text-sm leading-relaxed">
-                        একবার আজীবন সদস্য ফি জমা দেওয়ার পর ভবিষ্যতে আর কখনো কোনো প্রকার আর্থিক লেনদেন বা ফি দিতে হবে না।
+                        একবার ফরম ও ফি জমাদানের পর ভবিষ্যতে আর কোনোদিন কোনো বাড়তি অর্থ বা ফি পরিশোধ করতে হবে না।
                     </p>
                 </div>
 
@@ -144,9 +149,9 @@
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-qrcode"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-white mb-2">এনএমসি কিউআর কোড আইডি</h4>
+                    <h4 class="text-lg font-bold text-white mb-2">স্মার্ট কিউআর আইডি</h4>
                     <p class="text-slate-300 text-sm leading-relaxed">
-                        আধুনিক প্রযুক্তিসম্পন্ন কিউআর কোড সংবলিত স্মার্ট আইডি কার্ড ও নতুন ডিজাইনের ফিতা প্রদান করা হবে।
+                        আধুনিক প্রযুক্তি ও এনএমসি কিউআর কোড সিস্টেম সংবলিত স্মার্ট আইডি কার্ড ও নতুন ফিতা।
                     </p>
                 </div>
 
@@ -155,9 +160,9 @@
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-certificate"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-white mb-2">বিশেষ প্রত্যয়নপত্র ও সার্টিফিকেট</h4>
+                    <h4 class="text-lg font-bold text-white mb-2">কম্পিউটারাইজড প্রত্যয়নপত্র</h4>
                     <p class="text-slate-300 text-sm leading-relaxed">
-                        সরাসরি প্রতিনিধির তথ্য এবং কিউআর কোড সিস্টেমযুক্ত আজীবন প্রত্যয়নপত্র ও সার্টিফিকেট কম্পিউটারাইজড তৈরি করে দেওয়া হবে।
+                        সরাসরি প্রতিনিধির তথ্য সমৃদ্ধ আজীবন প্রত্যয়নপত্র ও সার্টিফিকেট যা অত্যন্ত সম্মানজনক।
                     </p>
                 </div>
 
@@ -166,9 +171,9 @@
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-shirt"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-white mb-2">অফিসিয়াল প্রিমিয়াম গেঞ্জি</h4>
+                    <h4 class="text-lg font-bold text-white mb-2">অফিসিয়াল গেঞ্জি</h4>
                     <p class="text-slate-300 text-sm leading-relaxed">
-                        সর্বোচ্চ মানসম্মত ও প্রিমিয়াম ডিজাইনের অফিসিয়াল গেঞ্জি প্রদান করা হবে যা প্রতিষ্ঠানের পরিচয় বহন করবে।
+                        সর্বোচ্চ মানসম্মত ও আকর্ষণীয় ডিজাইনের অফিসিয়াল গেঞ্জি যা প্রতিষ্ঠানের পরিচয় বহন করে।
                     </p>
                 </div>
 
@@ -177,9 +182,9 @@
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-slate-950 flex items-center justify-center text-xl mb-4 font-bold shadow">
                         <i class="fa-solid fa-globe"></i>
                     </div>
-                    <h4 class="text-lg font-bold text-white mb-2">আধুনিক নিউজ পোর্টাল ও প্রযুক্তি</h4>
+                    <h4 class="text-lg font-bold text-white mb-2">আধুনিক নিউজ পোর্টাল</h4>
                     <p class="text-slate-300 text-sm leading-relaxed">
-                        নতুন ওয়েবসাইট ও আধুনিক নিউজ পোর্টাল থেকে শুরু করে সমস্ত কার্যক্রম প্রযুক্তির মাধ্যমে উন্মুক্ত ও সহজ করা হয়েছে।
+                        নতুন প্রযুক্তিনির্ভর আধুনিক নিউজ পোর্টাল ও সমস্ত কার্যক্রমে সরাসরি অংশগ্রহণের সুযোগ।
                     </p>
                 </div>
             </div>
@@ -193,7 +198,7 @@
         <p class="mt-1 text-xs text-amber-400/80">কারিগরি সহযোগিতায়: স্বাধীন বাংলা প্রেসক্লাব আইটি সেল</p>
     </footer>
 
-    <!-- Auto Redirection & Dynamic Alert Script -->
+    <!-- Auto Redirection Script (30 Seconds) -->
     <script>
         const targetUrl = "https://forms.gle/AtKofKqsZ5q6WsTD8";
         let timeLeft = 30;
