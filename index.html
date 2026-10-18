@@ -14,11 +14,11 @@
         body {
             font-family: 'Hind Siliguri', sans-serif;
         }
-        /* Colorful Vibrant Animated Background */
+        /* Ultra Vibrant Dynamic Colorful Background */
         .bg-vibrant-gradient {
-            background: linear-gradient(-45deg, #090d16, #171033, #2e0838, #0f2027, #090d16);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background: linear-gradient(-45deg, #05050f, #1a0b2e, #3b0744, #0f172a, #022335);
+            background-size: 500% 500%;
+            animation: gradientBG 18s ease infinite;
         }
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
@@ -26,14 +26,19 @@
             100% { background-position: 0% 50%; }
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5);
+        }
+        .glass-modal {
+            background: rgba(10, 10, 25, 0.92);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(234, 179, 8, 0.4);
         }
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 25px rgba(234, 179, 8, 0.7); }
-            50% { box-shadow: 0 0 50px rgba(239, 68, 68, 0.95); }
+            0%, 100% { box-shadow: 0 0 25px rgba(234, 179, 8, 0.7), inset 0 0 15px rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 0 50px rgba(239, 68, 68, 0.95), inset 0 0 25px rgba(234, 179, 8, 0.7); }
         }
         .glow-btn {
             animation: pulse-glow 1.5s infinite;
@@ -50,7 +55,7 @@
 <body class="bg-vibrant-gradient text-slate-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950">
 
     <!-- Top Urgent Notice Banner with Live Countdown -->
-    <div class="bg-gradient-to-r from-red-600 via-pink-600 to-amber-600 text-white py-3 px-4 text-center text-sm md:text-base font-bold shadow-xl sticky top-0 z-50 flex flex-wrap items-center justify-center gap-3 border-b border-white/20">
+    <div class="bg-gradient-to-r from-red-600 via-pink-600 to-amber-600 text-white py-3 px-4 text-center text-sm md:text-base font-bold shadow-2xl sticky top-0 z-50 flex flex-wrap items-center justify-center gap-3 border-b border-white/20">
         <i class="fa-solid fa-triangle-exclamation text-yellow-300 urgent-alert text-xl"></i>
         <span>🚨 জরুরি ঘোষণা: আজকেই শেষ সময়! দ্রুত আপনার আজীবন সদস্য ফরমটি জমা দিন। অটো-রিডাইরেক্ট হতে বাকি: <span id="top-countdown" class="bg-black/50 px-3 py-0.5 rounded text-amber-300 font-extrabold text-lg">30</span> সেকেন্ড</span>
     </div>
@@ -192,18 +197,46 @@
 
     </main>
 
+    <!-- Periodic Popup Modal for Application -->
+    <div id="urgent-popup" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden transition-all duration-300 p-4">
+        <div class="glass-modal max-w-lg w-full p-6 md:p-8 rounded-3xl shadow-2xl border border-amber-500/50 text-center relative animate-pulse">
+            <button onclick="closePopup()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-white/10 w-9 h-9 rounded-full flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            
+            <div class="w-16 h-16 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-3xl mx-auto mb-4 border border-red-500/30">
+                <i class="fa-solid fa-bullhorn animate-bounce"></i>
+            </div>
+
+            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3">জরুরি সতর্কবার্তা!</h3>
+            <p class="text-slate-300 text-sm md:text-base mb-6 leading-relaxed">
+                আজকেই শেষ সময়! স্বাধীন বাংলা প্রেসক্লাবের আজীবন সদস্য ফরমটি দ্রুত জমা দিন এবং আপনার স্মার্ট আইডি কার্ড ও সার্টিফিকেট নিশ্চিত করুন।
+            </p>
+
+            <div class="flex flex-col gap-3">
+                <a href="https://forms.gle/AtKofKqsZ5q6WsTD8" target="_blank" onclick="closePopup()" class="w-full py-4 bg-gradient-to-r from-red-600 via-amber-500 to-yellow-500 hover:from-red-700 hover:to-yellow-600 text-slate-950 font-extrabold rounded-xl text-lg shadow-xl glow-btn transition">
+                    <i class="fa-solid fa-file-pen mr-2"></i> এখনই ফরম জমা দিন (Google Form)
+                </a>
+                <button onclick="closePopup()" class="w-full py-3 bg-white/10 hover:bg-white/20 text-slate-300 font-semibold rounded-xl text-sm transition">
+                    পরে দেখব (বন্ধ করুন)
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="border-t border-white/10 bg-slate-950/90 py-6 text-center text-slate-400 text-sm">
         <p>© ২০২৬ স্বাধীন বাংলা প্রেসক্লাব। সর্বস্বত্ব সংরক্ষিত।</p>
         <p class="mt-1 text-xs text-amber-400/80">কারিগরি সহযোগিতায়: স্বাধীন বাংলা প্রেসক্লাব আইটি সেল</p>
     </footer>
 
-    <!-- Auto Redirection Script (30 Seconds) -->
+    <!-- Scripts: Auto Redirection & Periodic Popup -->
     <script>
         const targetUrl = "https://forms.gle/AtKofKqsZ5q6WsTD8";
         let timeLeft = 30;
         const countdownEl = document.getElementById("top-countdown");
 
+        // 30 Seconds Main Auto Redirection Timer
         const timer = setInterval(() => {
             timeLeft--;
             countdownEl.textContent = timeLeft;
@@ -212,6 +245,21 @@
                 window.location.href = targetUrl;
             }
         }, 1000);
+
+        // Periodic Popup Modal Trigger (Shows every 15 seconds)
+        const popup = document.getElementById("urgent-popup");
+        
+        function showPopup() {
+            popup.classList.remove("hidden");
+        }
+
+        function closePopup() {
+            popup.classList.add("hidden");
+        }
+
+        // Show popup first time after 5 seconds, then every 15 seconds
+        setTimeout(showPopup, 5000);
+        setInterval(showPopup, 15000);
     </script>
 </body>
 </html>
